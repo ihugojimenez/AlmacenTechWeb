@@ -13,5 +13,10 @@ namespace AlmacenTech.Registros
         {
 
         }
+
+        protected void SearchButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
