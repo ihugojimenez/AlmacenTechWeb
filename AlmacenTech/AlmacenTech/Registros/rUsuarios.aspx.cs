@@ -102,11 +102,13 @@ namespace AlmacenTech.Registros
 
         public void LlenarClase(Usuarios u)
         {
-            u.UsuarioId = Convert.ToInt32(IdTextBox.Text);
-            u.Nombres = NamesTextBox.Text;
-            u.NombreUsuario = UserNameTextBox.Text;
-            u.Contraseña = PassTextBox.Text;
-            u.IdTipo = int.Parse(TipoUsersDropDownList.SelectedValue);
+            
+                u.Nombres = NamesTextBox.Text;
+                u.NombreUsuario = UserNameTextBox.Text;
+                u.Contraseña = PassTextBox.Text;
+                u.IdTipo = int.Parse(TipoUsersDropDownList.SelectedValue);
+            
+            
         }
 
         
