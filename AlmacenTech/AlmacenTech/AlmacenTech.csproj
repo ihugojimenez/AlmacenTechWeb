@@ -129,6 +129,7 @@
     <Content Include="img\intro-bg.jpg" />
     <Content Include="img\ipad.png" />
     <Content Include="img\phones.png" />
+    <Content Include="JQuery\toastr.min.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.js" />
     <Content Include="Registros\rUsuarios.aspx" />

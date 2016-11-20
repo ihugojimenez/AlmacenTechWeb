@@ -14,7 +14,26 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <%--          Toastr               --%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/JQuery/toastr.min.js"></script>
     <link href="/Boostrap/toastr.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+    <style type="text/css">
+        .auto-style1 {
+            width: 364px;
+        }
+        .auto-style2 {
+            width: 364px;
+            height: 153px;
+        }
+        .auto-style3 {
+            height: 153px;
+        }
+    </style>
 
     <!-- Custom CSS -->
     <link href="/css/landing-page.css" rel="stylesheet"/>

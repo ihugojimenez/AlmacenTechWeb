@@ -14,11 +14,11 @@ namespace AlmacenTech.Registros
         {
             if(!IsPostBack)
             {
-                cargar();
+                Cargar();
             }
         }
 
-        public void cargar()
+        public void Cargar()
         {
             TiposUsuarios tp = new TiposUsuarios();
             TipoUsersDropDownList.DataSource = tp.Listado("*", "1=1", "");
@@ -34,6 +34,25 @@ namespace AlmacenTech.Registros
             LlenarCampos(id);
         }
 
+        protected void NewButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        protected void SaveButton_Click(object sender, EventArgs e)
+        {
+            Usuarios u = new Usuarios();
+            LlenarClase(u);
+            if (u.Insertar())
+            {
+                Limpiar();
+                Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
+            }
+
+        }
+
+        
+
         public Usuarios LlenarCampos(int id)
         {
             Usuarios u = new Usuarios();
@@ -44,19 +63,9 @@ namespace AlmacenTech.Registros
             UserNameTextBox.Text = u.NombreUsuario;
             PassTextBox.Text = u.Contraseña;
             rPassTextBox.Text = u.Contraseña;
-            TipoUsersDropDownList.SelectedIndex = u.IdTipo;
+            TipoUsersDropDownList.SelectedValue = u.IdTipo.ToString();
 
             return u;
-        }
-
-        protected void NewButton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
-        protected void NamesTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         public void Limpiar()
@@ -69,19 +78,41 @@ namespace AlmacenTech.Registros
             TipoUsersDropDownList.SelectedIndex = 1;
         }
 
-        public void LLenarClase(Usuarios u)
+        public void LlenarClase(Usuarios u)
         {
+            u.UsuarioId = Convert.ToInt32(IdTextBox.Text);
             u.Nombres = NamesTextBox.Text;
             u.NombreUsuario = UserNameTextBox.Text;
             u.Contraseña = PassTextBox.Text;
             u.IdTipo = int.Parse(TipoUsersDropDownList.SelectedValue);
         }
 
-        protected void SaveButton_Click(object sender, EventArgs e)
+        
+
+        protected void UpdateButton_Click(object sender, EventArgs e)
         {
             Usuarios u = new Usuarios();
-            LLenarClase(u);
-            u.Insertar();
+            LlenarClase(u);
+            if (u.Editar())
+            {
+                Utilitarios.ShowToastr(this, "Editado", "Mensaje", "success");
+                Limpiar();
+            }
+        }
+
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+            Usuarios u = new Usuarios();
+            u.Buscar(Convert.ToInt32(IdTextBox.Text));
+            if (u.Eliminar())
+            {
+                Utilitarios.ShowToastr(this, "Eliminado", "Mensaje", "success");
+                Limpiar();
+            }
+        }
+
+        protected void NamesTextBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
