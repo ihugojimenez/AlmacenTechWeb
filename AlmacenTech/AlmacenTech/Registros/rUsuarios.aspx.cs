@@ -51,7 +51,29 @@ namespace AlmacenTech.Registros
 
         }
 
-        
+        protected void UpdateButton_Click(object sender, EventArgs e)
+        {
+            Usuarios u = new Usuarios();
+            LlenarClase(u);
+            if (u.Editar())
+            {
+                Utilitarios.ShowToastr(this, "Editado", "Mensaje", "success");
+                Limpiar();
+            }
+        }
+
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+            Usuarios u = new Usuarios();
+            u.Buscar(Convert.ToInt32(IdTextBox.Text));
+            if (u.Eliminar())
+            {
+                Utilitarios.ShowToastr(this, "Eliminado", "Mensaje", "success");
+                Limpiar();
+            }
+        }
+
+
 
         public Usuarios LlenarCampos(int id)
         {
@@ -89,27 +111,7 @@ namespace AlmacenTech.Registros
 
         
 
-        protected void UpdateButton_Click(object sender, EventArgs e)
-        {
-            Usuarios u = new Usuarios();
-            LlenarClase(u);
-            if (u.Editar())
-            {
-                Utilitarios.ShowToastr(this, "Editado", "Mensaje", "success");
-                Limpiar();
-            }
-        }
 
-        protected void DeleteButton_Click(object sender, EventArgs e)
-        {
-            Usuarios u = new Usuarios();
-            u.Buscar(Convert.ToInt32(IdTextBox.Text));
-            if (u.Eliminar())
-            {
-                Utilitarios.ShowToastr(this, "Eliminado", "Mensaje", "success");
-                Limpiar();
-            }
-        }
 
         protected void NamesTextBox_TextChanged(object sender, EventArgs e)
         {
