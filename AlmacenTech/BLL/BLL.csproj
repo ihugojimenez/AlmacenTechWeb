@@ -45,7 +45,9 @@
     <Compile Include="Equipos.cs" />
     <Compile Include="Mensajeros.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TiposUsuarios.cs" />
     <Compile Include="Usuarios.cs" />
+    <Compile Include="Utilitarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
