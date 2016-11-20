@@ -51,6 +51,14 @@ namespace AlmacenTech.Registros
 
         }
 
+        public void elegirValidacion()
+        {
+            if(NamesTextBox.Text.Equals(""))
+            {
+                
+            }
+        }
+
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
             Usuarios u = new Usuarios();

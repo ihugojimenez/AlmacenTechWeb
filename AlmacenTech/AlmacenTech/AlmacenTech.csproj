@@ -135,6 +135,7 @@
     <Content Include="js\jquery.js" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Boostrap\toastr.min.css" />
+    <Content Include="Sesion\IniciarSesionWebForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +165,13 @@
     </Compile>
     <Compile Include="Registros\rUsuarios.aspx.designer.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sesion\IniciarSesionWebForm.aspx.cs">
+      <DependentUpon>IniciarSesionWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sesion\IniciarSesionWebForm.aspx.designer.cs">
+      <DependentUpon>IniciarSesionWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>

@@ -79,6 +79,12 @@
                     <li>
                         <a href="#contact">Contactanos</a>
                     </li>
+                    <li>
+                        <a href="/Registros/rUsuarios.aspx">Registrarse</a>
+                    </li>
+                    <li>
+                        <a href="/Registros/rUsuarios.aspx">Iniciar Sesion</a>
+                    </li>
                      <li>
                          <li role="presentation" class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -86,6 +92,18 @@
                         </a>
                         <ul class="dropdown-menu">
                              <li><a href="/Registros/rUsuarios.aspx">Usuarios</a></li>
+                          
+                        </ul>
+                      </li>
+                            
+                     </li>
+                    <li>
+                         <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                          Consultas <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                             <li><a href="/Consultas/cUsuarios.aspx">Usuarios</a></li>
                           
                         </ul>
                       </li>

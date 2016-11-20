@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +14,39 @@ namespace AlmacenTech.Consultas
         {
 
         }
+
+        protected void SearchButton_Click(object sender, EventArgs e)
+        {
+            Condicion();
+            gridView();
+        }
+
+        public string Condicion()
+        {
+            string condicion = "";
+            if (string.IsNullOrWhiteSpace(FiltroTextBox.Text))
+            {
+                condicion = "1=1";
+            }
+            else
+            {
+                if (!string.IsNullOrWhiteSpace(FiltroTextBox.Text))
+                {
+                    condicion = FiltroDropDownList.SelectedValue + " like '%" + FiltroTextBox.Text + "%'";
+                    
+                }
+            }
+
+            return condicion;
+        }
+
+        public void gridView()
+        {
+            Usuarios u = new Usuarios();
+            UsersGridView.DataSource = u.Listado("UsuarioId, Nombres, NombreUsuario, IdTipo", Condicion(), "");
+            UsersGridView.DataBind();
+
+        }
+
     }
 }
