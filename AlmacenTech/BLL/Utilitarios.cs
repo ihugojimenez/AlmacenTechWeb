@@ -14,5 +14,12 @@ namespace BLL
             page.ClientScript.RegisterStartupScript(page.GetType(), "toastr_message",
                   String.Format("toastr.{0}('{1}', '{2}');", type.ToLower(), message, title), addScriptTags: true);
         }
+
+        public static int ConvertirAentero(string s)
+        {
+            int id = 0;
+            int.TryParse(s, out id);
+            return id;
+        }
     }
 }

@@ -29,9 +29,8 @@ namespace AlmacenTech.Registros
 
         protected void SearchButton_Click(object sender, EventArgs e)
         {
-            int id;
-            int.TryParse(IdTextBox.Text, out id);
-            LlenarCampos(id);
+           
+            LlenarCampos(Utilitarios.ConvertirAentero(IdTextBox.Text));
         }
 
         protected void NewButton_Click(object sender, EventArgs e)
@@ -73,7 +72,7 @@ namespace AlmacenTech.Registros
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
             Usuarios u = new Usuarios();
-            u.Buscar(Convert.ToInt32(IdTextBox.Text));
+            u.Buscar(Utilitarios.ConvertirAentero(IdTextBox.Text));
             if (u.Eliminar())
             {
                 Utilitarios.ShowToastr(this, "Eliminado", "Mensaje", "success");
@@ -114,7 +113,7 @@ namespace AlmacenTech.Registros
                 u.Nombres = NamesTextBox.Text;
                 u.NombreUsuario = UserNameTextBox.Text;
                 u.Contraseña = PassTextBox.Text;
-                u.IdTipo = int.Parse(TipoUsersDropDownList.SelectedValue);
+                u.IdTipo = Utilitarios.ConvertirAentero(TipoUsersDropDownList.SelectedValue);
             
             
         }

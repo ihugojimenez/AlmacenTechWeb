@@ -133,6 +133,7 @@
     <Content Include="JQuery\toastr.min.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="Registros\rBancas.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Boostrap\toastr.min.css" />
     <Content Include="Sesion\IniciarSesionWebForm.aspx" />
@@ -158,6 +159,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rBancas.aspx.cs">
+      <DependentUpon>rBancas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rBancas.aspx.designer.cs">
+      <DependentUpon>rBancas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rUsuarios.aspx.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
@@ -204,6 +212,7 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
