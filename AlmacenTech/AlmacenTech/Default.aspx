@@ -46,8 +46,8 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer"/>
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Death to the Stock Photo:<br/>Special Thanks</h2>
-                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+                    <h2 class="section-heading">Control de flujo de entrada <br/>y salida de equipos</h2>
+                    <p class="lead">Te brindamos una forma simple de controlar <%--<a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>--%> el flujo de los equipos dentro de tu compañia, accesible desde cualquier lugar en donde estes.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                     <img class="img-responsive" src="img/ipad.png" alt=""/>
@@ -103,34 +103,54 @@
 
     </div>
     <!-- /.content-section-a -->
-
-	<a  name="contact"></a>
+    <a  name="contact"></a>
     <div class="banner">
 
         <div class="container">
-
             <div class="row">
-                <div class="col-lg-6">
-                    <h2>Conectate con nosotros:</h2>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-comments fa-fw" <%--class="fa fa-github fa-fw"--%>></i> <span class="network-name">Mensajes</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                        </li>
-                    </ul>
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contactanos</h2>
+                    <h3 class="section-subheading">Dejanos saber cualquier inquietud.</h3>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <asp:TextBox ID="NameTextBox" CssClass="form form-control" placeholder="Nombres *" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                   
+                                    <asp:TextBox ID="CorreoTextBox" CssClass="form form-control" placeholder="Correo *" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                   
+                                    <asp:TextBox ID="TelTextBox" CssClass="form form-control" placeholder="Celular *" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    
+                                    <asp:TextBox ID="MsjTextBox" CssClass="form form-control" placeholder="Mensaje *" runat="server" Height="136px" TextMode="MultiLine"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <%--<button type="submit" class="btn btn-xl">Enviar mensaje</button>--%>
+                                <asp:Button ID="SendButton" Width="280" CssClass="btn btn-info" runat="server" Text="Enviar" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <!-- /.container -->
-
+    </section>
+        </div>
     </div>
+        </div>
+	
     <!-- /.banner -->
 </asp:Content>

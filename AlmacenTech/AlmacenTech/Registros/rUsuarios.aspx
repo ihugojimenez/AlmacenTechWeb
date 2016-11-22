@@ -74,7 +74,9 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="PassTextBox" ErrorMessage="Favor ingresar la contraseña" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
             
             </div>
-            
+            <div class ="col-md-4 text-left">
+                  
+            </div>
                 
             <div class ="col-md-8 text-left">
                 <br />
@@ -94,12 +96,6 @@
             <div class ="col-md-8 text-left">
                 <br />
                 <asp:Label ID="Label6" runat="server" Text="Tipo de Usuario"></asp:Label>
-            
-                
-            <div class ="col-md-4 text-left">
-                
-            </div>
-            
                 <br />
                 <asp:DropDownList ID="TipoUsersDropDownList" TabIndex="6" CssClass="form-control" runat="server" Width="480"></asp:DropDownList>
             </div>
