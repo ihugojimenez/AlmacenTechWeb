@@ -76,10 +76,6 @@
             </div>
             
                 
-            <div class ="col-md-4 text-left">
-                
-            </div>
-            
             <div class ="col-md-8 text-left">
                 <br />
                 <asp:Label ID="Label5" runat="server" Text="Repetir contraseña"></asp:Label>
@@ -98,6 +94,12 @@
             <div class ="col-md-8 text-left">
                 <br />
                 <asp:Label ID="Label6" runat="server" Text="Tipo de Usuario"></asp:Label>
+            
+                
+            <div class ="col-md-4 text-left">
+                
+            </div>
+            
                 <br />
                 <asp:DropDownList ID="TipoUsersDropDownList" TabIndex="6" CssClass="form-control" runat="server" Width="480"></asp:DropDownList>
             </div>
@@ -120,7 +122,7 @@
                 <asp:Button ID="UpdateButton" ValidationGroup="ID" runat="server" TabIndex="9" CssClass="btn btn-primary" Text="Editar" Width="89px" OnClick="UpdateButton_Click" />
             </div> 
             <div class ="col-md-1 text-left">
-                <asp:Button ID="DeleteButton" runat="server" ValidationGroup="ID" TabIndex="10" CssClass="btn btn-danger" Text="Eliminar" Width="89px" OnClick="DeleteButton_Click" />
+                <asp:Button ID="DeleteButton" runat="server" ValidationGroup="Buscar" TabIndex="10" CssClass="btn btn-danger" Text="Eliminar" Width="89px" OnClick="DeleteButton_Click" />
             </div>               
             
             

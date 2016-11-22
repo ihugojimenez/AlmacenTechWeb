@@ -21,5 +21,12 @@ namespace BLL
             int.TryParse(s, out id);
             return id;
         }
+
+        public static float ConvertirAflotante(string s)
+        {
+            float aux = 0;
+            float.TryParse(s, out aux);
+            return aux;
+        }
     }
 }

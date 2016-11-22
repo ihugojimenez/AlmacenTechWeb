@@ -135,6 +135,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.js" />
     <Content Include="Registros\rBancas.aspx" />
+    <Content Include="Registros\rEquipos.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Boostrap\toastr.min.css" />
     <Content Include="Sesion\IniciarSesionWebForm.aspx" />
@@ -174,6 +175,13 @@
     </Compile>
     <Compile Include="Registros\rBancas.aspx.designer.cs">
       <DependentUpon>rBancas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rEquipos.aspx.cs">
+      <DependentUpon>rEquipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rEquipos.aspx.designer.cs">
+      <DependentUpon>rEquipos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rUsuarios.aspx.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
