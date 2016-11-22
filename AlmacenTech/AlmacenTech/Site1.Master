@@ -92,6 +92,7 @@
                         </a>
                         <ul class="dropdown-menu">
                              <li><a href="/Registros/rUsuarios.aspx">Usuarios</a></li>
+                             <li><a href="/Registros/rBancas.aspx">Bancas</a></li>
                           
                         </ul>
                       </li>
@@ -104,6 +105,7 @@
                         </a>
                         <ul class="dropdown-menu">
                              <li><a href="/Consultas/cUsuarios.aspx">Usuarios</a></li>
+                             <li><a href="/Consultas/cBancas.aspx">Bancas</a></li>
                           
                         </ul>
                       </li>

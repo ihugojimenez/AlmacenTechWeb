@@ -35,7 +35,7 @@
             </div>
             <div class ="col-md-8 text-left">
                 <br />
-                <asp:GridView ID="UsersGridView"  runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="UsersGridView"  runat="server" CellPadding="4" Width="480" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

@@ -119,6 +119,7 @@
     <Content Include="App_Data\AlmacenTechDb_log.ldf">
       <DependentUpon>AlmacenTechDb.mdf</DependentUpon>
     </Content>
+    <Content Include="Consultas\cBancas.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.min.css" />
@@ -140,6 +141,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\cBancas.aspx.cs">
+      <DependentUpon>cBancas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cBancas.aspx.designer.cs">
+      <DependentUpon>cBancas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

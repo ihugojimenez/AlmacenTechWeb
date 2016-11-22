@@ -35,6 +35,13 @@
             <div class ="col-md-4 text-left">
                 <asp:ValidationSummary ID="ValidationSummary3" ValidationGroup="Save" ForeColor="Red" runat="server" />
             </div>
+            <div class ="col-md-8 text-left">
+                <br />
+                <asp:Label ID="Label3" runat="server" Text="Direccion"></asp:Label>
+                <asp:TextBox ID="DireccionTextBox" CssClass="form-control" Width="480" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingresar la direccion" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingresar la direccion" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
+            </div>
         </div>
 
      <div class="row">
@@ -52,14 +59,8 @@
                 <asp:Button ID="UpdateButton" ValidationGroup="ID" runat="server"  CssClass="btn btn-primary" Text="Editar" Width="89px" OnClick="UpdateButton_Click"  />
             </div> 
             <div class ="col-md-1 text-left">
-                <asp:Button ID="DeleteButton" runat="server" ValidationGroup="ID"  CssClass="btn btn-danger" Text="Eliminar" Width="89px" OnClick="DeleteButton_Click"  />
-            <div class ="col-md-8 text-left">
-                <br />
-                <asp:Label ID="Label3" runat="server" Text="Direccion"></asp:Label>
-                <asp:TextBox ID="DireccionTextBox" CssClass="form-control" Width="480" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingresar la direccion" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingresar la direccion" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
-            </div>  
+                <asp:Button ID="DeleteButton" runat="server" ValidationGroup="Buscar"  CssClass="btn btn-danger" Text="Eliminar" Width="89px" OnClick="DeleteButton_Click"  />
+              
             </div>               
             
             
