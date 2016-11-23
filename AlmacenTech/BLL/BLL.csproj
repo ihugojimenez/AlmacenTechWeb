@@ -47,7 +47,10 @@
     <Compile Include="MarcaEquipos.cs" />
     <Compile Include="Mensajeros.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salidas.cs" />
+    <Compile Include="SalidasDetalle.cs" />
     <Compile Include="TiposEquipos.cs" />
+    <Compile Include="TiposSalidas.cs" />
     <Compile Include="TiposUsuarios.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Utilitarios.cs" />

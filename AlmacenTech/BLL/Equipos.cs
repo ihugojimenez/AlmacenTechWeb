@@ -107,7 +107,11 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
 
-            return conexion.ObtenerDatos(string.Format("select *" + " from Equipos where " + Condicion));
+            return conexion.ObtenerDatos(string.Format("select EquipoId, TE.Detalle + '  ' + ME.Detalle + '  ' + E.SerialNum as Aux" + " from Equipos as E inner join TiposEquipos TE on E.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on E.MarcaId=ME.MarcaId where " + Condicion));
         }
+
+        //from Ventas as V inner join VentasDetalle VD on V.VentaId=VD.VentaId inner join Articulos A on VD.ArticuloId=A.ArticuloId where " 
+        //    string consulta = "SELECT au_id, au_fname + ' ' + au_lname AS name " +
+        //          "FROM Authors";
     }
 }

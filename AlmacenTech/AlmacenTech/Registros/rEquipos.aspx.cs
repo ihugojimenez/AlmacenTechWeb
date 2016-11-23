@@ -90,8 +90,8 @@ namespace AlmacenTech.Registros
         public void Limpiar()
         {
             IdTextBox.Text = "";
-            MarcaDropDownList.SelectedIndex = 1;
-            TipoDropDownList.SelectedIndex = 1;
+            MarcaDropDownList.SelectedIndex = 0;
+            TipoDropDownList.SelectedIndex = 0;
             SerialNumTextBox.Text = "";
             CostoTextBox.Text = "";
         }

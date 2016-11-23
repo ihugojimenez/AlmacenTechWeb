@@ -95,6 +95,7 @@
                              <li><a href="/Registros/rBancas.aspx">Bancas</a></li>
                             <li><a href="/Registros/rEquipos.aspx">Equipos</a></li>
                             <li><a href="/Registros/rMensajeros.aspx">Mensajeros</a></li>
+                            <li><a href="/Registros/rSalidas.aspx">Salidas</a></li>
                           
                         </ul>
                       </li>

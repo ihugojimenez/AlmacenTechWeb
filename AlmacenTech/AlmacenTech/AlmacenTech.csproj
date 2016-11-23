@@ -139,6 +139,7 @@
     <Content Include="Registros\rBancas.aspx" />
     <Content Include="Registros\rEquipos.aspx" />
     <Content Include="Registros\rMensajeros.aspx" />
+    <Content Include="Registros\rSalidas.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Boostrap\toastr.min.css" />
     <Content Include="Sesion\IniciarSesionWebForm.aspx" />
@@ -204,6 +205,13 @@
     </Compile>
     <Compile Include="Registros\rMensajeros.aspx.designer.cs">
       <DependentUpon>rMensajeros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rSalidas.aspx.cs">
+      <DependentUpon>rSalidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rSalidas.aspx.designer.cs">
+      <DependentUpon>rSalidas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rUsuarios.aspx.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
