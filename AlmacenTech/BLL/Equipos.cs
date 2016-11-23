@@ -15,6 +15,7 @@ namespace BLL
         public int TipoEquipoId { get; set; }
         public string SerialNum { get; set; }
         public float Costo { get; set; }
+        public int Estado { get; set; }
 
         public override bool Buscar(int IdBuscado)
         {
@@ -31,6 +32,7 @@ namespace BLL
                     this.TipoEquipoId = int.Parse(dt.Rows[0]["TipoEquipoId"].ToString());
                     this.SerialNum = dt.Rows[0]["SerialNum"].ToString();
                     this.Costo = float.Parse(dt.Rows[0]["Costo"].ToString());
+                    this.Estado = int.Parse(dt.Rows[0]["Estado"].ToString());
                 }
             }
             catch (Exception ex)
@@ -81,7 +83,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Insert into Equipos(MarcaId, TipoEquipoId, SerialNum, Costo) values({0}, {1},'{2}', {3})", this.MarcaId, this.TipoEquipoId, this.SerialNum, this.Costo));
+                retorno = Conexion.Ejecutar(string.Format("Insert into Equipos(MarcaId, TipoEquipoId, SerialNum, Costo, Estado) values({0}, {1},'{2}', {3}, {4})", this.MarcaId, this.TipoEquipoId, this.SerialNum, this.Costo, 0));
             }
             catch (Exception ex)
             {

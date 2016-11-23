@@ -55,5 +55,12 @@
                 </asp:GridView>
                 
             </div>  
+        <div class ="col-md-4 text-left">
+                  
+            </div>
+            <div class ="col-md-8 text-left">
+                
+                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+            </div>  
         </div>
 </asp:Content>

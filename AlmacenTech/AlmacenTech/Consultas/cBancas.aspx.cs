@@ -47,5 +47,11 @@ namespace AlmacenTech.Consultas
             BancasGridView.DataBind();
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Consultas/ReporteEquipos.aspx");
+            Response.Clear();
+        }
     }
 }

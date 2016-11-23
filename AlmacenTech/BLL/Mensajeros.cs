@@ -16,7 +16,7 @@ namespace BLL
         public string Celular { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
-        public DateTime FechaNacimiento { get; set; }
+        public string FechaNacimiento { get; set; }
         public string Sexo { get; set; }
 
         public override bool Insertar()
@@ -25,7 +25,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Insert into Mensajeros(Nombres, Cedula, Celular, Telefono, Direccion, FechaNacimiento, Sexo) values('{0}', '{1}','{2}', '{3}', '{4}', {5}, '{6}')", this.Nombres, this.Cedula, this.Celular, this.Telefono, this.Direccion, this.FechaNacimiento, this.Sexo));
+                retorno = Conexion.Ejecutar(string.Format("Insert into Mensajeros(Nombres, Cedula, Celular, Telefono, Direccion, FechaNacimiento, Sexo) values('{0}', '{1}','{2}', '{3}', '{4}', '{5}', '{6}')", this.Nombres, this.Cedula, this.Celular, this.Telefono, this.Direccion, this.FechaNacimiento, this.Sexo));
             }
             catch (Exception ex)
             {

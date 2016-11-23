@@ -72,6 +72,7 @@
       <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
       <Private>True</Private>
@@ -121,6 +122,7 @@
     </Content>
     <Content Include="Consultas\cBancas.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
+    <Content Include="Consultas\ReporteEquipos.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\landing-page.css" />
@@ -136,12 +138,18 @@
     <Content Include="js\jquery.js" />
     <Content Include="Registros\rBancas.aspx" />
     <Content Include="Registros\rEquipos.aspx" />
+    <Content Include="Registros\rMensajeros.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Boostrap\toastr.min.css" />
     <Content Include="Sesion\IniciarSesionWebForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlmacenTechDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlmacenTechDbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cBancas.aspx.cs">
       <DependentUpon>cBancas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,6 +163,13 @@
     </Compile>
     <Compile Include="Consultas\cUsuarios.aspx.designer.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ReporteEquipos.aspx.cs">
+      <DependentUpon>ReporteEquipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ReporteEquipos.aspx.designer.cs">
+      <DependentUpon>ReporteEquipos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -182,6 +197,13 @@
     </Compile>
     <Compile Include="Registros\rEquipos.aspx.designer.cs">
       <DependentUpon>rEquipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rMensajeros.aspx.cs">
+      <DependentUpon>rMensajeros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rMensajeros.aspx.designer.cs">
+      <DependentUpon>rMensajeros.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rUsuarios.aspx.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
@@ -211,6 +233,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Site1.Master" />
+    <Content Include="AlmacenTechDbDataSet.xsc">
+      <DependentUpon>AlmacenTechDbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="AlmacenTechDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AlmacenTechDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="AlmacenTechDbDataSet.xss">
+      <DependentUpon>AlmacenTechDbDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -228,7 +261,9 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Reportes\EquiposReport.rdlc" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

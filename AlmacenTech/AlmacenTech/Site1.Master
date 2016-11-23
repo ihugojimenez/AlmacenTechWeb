@@ -94,6 +94,7 @@
                              <li><a href="/Registros/rUsuarios.aspx">Usuarios</a></li>
                              <li><a href="/Registros/rBancas.aspx">Bancas</a></li>
                             <li><a href="/Registros/rEquipos.aspx">Equipos</a></li>
+                            <li><a href="/Registros/rMensajeros.aspx">Mensajeros</a></li>
                           
                         </ul>
                       </li>

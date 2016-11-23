@@ -58,8 +58,8 @@
                 <asp:Label ID="Label4" runat="server" Text="Numero Serial"></asp:Label>
                 <br />
                 <asp:TextBox ID="SerialNumTextBox" TabIndex="4" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="SerialNumTextBox" ErrorMessage="Favor ingresar la contraseña" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="SerialNumTextBox" ErrorMessage="Favor ingresar la contraseña" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="SerialNumTextBox" ErrorMessage="Favor ingresar Numero Serial" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="SerialNumTextBox" ErrorMessage="Favor ingresar Numero Serial" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
             
             </div>
             
@@ -77,6 +77,16 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="CostoTextBox" ErrorMessage="Favor repetir la contraseña" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="CostoTextBox" ErrorMessage="Favor ingresar el costo valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Save">*</asp:RegularExpressionValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="CostoTextBox" ErrorMessage="Favor ingresar el costo valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
+            </div>
+            <div class ="col-md-4 text-left">
+                
+            </div>
+            
+            <div class ="col-md-8 text-left">
+                <br />
+                <asp:Label ID="Label6" runat="server" Visible="false" Text="Estado"></asp:Label>
+                <br />
+                <asp:TextBox ID="EstadoTextBox" TabIndex="5" Visible="false" CssClass="form-control" runat="server" Width="480" ReadOnly="True"></asp:TextBox>
             </div>
            
         </div>
