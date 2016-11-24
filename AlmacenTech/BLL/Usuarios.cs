@@ -121,5 +121,23 @@ namespace BLL
                 return ds;
             }
         }
+
+        public bool BuscarDuplicado(string aux)
+        {
+            
+            DataTable datatable = new DataTable();
+            try
+            {
+                datatable = Conexion.ObtenerDatos(string.Format("select * from Usuarios" + " where NombreUsuario" + "= '" + aux + "'"));
+
+            }
+            catch (Exception exc)
+            {
+
+                throw exc;
+            }
+            return datatable.Rows.Count > 0;
+
+        }
     }
 }

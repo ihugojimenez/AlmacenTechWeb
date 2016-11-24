@@ -110,6 +110,22 @@ namespace BLL
             return conexion.ObtenerDatos(string.Format("select EquipoId, TE.Detalle + '  ' + ME.Detalle + '  ' + E.SerialNum as Aux" + " from Equipos as E inner join TiposEquipos TE on E.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on E.MarcaId=ME.MarcaId where " + Condicion));
         }
 
+        public bool Editarestado(int estado)
+        {
+            bool retorno;
+
+            try
+            {
+                retorno = Conexion.Ejecutar(string.Format("Update Equipos set Estado = {0} Where EquipoId = {1}", estado,this.EquipoId));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return retorno;
+        } 
+
         //from Ventas as V inner join VentasDetalle VD on V.VentaId=VD.VentaId inner join Articulos A on VD.ArticuloId=A.ArticuloId where " 
         //    string consulta = "SELECT au_id, au_fname + ' ' + au_lname AS name " +
         //          "FROM Authors";

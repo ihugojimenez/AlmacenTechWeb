@@ -43,10 +43,12 @@
 
             </div>    
 
+            
+          
+
             <div class ="col-md-4 text-left">
                   
-            </div>
-            
+                </div>
             <div class ="col-md-8 text-left">
                 <br />
                 <asp:Label ID="Label8" runat="server" Text="Equipo"></asp:Label>
@@ -57,11 +59,36 @@
                
             </div>
 
-          
-
             <div class ="col-md-4 text-left">
                   
             </div>
+            
+            <div class ="col-md-8 text-left">
+                <br />
+                <asp:Button ID="AddButton" runat="server"  CssClass="btn btn-primary" Text="Agregar" Width="89px" OnClick="AddButton_Click"    />
+                <br />
+                <br />
+                <asp:GridView ID="EquiposGridView" Width="480px" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" />
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                </asp:GridView>
+                
+                
+               
+            </div>
+
+            <div class ="col-md-4 text-left">
+                  
+                </div>
             
             <div class ="col-md-8 text-left">
                 <br />
@@ -104,7 +131,7 @@
                 <asp:Button ID="UpdateButton" ValidationGroup="ID" runat="server"  CssClass="btn btn-primary" Text="Editar" Width="89px" OnClick="UpdateButton_Click"   />
             </div> 
             <div class ="col-md-1 text-left">
-                <asp:Button ID="DeleteButton" runat="server" ValidationGroup="Buscar"  CssClass="btn btn-danger" Text="Eliminar" Width="89px"   />
+                <asp:Button ID="DeleteButton" runat="server" ValidationGroup="Buscar"  CssClass="btn btn-danger" Text="Eliminar" Width="89px" OnClick="DeleteButton_Click"   />
             </div>               
             
             

@@ -30,7 +30,25 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            throw new NotImplementedException();
+            DataTable dt = new DataTable();
+
+            try
+            {
+                dt = Conexion.ObtenerDatos(string.Format("Select * from MarcaEquipos where MarcaId = " + IdBuscado));
+                if (dt.Rows.Count > 0)
+                {
+                    this.MarcaId = IdBuscado;
+                    this.Detalle = dt.Rows[0]["Detalle"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+
+
+            return dt.Rows.Count > 0;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)

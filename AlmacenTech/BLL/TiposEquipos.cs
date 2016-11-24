@@ -13,6 +13,7 @@ namespace BLL
         public int TipoEquipoId { get; set; }
         public string Detalle { get; set; }
 
+
         public override bool Insertar()
         {
             throw new NotImplementedException();
@@ -30,7 +31,25 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            throw new NotImplementedException();
+            DataTable dt = new DataTable();
+
+            try
+            {
+                dt = Conexion.ObtenerDatos(string.Format("Select * from TiposEquipos where TipoEquipoId = " + IdBuscado));
+                if (dt.Rows.Count > 0)
+                {
+                    this.TipoEquipoId = IdBuscado;
+                    this.Detalle = dt.Rows[0]["Detalle"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+
+
+            return dt.Rows.Count > 0;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)

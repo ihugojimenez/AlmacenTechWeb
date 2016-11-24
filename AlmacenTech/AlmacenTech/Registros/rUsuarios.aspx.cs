@@ -1,6 +1,8 @@
 ﻿using BLL;
+using DAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -25,6 +27,7 @@ namespace AlmacenTech.Registros
             TipoUsersDropDownList.DataTextField = "Detalle";
             TipoUsersDropDownList.DataValueField = "IdTipo";
             TipoUsersDropDownList.DataBind();
+            NamesTextBox.Focus();
         }
 
         protected void SearchButton_Click(object sender, EventArgs e)
@@ -42,21 +45,22 @@ namespace AlmacenTech.Registros
         {
             Usuarios u = new Usuarios();
             LlenarClase(u);
-            if (u.Insertar())
-            {
-                Limpiar();
-                Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
-            }
+            if (Validar())
+                if (u.Insertar())
+                {
+                    Limpiar();
+                    Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
+                }
 
         }
 
-        public void elegirValidacion()
-        {
-            if(NamesTextBox.Text.Equals(""))
-            {
-                
-            }
-        }
+        //public void elegirValidacion()
+        //{
+        //    if (NamesTextBox.Text.Equals(""))
+        //    {
+
+        //    }
+        //}
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
@@ -118,7 +122,23 @@ namespace AlmacenTech.Registros
             
         }
 
-        
+       public bool Validar()
+        {
+            Usuarios u = new Usuarios();
+            bool yes = true;
+            if(u.Listado("*", " NombreUsuario = '" + UserNameTextBox.Text + "'", "").Rows.Count > 0)
+            {
+                Utilitarios.ShowToastr(this, "Nombre de Usuario en uso", "Mensaje", "info");
+                yes = false;
+                UserNameTextBox.Text = "";
+                UserNameTextBox.Focus();
+            }
+
+            return yes;
+
+
+        }
+
 
 
 
