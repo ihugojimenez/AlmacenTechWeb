@@ -54,7 +54,7 @@ namespace AlmacenTech.Registros
         {
             Salidas s = new Salidas();
             s.Buscar(Utilitarios.ConvertirAentero(IdTextBox.Text));
-            RegresarEstado();
+            RegresarEstado(s);
             if (s.Eliminar())
             {
                 Utilitarios.ShowToastr(this, "Eliminado", "Mensaje", "success");
@@ -69,7 +69,12 @@ namespace AlmacenTech.Registros
             Equipos eq = new Equipos();
             TiposEquipos te = new TiposEquipos();
             MarcaEquipos me = new MarcaEquipos();
+            s.Buscar(id);
             IdTextBox.Text = id.ToString();
+            TipoDropDownList.SelectedValue = s.TipoSalidaId.ToString();
+            BancasDropDownList.SelectedValue = s.BancaId.ToString();
+            MensajerosDropDownList.SelectedValue = s.MensajeroId.ToString();
+
             
             foreach (var d in s.Detalle)
             {
@@ -88,12 +93,14 @@ namespace AlmacenTech.Registros
 
         protected void Limpiar()
         {
+            IdTextBox.Text = "";
             TipoDropDownList.SelectedIndex = 0;
             EquiposDropDownList.SelectedIndex = 0;
             BancasDropDownList.SelectedIndex = 0;
             MensajerosDropDownList.SelectedIndex = 0;
             EquiposGridView.DataSource = null;
             EquiposGridView.DataBind();
+            Cargar();
         }
 
         protected void Cargar()
@@ -144,10 +151,10 @@ namespace AlmacenTech.Registros
 
         }
 
-        protected void RegresarEstado()
+        protected void RegresarEstado(Salidas s)
         {
 
-            Salidas s = new Salidas();
+            
             Equipos eq = new Equipos();
             SalidasDetalle sd = new SalidasDetalle();
             s.Buscar(Utilitarios.ConvertirAentero(IdTextBox.Text));
@@ -184,6 +191,7 @@ namespace AlmacenTech.Registros
         protected void LlenarClase(Salidas s)
         {
             Equipos eq = new Equipos();
+            
             s.UsuarioId = 1;
             s.TipoSalidaId = Utilitarios.ConvertirAentero(TipoDropDownList.SelectedValue);
             s.BancaId = Utilitarios.ConvertirAentero(BancasDropDownList.SelectedValue);
@@ -194,7 +202,7 @@ namespace AlmacenTech.Registros
 
             foreach (GridViewRow g in EquiposGridView.Rows)
             {
-                s.AgregarEquipos(s.SalidaId, Convert.ToInt32(g.Cells[0].Text));
+                s.AgregarEquipos(s.SalidaId, Utilitarios.ConvertirAentero(g.Cells[0].Text));
             }
 
         }

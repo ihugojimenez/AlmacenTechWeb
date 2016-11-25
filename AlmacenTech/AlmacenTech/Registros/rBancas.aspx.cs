@@ -12,7 +12,10 @@ namespace AlmacenTech.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                Cargar();
+            }
         }
 
         protected void SearchButton_Click(object sender, EventArgs e)
@@ -85,6 +88,10 @@ namespace AlmacenTech.Registros
             DireccionTextBox.Text = "";
         }
 
+        protected void Cargar()
+        {
+            NumTextBox.Focus();
+        }
         
     }
 }

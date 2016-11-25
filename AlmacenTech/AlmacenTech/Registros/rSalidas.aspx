@@ -28,6 +28,21 @@
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="IdTextBox" ErrorMessage="Favor ingresar numero Id valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Buscar">*</asp:RegularExpressionValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="IdTextBox" ErrorMessage="Favor ingresar numero Id valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
             </div>  
+
+            <div class ="col-md-4 text-left">
+                  
+            </div>
+            
+            <div class ="col-md-8 text-left">
+                <br />
+                <asp:Label ID="Label4" runat="server" Text="Fecha"></asp:Label>
+                <br />
+               <asp:TextBox ID="FechaTextBox" TabIndex="23" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
+                 <ajaxToolkit:MaskedEditExtender ID="FechaMasked" runat="server" TargetControlID="FechaTextBox" Mask="99/99/2016" />
+                
+               
+
+            </div> 
             
             <div class ="col-md-4 text-left">
                   

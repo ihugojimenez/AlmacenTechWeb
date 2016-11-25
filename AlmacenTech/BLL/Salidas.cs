@@ -18,6 +18,16 @@ namespace BLL
         public string FechaSalida { get; set; }
         public List<SalidasDetalle> Detalle { get; set; }
 
+        public Salidas()
+        {
+            this.UsuarioId = 0;
+            this.TipoSalidaId = 0;
+            this.BancaId = 0;
+            this.MensajeroId = 0;
+            this.FechaSalida = "";
+            this.Detalle = new List<SalidasDetalle>();
+        }
+
         public override bool Insertar()
         {
             bool retorno;
@@ -32,12 +42,13 @@ namespace BLL
 
                 foreach (SalidasDetalle d in this.Detalle)
                 {
-                    con.Ejecutar(string.Format("Insert into SalidasDetalle(SalidaId, EquipoId Values({0}, {1})", aux, d.EquipoId));
+                    con.Ejecutar(string.Format("Insert into SalidasDetalle(SalidaId, EquipoId) Values({0}, {1})", aux, d.EquipoId));
                 }
                 retorno = true;
             }
             catch
             {
+                //throw ex;
                 retorno = false;
             }
 

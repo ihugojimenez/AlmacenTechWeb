@@ -85,6 +85,7 @@ namespace AlmacenTech.Registros
             TipoDropDownList.DataValueField = "TipoEquipoId";
             TipoDropDownList.DataTextField = "Detalle";
             TipoDropDownList.DataBind();
+            SerialNumTextBox.Focus();
         }
 
         public void Limpiar()
