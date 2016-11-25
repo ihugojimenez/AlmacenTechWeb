@@ -115,7 +115,7 @@ namespace AlmacenTech.Registros
         {
             
                 u.Nombres = NamesTextBox.Text;
-                u.NombreUsuario = UserNameTextBox.Text;
+                u.NombreUsuario = UserNameTextBox.Text.ToUpper();
                 u.Contraseña = PassTextBox.Text;
                 u.IdTipo = Utilitarios.ConvertirAentero(TipoUsersDropDownList.SelectedValue);
             

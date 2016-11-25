@@ -108,7 +108,7 @@ namespace BLL
                     this.TipoSalidaId = Utilitarios.ConvertirAentero(dt.Rows[0]["TipoSalidaId"].ToString());
                     this.BancaId = Utilitarios.ConvertirAentero(dt.Rows[0]["BancaId"].ToString());
                     this.MensajeroId = Utilitarios.ConvertirAentero(dt.Rows[0]["MensajeroId"].ToString());
-                    this.FechaSalida = dt.Rows[0]["TipoSalidaId"].ToString();
+                    this.FechaSalida = dt.Rows[0]["FechaSalida"].ToString();
 
                 }
 

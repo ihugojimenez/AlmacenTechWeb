@@ -79,19 +79,19 @@
                     <li>
                         <a href="#contact"tabindex="34">Contactanos</a>
                     </li>
-                    <li>
+                    <%--<li>
                         <a href="/Registros/rUsuarios.aspx" tabindex="35">Registrarse</a>
-                    </li>
-                    <li>
+                    </li>--%>
+                   <%-- <li>
                         <a href="/Registros/rUsuarios.aspx" tabindex="36">Iniciar Sesion</a>
-                    </li>
+                    </li>--%>
                      <li>
                          <li role="presentation" class="dropdown">
                         <a class="dropdown-toggle" tabindex="37" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                           Registros <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                             <li><a href="/Registros/rUsuarios.aspx">Usuarios</a></li>
+                             <li><a href="/Registros/rUsuarios.aspx" id="UsuariosAdm">Usuarios</a></li>
                              <li><a href="/Registros/rBancas.aspx">Bancas</a></li>
                             <li><a href="/Registros/rEquipos.aspx">Equipos</a></li>
                             <li><a href="/Registros/rMensajeros.aspx">Mensajeros</a></li>
@@ -107,7 +107,7 @@
                           Consultas <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                             <li><a href="/Consultas/cUsuarios.aspx">Usuarios</a></li>
+                             <li><a href="/Consultas/cUsuarios.aspx" id="cUsuariosAdm">Usuarios</a></li>
                              <li><a href="/Consultas/cBancas.aspx">Bancas</a></li>
                           
                         </ul>
@@ -131,7 +131,7 @@
                 <div class="col-lg-12 text-center">
                     <ul class="list-inline">
                         <li>
-                            <a href="#" tabindex="39">AlmacenTech</a>
+                            <a href="/Default.aspx" tabindex="39">AlmacenTech</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                        

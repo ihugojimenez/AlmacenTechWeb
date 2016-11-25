@@ -47,7 +47,17 @@ namespace AlmacenTech.Registros
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
-
+            Salidas s = new Salidas();
+            LlenarClase(s);
+            if (s.Editar())
+            {
+                Utilitarios.ShowToastr(this, "Modificado", "Mensaje", "success");
+                Limpiar();
+            }
+            else
+            {
+                Utilitarios.ShowToastr(this, "Error al intentar Modificar, si el problema persiste, contacte a soporte tecnico", "Mensaje", "error");
+            }
         }
 
         protected void DeleteButton_Click(object sender, EventArgs e)
@@ -74,6 +84,8 @@ namespace AlmacenTech.Registros
             TipoDropDownList.SelectedValue = s.TipoSalidaId.ToString();
             BancasDropDownList.SelectedValue = s.BancaId.ToString();
             MensajerosDropDownList.SelectedValue = s.MensajeroId.ToString();
+            FechaCargar.Text = "Fecha de Saldia: " + s.FechaSalida;
+            FechaCargar.Visible = true;
 
             
             foreach (var d in s.Detalle)
@@ -110,6 +122,9 @@ namespace AlmacenTech.Registros
             Bancas b = new Bancas();
             Mensajeros m = new Mensajeros();
             DataTable dt = new DataTable();
+
+            FechaLabel.Text = DateTime.Now.ToString("dd/MM/yyy");
+            FechaCargar.Visible = false;
 
             TipoDropDownList.DataSource = ts.Listado("*", "1=1", "");
             TipoDropDownList.DataValueField = "TipoSalidaId";
@@ -196,7 +211,7 @@ namespace AlmacenTech.Registros
             s.TipoSalidaId = Utilitarios.ConvertirAentero(TipoDropDownList.SelectedValue);
             s.BancaId = Utilitarios.ConvertirAentero(BancasDropDownList.SelectedValue);
             s.MensajeroId = Utilitarios.ConvertirAentero(MensajerosDropDownList.SelectedValue);
-            s.FechaSalida = "11/23/2016";
+            s.FechaSalida = FechaLabel.Text;
 
 
 

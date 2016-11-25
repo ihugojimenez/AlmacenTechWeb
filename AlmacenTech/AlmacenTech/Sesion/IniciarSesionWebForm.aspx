@@ -13,17 +13,19 @@
             <div class ="col-md-8 text-left">
                 <asp:Label ID="Label3" runat="server" Text="Nombre de Usuario"></asp:Label>
                 <br />
-                <asp:TextBox ID="UserNameTextBox" TabIndex="3" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
+                <asp:TextBox ID="UserNameTextBox" TabIndex="3" CssClass="form-control text-uppercase"  runat="server" Width="480" OnTextChanged="UserNameTextBox_TextChanged"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UserNameTextBox" ErrorMessage="Favor ingresar nombre de usuario" ForeColor="Red" ValidationGroup="Entrar">*</asp:RequiredFieldValidator>
             </div>
             <div class ="col-md-4 text-left">
-                  
+                <asp:ValidationSummary ID="ValidationSummary1" ForeColor="Red" ValidationGroup="Entrar" runat="server" />
                 </div>
                 
                 <div class ="col-md-8 text-left">
                     <br />
                     <asp:Label ID="Label1" runat="server" Text="Contraseña"></asp:Label>
                     <br />
-                    <asp:TextBox ID="PassTextBox" TabIndex="3" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
+                    <asp:TextBox ID="PassTextBox" TabIndex="3" TextMode="Password" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PassTextBox" ErrorMessage="Ingresar contraseña" ForeColor="Red" ValidationGroup="Entrar">*</asp:RequiredFieldValidator>
                 </div>
                 
             <div class ="col-md-4 text-left">
@@ -32,7 +34,7 @@
                 
                 <div class ="col-md-8 text-left">
                     <br />
-                    <asp:Button ID="SingButton" CssClass="btn btn-info" runat="server" Width="480" Text="Iniciar Sesion" />
+                    <asp:Button ID="SingButton" ValidationGroup="Entrar" CssClass="btn btn-info" runat="server" Width="480" Text="Iniciar Sesion" OnClick="SingButton_Click" />
                 </div>
         <%--<div class ="col-md-4 text-left">
                   

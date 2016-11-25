@@ -54,7 +54,7 @@
                 <br />
                 <asp:Label ID="Label3" runat="server" Text="Nombre de Usuario"></asp:Label>
                 <br />
-                <asp:TextBox ID="UserNameTextBox" TabIndex="22" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
+                <asp:TextBox ID="UserNameTextBox" TabIndex="22" CssClass="form-control text-uppercase" runat="server" Width="480"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="UserNameTextBox" ErrorMessage="favor ingrese su nombre de Usuario" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>            
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="UserNameTextBox" ErrorMessage="favor ingrese su nombre de Usuario" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
                 
@@ -69,7 +69,7 @@
                 <br />
                 <asp:Label ID="Label4" runat="server" Text="Contraseña"></asp:Label>
                 <br />
-                <asp:TextBox ID="PassTextBox" TabIndex="23" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
+                <asp:TextBox ID="PassTextBox" TabIndex="23" TextMode="Password" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="PassTextBox" ErrorMessage="Favor ingresar la contraseña" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="PassTextBox" ErrorMessage="Favor ingresar la contraseña" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
             
@@ -82,7 +82,7 @@
                 <br />
                 <asp:Label ID="Label5" runat="server" Text="Repetir contraseña"></asp:Label>
                 <br />
-                <asp:TextBox ID="rPassTextBox" TabIndex="24" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
+                <asp:TextBox ID="rPassTextBox" TabIndex="24" TextMode="Password" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="rPassTextBox" ErrorMessage="Favor repetir la contraseña" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
                 <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="PassTextBox" ControlToValidate="rPassTextBox" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red" ValidationGroup="Save">*</asp:CompareValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="rPassTextBox" ErrorMessage="Favor repetir la contraseña" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>

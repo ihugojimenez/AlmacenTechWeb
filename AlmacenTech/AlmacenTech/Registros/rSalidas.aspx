@@ -10,16 +10,31 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="jumbotron text-center ">
         <h2>Registro de Salidas</h2>
+        
    </div>
 
 
         <%--Cuerpo de los textbox--%>
         <div class="row">
+
+             <div class ="col-md-4 text-left">
+                  
+            </div>
+            
+            <div class ="col-md-6 text-right">
+                <asp:Label ID="Label4" runat="server" Text="Fecha: "></asp:Label><asp:Label ID="FechaLabel" runat="server" Text="Fecha"></asp:Label>
+            </div> 
+
+            <div class ="col-md-2 text-right">
+                
+            </div> 
+
             <div class ="col-md-4 text-left">
                 <asp:ValidationSummary ID="ValidationSummary1" ForeColor="Red" ValidationGroup="ID" runat="server" />
                 <asp:ValidationSummary ID="ValidationSummary2" ForeColor="Red" ValidationGroup="Buscar" runat="server" />
             </div>
             <div class ="col-md-8 text-left">
+                <br />
                 <asp:Label ID="Label1" runat="server" Text="ID "></asp:Label>
                 <asp:TextBox ID="IdTextBox" CssClass="form-control" Width="480" runat="server"></asp:TextBox>
                 <asp:Button ID="SearchButton" runat="server" ValidationGroup="Buscar"  CssClass="btn btn-info" Text="Buscar" OnClick="SearchButton_Click"  />
@@ -29,20 +44,7 @@
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="IdTextBox" ErrorMessage="Favor ingresar numero Id valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
             </div>  
 
-            <div class ="col-md-4 text-left">
-                  
-            </div>
-            
-            <div class ="col-md-8 text-left">
-                <br />
-                <asp:Label ID="Label4" runat="server" Text="Fecha"></asp:Label>
-                <br />
-               <asp:TextBox ID="FechaTextBox" TabIndex="23" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
-                 <ajaxToolkit:MaskedEditExtender ID="FechaMasked" runat="server" TargetControlID="FechaTextBox" Mask="99/99/2016" />
-                
-               
-
-            </div> 
+           
             
             <div class ="col-md-4 text-left">
                   
@@ -115,7 +117,7 @@
 
             
             <div class ="col-md-4 text-left">
-                  <%--<asp:ValidationSummary ID="ValidationSummary3" ValidationGroup="Save" ForeColor="Red" runat="server" />--%>
+                 
             </div>
 
             <div class ="col-md-8 text-left">
@@ -123,6 +125,17 @@
                 <asp:Label ID="Label3" runat="server" Text="Mensajero"></asp:Label>
                 <br />
                 <asp:DropDownList ID="MensajerosDropDownList" CssClass="form-control" Width="480" runat="server"></asp:DropDownList>
+            
+            </div>
+
+            <div class ="col-md-4 text-left">
+                 
+            </div>
+
+            <div class ="col-md-8 text-left">
+                <br />
+                <asp:Label ID="FechaCargar" ForeColor="Red" runat="server" ></asp:Label>
+                
             
             </div>
 
@@ -147,6 +160,8 @@
             </div> 
             <div class ="col-md-1 text-left">
                 <asp:Button ID="DeleteButton" runat="server" ValidationGroup="Buscar"  CssClass="btn btn-danger" Text="Eliminar" Width="89px" OnClick="DeleteButton_Click"   />
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
             </div>               
             
             
