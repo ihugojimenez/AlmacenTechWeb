@@ -223,6 +223,9 @@ namespace AlmacenTech.Registros
 
         }
 
-        
+        protected void IdTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

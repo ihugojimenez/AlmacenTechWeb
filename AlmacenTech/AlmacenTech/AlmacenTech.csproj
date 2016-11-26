@@ -134,6 +134,7 @@
     <Content Include="css\landing-page.css" />
     <Content Include="Default.aspx" />
     <Content Include="DefaultHome.aspx" />
+    <Content Include="Imagenes\devoluciones.png" />
     <Content Include="Imagenes\Mensajeros.png" />
     <Content Include="Imagenes\Equipos-rahmen.png" />
     <Content Include="Imagenes\forma-bancaiconobanco.png" />
