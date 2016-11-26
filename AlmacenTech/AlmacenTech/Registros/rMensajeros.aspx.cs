@@ -16,7 +16,7 @@ namespace AlmacenTech.Registros
                 Cargar();
         }
 
-        protected void SearchButton_Click(object sender, EventArgs e)
+        protected void SearchButton_Click1(object sender, EventArgs e)
         {
             LlenaCampos(Utilitarios.ConvertirAentero(IdTextBox.Text));
         }
@@ -26,9 +26,9 @@ namespace AlmacenTech.Registros
             Limpiar();
         }
 
-        protected void SaveButton_Click(object sender, EventArgs e)
+        protected void SaveButton_Click1(object sender, EventArgs e)
         {
-            Mensajeros m  = new Mensajeros();
+            Mensajeros m = new Mensajeros();
             LlenarClase(m);
             if (m.Insertar())
             {
@@ -37,6 +37,7 @@ namespace AlmacenTech.Registros
             }
         }
 
+        
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
             Mensajeros m = new Mensajeros();
@@ -117,5 +118,7 @@ namespace AlmacenTech.Registros
         {
             NombresTextBox.Focus();
         }
+
+        
     }
 }

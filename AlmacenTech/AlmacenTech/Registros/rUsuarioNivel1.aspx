@@ -22,9 +22,9 @@
                 <br />
                 <asp:Label ID="Label2" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-pencil"></span> Nombres</asp:Label>
                 <br />
-                <asp:TextBox ID="NamesTextBox" CssClass="form-control" TabIndex="21" runat="server" Width="480" ></asp:TextBox>
+                <asp:TextBox ID="NamesTextBox" CssClass="form-control text-uppercase" TabIndex="21" runat="server" Width="480" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="NamesTextBox" ErrorMessage="Favor ingresar sus nombres" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
-
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="NamesTextBox" ErrorMessage="Favor ingresar Nombre valido" ForeColor="Red" ValidationExpression="^[a-zA-Z]*$" ValidationGroup="Save">*</asp:RegularExpressionValidator>
             </div>    
             
             <div class ="col-md-4 text-left">

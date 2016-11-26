@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ButtonsWebUserControl.ascx.cs" Inherits="AlmacenTech.Controls.ButtonsWebUserControl" %>
-<<div class="row">
+    <div class="row">
         <br />
             <div class ="col-md-4 text-left">
                   

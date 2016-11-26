@@ -18,17 +18,17 @@ namespace AlmacenTech.Registros
             }
         }
 
-        protected void SearchButton_Click(object sender, EventArgs e)
+        protected void SearchButton_Click1(object sender, EventArgs e)
         {
             LlenarCampos(Utilitarios.ConvertirAentero(IdTextBox.Text));
         }
-
+        
         protected void NewButton_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
-        protected void SaveButton_Click(object sender, EventArgs e)
+        protected void SaveButton_Click1(object sender, EventArgs e)
         {
             Equipos eq = new Equipos();
             LlenarClase(eq);
@@ -38,6 +38,7 @@ namespace AlmacenTech.Registros
                 Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
             }
         }
+  
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
@@ -75,6 +76,7 @@ namespace AlmacenTech.Registros
         {
             MarcaEquipos me = new MarcaEquipos();
             TiposEquipos te = new TiposEquipos();
+            Limpiar();
 
             MarcaDropDownList.DataSource = me.Listado("*", "1=1", "");
             MarcaDropDownList.DataValueField = "MarcaId";
@@ -95,6 +97,10 @@ namespace AlmacenTech.Registros
             TipoDropDownList.SelectedIndex = 0;
             SerialNumTextBox.Text = "";
             CostoTextBox.Text = "";
+            Label6.Visible = false;
+            EstadoTextBox.Visible = false;
+
+                
         }
 
         public void LlenarCampos(int id)
@@ -127,6 +133,11 @@ namespace AlmacenTech.Registros
                 estado = "Asignado";
 
             return estado;
+
+        }
+
+        protected void IdTextBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
 

@@ -13,6 +13,15 @@ namespace AlmacenTech.Registros {
     public partial class rUsuarios {
         
         /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+        
+        /// <summary>
         /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
@@ -55,7 +64,7 @@ namespace AlmacenTech.Registros {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchButton;
+        protected global::System.Web.UI.WebControls.LinkButton SearchButton;
         
         /// <summary>
         /// RequiredFieldValidator5 control.
@@ -130,6 +139,24 @@ namespace AlmacenTech.Registros {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
         
         /// <summary>
+        /// RegularExpressionValidator7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator7;
+        
+        /// <summary>
+        /// RegularExpressionValidator8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator8;
+        
+        /// <summary>
         /// ValidationSummary3 control.
         /// </summary>
         /// <remarks>
@@ -157,15 +184,6 @@ namespace AlmacenTech.Registros {
         protected global::System.Web.UI.WebControls.TextBox UserNameTextBox;
         
         /// <summary>
-        /// RequiredFieldValidator8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
-        
-        /// <summary>
         /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
@@ -191,15 +209,6 @@ namespace AlmacenTech.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PassTextBox;
-        
-        /// <summary>
-        /// RequiredFieldValidator9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
         
         /// <summary>
         /// RequiredFieldValidator3 control.
@@ -247,24 +256,6 @@ namespace AlmacenTech.Registros {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
-        /// RequiredFieldValidator10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
-        
-        /// <summary>
-        /// CompareValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
-        
-        /// <summary>
         /// Label6 control.
         /// </summary>
         /// <remarks>
@@ -289,7 +280,7 @@ namespace AlmacenTech.Registros {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NewButton;
+        protected global::System.Web.UI.WebControls.LinkButton NewButton;
         
         /// <summary>
         /// SaveButton control.
@@ -298,7 +289,7 @@ namespace AlmacenTech.Registros {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveButton;
+        protected global::System.Web.UI.WebControls.LinkButton SaveButton;
         
         /// <summary>
         /// UpdateButton control.
@@ -307,7 +298,7 @@ namespace AlmacenTech.Registros {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateButton;
+        protected global::System.Web.UI.WebControls.LinkButton UpdateButton;
         
         /// <summary>
         /// DeleteButton control.
@@ -316,6 +307,6 @@ namespace AlmacenTech.Registros {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteButton;
+        protected global::System.Web.UI.WebControls.LinkButton DeleteButton;
     }
 }

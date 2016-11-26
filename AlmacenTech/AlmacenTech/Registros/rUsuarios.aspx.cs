@@ -30,9 +30,8 @@ namespace AlmacenTech.Registros
             NamesTextBox.Focus();
         }
 
-        protected void SearchButton_Click(object sender, EventArgs e)
+        protected void SearchButton_Click1(object sender, EventArgs e)
         {
-           
             LlenarCampos(Utilitarios.ConvertirAentero(IdTextBox.Text));
         }
 
@@ -41,7 +40,7 @@ namespace AlmacenTech.Registros
             Limpiar();
         }
 
-        protected void SaveButton_Click(object sender, EventArgs e)
+        protected void SaveButton_Click1(object sender, EventArgs e)
         {
             Usuarios u = new Usuarios();
             LlenarClase(u);
@@ -51,17 +50,9 @@ namespace AlmacenTech.Registros
                     Limpiar();
                     Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
                 }
-
         }
 
-        //public void elegirValidacion()
-        //{
-        //    if (NamesTextBox.Text.Equals(""))
-        //    {
-
-        //    }
-        //}
-
+      
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
             Usuarios u = new Usuarios();
@@ -146,5 +137,7 @@ namespace AlmacenTech.Registros
         {
 
         }
+
+   
     }
 }

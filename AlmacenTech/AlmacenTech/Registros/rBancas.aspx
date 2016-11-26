@@ -38,6 +38,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="NumTextBox" ErrorMessage="Favor ingresar el numero de banca" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="NumTextBox" ErrorMessage="Favor ingresar el numero de banca" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="NumTextBox" ErrorMessage="Favor ingrese un numero valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Save">*</asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="NumTextBox" ErrorMessage="Favor ingrese un numero valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
             </div>
             <div class ="col-md-4 text-left">
                 <asp:ValidationSummary ID="ValidationSummary3" ValidationGroup="Save" ForeColor="Red" runat="server" />

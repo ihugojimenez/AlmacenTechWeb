@@ -19,9 +19,15 @@ namespace AlmacenTech.Registros
             }
         }
 
-        protected void SearchButton_Click(object sender, EventArgs e)
+        protected void SearchButton_Click1(object sender, EventArgs e)
         {
             LlenaCampos(Utilitarios.ConvertirAentero(IdTextBox.Text));
+        }
+
+
+        protected void NewButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
 
         protected void AddButton_Click(object sender, EventArgs e)
@@ -29,12 +35,7 @@ namespace AlmacenTech.Registros
             Agregar();
         }
 
-        protected void NewButton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
-        protected void SaveButton_Click(object sender, EventArgs e)
+        protected void SaveButton_Click1(object sender, EventArgs e)
         {
             Salidas s = new Salidas();
             LlenarClase(s);
