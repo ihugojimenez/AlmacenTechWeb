@@ -3,52 +3,70 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="jumbotron text-center ">
-        <h2>Registro de Devoluciones</h2>
+          <br />
+        <br />
+        <asp:Image ID="Image1" runat="server" Width="100" ImageUrl="~/Imagenes/Salidas.png" />
+        <h2>Registro de Salidas</h2>
+        
    </div>
 
 
         <%--Cuerpo de los textbox--%>
         <div class="row">
-            <div class ="col-md-4 text-left">
+
+             <div class ="col-md-4 text-left">
+                  
+            </div>
+            
+            <div class ="col-md-6 text-right">
+                <asp:Label ID="Label4" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span>  </asp:Label><asp:Label ID="FechaLabel" runat="server"></asp:Label>
+            </div> 
+
+            <div class ="col-md-2 text-right">
+                
+            </div> 
+
+           <div class ="col-md-4 text-left">
                 <asp:ValidationSummary ID="ValidationSummary1" ForeColor="Red" ValidationGroup="ID" runat="server" />
                 <asp:ValidationSummary ID="ValidationSummary2" ForeColor="Red" ValidationGroup="Buscar" runat="server" />
             </div>
             <div class ="col-md-8 text-left">
-                <asp:Label ID="Label1" runat="server" Text="ID "></asp:Label>
+                <asp:Label ID="Label1" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-tag"></span> ID</asp:Label>
                 <asp:TextBox ID="IdTextBox" CssClass="form-control" Width="480" runat="server"></asp:TextBox>
-                <asp:Button ID="SearchButton" runat="server" ValidationGroup="Buscar"  CssClass="btn btn-info" Text="Buscar" OnClick="SearchButton_Click"  />
+                <asp:LinkButton ID="SearchButton" CssClass="btn btn-info" ValidationGroup="Buscar"  runat="server" Width="89px" OnClick="SearchButton_Click1" ><span aria-hidden="true" class="glyphicon glyphicon-search"></span>  Buscar</asp:LinkButton>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Text="*" ControlToValidate="IdTextBox" ForeColor="Red" ValidationGroup="Buscar" ErrorMessage="Favor ingrese el ID"></asp:RequiredFieldValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" Text="*" ControlToValidate="IdTextBox" ForeColor="Red" ValidationGroup="ID" ErrorMessage="Favor buscar el Usuario"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="IdTextBox" ErrorMessage="Favor ingresar numero Id valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Buscar">*</asp:RegularExpressionValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="IdTextBox" ErrorMessage="Favor ingresar numero Id valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
             </div>  
 
-            <div class ="col-md-4 text-left">
+           
+            
+            <div class ="col-md-4 text-left" style="left: 0px; top: 0px">
                   
             </div>
             
             <div class ="col-md-8 text-left">
                 <br />
-                <asp:Label ID="Label4" runat="server" Text="Fecha"></asp:Label>
+                <asp:Label ID="Label2" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-open"></span> Tipo de Salida</asp:Label>
                 <br />
-               <asp:TextBox ID="FechaTextBox" TabIndex="23" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
-                 <ajaxToolkit:MaskedEditExtender ID="FechaMasked" runat="server" TargetControlID="FechaTextBox" Mask="99/99/2016" />
+                <asp:DropDownList ID="TipoDropDownList" TabIndex="11" CssClass="form-control" Width="480" runat="server"></asp:DropDownList>
                 
                
 
-            </div> 
+            </div>    
+
             
+          
 
             <div class ="col-md-4 text-left">
                   
                 </div>
             <div class ="col-md-8 text-left">
                 <br />
-                <asp:Label ID="Label8" runat="server" Text="Equipo"></asp:Label>
+                <asp:Label ID="Label5" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-copy"></span> Equipo</asp:Label>
                 <br />
-
-                <asp:DropDownList ID="EquiposDropDownList" CssClass="form-control" Width="480" runat="server"></asp:DropDownList>
-               
+                <asp:DropDownList ID="EquiposDropDownList" TabIndex="12" CssClass="form-control" Width="480" runat="server"></asp:DropDownList>
             </div>
 
             <div class ="col-md-4 text-left">
@@ -57,7 +75,7 @@
             
             <div class ="col-md-8 text-left">
                 <br />
-                <asp:Button ID="AddButton" runat="server"  CssClass="btn btn-primary" Text="Agregar" Width="89px" OnClick="AddButton_Click"    />
+                <asp:LinkButton ID="AddButton" CssClass="btn btn-primary" TabIndex="13"  runat="server" Width="89px" OnClick="AddButton_Click" ><span aria-hidden="true" class="glyphicon glyphicon-plus"></span>  Agregar</asp:LinkButton>
                 <br />
                 <br />
                 <asp:GridView ID="EquiposGridView" Width="480px" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
@@ -84,51 +102,57 @@
             
             <div class ="col-md-8 text-left">
                 <br />
-                <asp:Label ID="Label7" runat="server" Text="Banca"></asp:Label>
+                <asp:Label ID="Label6" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Banca</asp:Label>
                 <br />
-                <asp:DropDownList ID="BancasDropDownList" CssClass="form-control" Width="480" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="BancasDropDownList" TabIndex="14" CssClass="form-control" Width="480" runat="server"></asp:DropDownList>
                
             </div>    
 
             
             <div class ="col-md-4 text-left">
-                  <%--<asp:ValidationSummary ID="ValidationSummary3" ValidationGroup="Save" ForeColor="Red" runat="server" />--%>
+                 
             </div>
 
             <div class ="col-md-8 text-left">
                 <br />
-                <asp:Label ID="Label3" runat="server" Text="Mensajero"></asp:Label>
+                <asp:Label ID="Label3" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-user"></span> Mensajero</asp:Label>
                 <br />
-                <asp:DropDownList ID="MensajerosDropDownList" CssClass="form-control" Width="480" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="MensajerosDropDownList" TabIndex="15" CssClass="form-control" Width="480" runat="server"></asp:DropDownList>
             
             </div>
 
-            
-           
+            <div class ="col-md-4 text-left">
+                 
+            </div>
+
+            <div class ="col-md-8 text-left">
+                <br />
+                <asp:Label ID="FechaCargar" ForeColor="Red" runat="server" ><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span></asp:Label>  
+            </div>   
+                    
         </div>
 
-
-        <div class="row">
+    <div class="row">
         <br />
             <div class ="col-md-4 text-left">
                   
             </div>
             <div class ="col-md-1 text-left">
-                <asp:Button ID="NewButton" CssClass="btn btn-warning" runat="server" Text="Nuevo" Width="89px" OnClick="NewButton_Click"    />
+                <asp:LinkButton ID="NewButton" CssClass="btn btn-warning" TabIndex="23"  runat="server" Width="89px" OnClick="NewButton_Click" ><span aria-hidden="true" onclick=" " class="glyphicon glyphicon-refresh"></span>  Nuevo</asp:LinkButton>
             </div>
             <div class ="col-md-1 text-left">
-                <asp:Button ID="SaveButton" runat="server"  CssClass="btn btn-success" Text="Registrar" Width="89px"  ValidationGroup="Save" OnClick="SaveButton_Click"    />
+                <asp:LinkButton ID="SaveButton" CssClass="btn btn-success" TabIndex="24" ValidationGroup="Save"  runat="server" Width="89px" OnClick="SaveButton_Click1" ><span aria-hidden="true" class="glyphicon glyphicon-save"></span>  Registrar</asp:LinkButton>
             </div> 
             <div class ="col-md-1 text-left">
-                <asp:Button ID="UpdateButton" ValidationGroup="ID" runat="server"  CssClass="btn btn-primary" Text="Editar" Width="89px" OnClick="UpdateButton_Click"   />
+                <asp:LinkButton ID="UpdateButton" CssClass="btn btn-primary" TabIndex="25" ValidationGroup="ID"  runat="server" Width="89px" OnClick="UpdateButton_Click" ><span aria-hidden="true" class="glyphicon glyphicon-edit"></span>  Editar</asp:LinkButton>
             </div> 
             <div class ="col-md-1 text-left">
-                <asp:Button ID="DeleteButton" runat="server" ValidationGroup="Buscar"  CssClass="btn btn-danger" Text="Eliminar" Width="89px" OnClick="DeleteButton_Click"   />
-                <asp:ScriptManager ID="ScriptManager1" runat="server">
-                </asp:ScriptManager>
+                <asp:LinkButton ID="DeleteButton" CssClass="btn btn-danger" TabIndex="26" ValidationGroup="Buscar"  runat="server" Width="89px" OnClick="DeleteButton_Click" ><span aria-hidden="true" class="glyphicon glyphicon-trash"></span>  Eliminar</asp:LinkButton>
+              
             </div>               
             
-            
-           
         </div>
+
+
+        
 </asp:Content>

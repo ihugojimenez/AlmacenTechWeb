@@ -119,26 +119,4 @@
         </div>
 
 
-    <%--<div class="row">
-        <br />
-            <div class ="col-md-4 text-left">
-                  
-            </div>
-            <div class ="col-md-1 text-left">
-                <asp:Button ID="NewButton" CssClass="btn btn-warning" TabIndex="7" runat="server" Text="Nuevo" Width="89px" OnClick="NewButton_Click"  />
-            </div>
-            <div class ="col-md-1 text-left">
-                <asp:Button ID="SaveButton" runat="server" TabIndex="8" CssClass="btn btn-success" Text="Registrar" Width="89px"  ValidationGroup="Save" OnClick="SaveButton_Click" />
-            </div> 
-            <div class ="col-md-1 text-left">
-                <asp:Button ID="UpdateButton" ValidationGroup="ID" runat="server" TabIndex="9" CssClass="btn btn-primary" Text="Editar" Width="89px" OnClick="UpdateButton_Click"  />
-            </div> 
-            <div class ="col-md-1 text-left">
-                <asp:Button ID="DeleteButton" runat="server" ValidationGroup="Buscar" TabIndex="10" CssClass="btn btn-danger" Text="Eliminar" Width="89px" OnClick="DeleteButton_Click" />
-            </div>               
-            
-            
-           
-        </div>--%>
-
 </asp:Content>

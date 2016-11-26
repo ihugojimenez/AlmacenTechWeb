@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Bancas.cs" />
     <Compile Include="ClaseMaestra.cs" />
+    <Compile Include="Devoluciones.cs" />
+    <Compile Include="DevolucionesDetalle.cs" />
     <Compile Include="Equipos.cs" />
     <Compile Include="MarcaEquipos.cs" />
     <Compile Include="Mensajeros.cs" />

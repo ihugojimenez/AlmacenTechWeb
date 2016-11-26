@@ -13,6 +13,33 @@ namespace AlmacenTech.Registros {
     public partial class rDevoluciones {
         
         /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+        
+        /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+        
+        /// <summary>
+        /// FechaLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FechaLabel;
+        
+        /// <summary>
         /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
@@ -55,7 +82,7 @@ namespace AlmacenTech.Registros {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchButton;
+        protected global::System.Web.UI.WebControls.LinkButton SearchButton;
         
         /// <summary>
         /// RequiredFieldValidator5 control.
@@ -94,40 +121,31 @@ namespace AlmacenTech.Registros {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
         
         /// <summary>
-        /// Label4 control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// FechaTextBox control.
+        /// TipoDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList TipoDropDownList;
         
         /// <summary>
-        /// FechaMasked control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.MaskedEditExtender FechaMasked;
-        
-        /// <summary>
-        /// Label8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
         /// EquiposDropDownList control.
@@ -145,7 +163,7 @@ namespace AlmacenTech.Registros {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddButton;
+        protected global::System.Web.UI.WebControls.LinkButton AddButton;
         
         /// <summary>
         /// EquiposGridView control.
@@ -157,13 +175,13 @@ namespace AlmacenTech.Registros {
         protected global::System.Web.UI.WebControls.GridView EquiposGridView;
         
         /// <summary>
-        /// Label7 control.
+        /// Label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
         /// BancasDropDownList control.
@@ -193,13 +211,22 @@ namespace AlmacenTech.Registros {
         protected global::System.Web.UI.WebControls.DropDownList MensajerosDropDownList;
         
         /// <summary>
+        /// FechaCargar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FechaCargar;
+        
+        /// <summary>
         /// NewButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NewButton;
+        protected global::System.Web.UI.WebControls.LinkButton NewButton;
         
         /// <summary>
         /// SaveButton control.
@@ -208,7 +235,7 @@ namespace AlmacenTech.Registros {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveButton;
+        protected global::System.Web.UI.WebControls.LinkButton SaveButton;
         
         /// <summary>
         /// UpdateButton control.
@@ -217,7 +244,7 @@ namespace AlmacenTech.Registros {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateButton;
+        protected global::System.Web.UI.WebControls.LinkButton UpdateButton;
         
         /// <summary>
         /// DeleteButton control.
@@ -226,15 +253,6 @@ namespace AlmacenTech.Registros {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteButton;
-        
-        /// <summary>
-        /// ScriptManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.LinkButton DeleteButton;
     }
 }
