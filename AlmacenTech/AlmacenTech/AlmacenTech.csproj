@@ -126,7 +126,7 @@
     </Content>
     <Content Include="Consultas\cBancas.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
-    <Content Include="Consultas\ReporteEquipos.aspx" />
+    <Content Include="Consultas\ReportEquipos.aspx" />
     <Content Include="Controls\ButtonsWebUserControl.ascx" />
     <Content Include="Controls\SearchWebUserControl.ascx" />
     <Content Include="css\bootstrap.min.css" />
@@ -181,12 +181,12 @@
     <Compile Include="Consultas\cUsuarios.aspx.designer.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\ReporteEquipos.aspx.cs">
-      <DependentUpon>ReporteEquipos.aspx</DependentUpon>
+    <Compile Include="Consultas\ReportEquipos.aspx.cs">
+      <DependentUpon>ReportEquipos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\ReporteEquipos.aspx.designer.cs">
-      <DependentUpon>ReporteEquipos.aspx</DependentUpon>
+    <Compile Include="Consultas\ReportEquipos.aspx.designer.cs">
+      <DependentUpon>ReportEquipos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controls\ButtonsWebUserControl.ascx.cs">
       <DependentUpon>ButtonsWebUserControl.ascx</DependentUpon>
@@ -306,6 +306,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Site1.Master" />
+    <Content Include="Home.Master" />
     <Content Include="AlmacenTechDbDataSet.xsc">
       <DependentUpon>AlmacenTechDbDataSet.xsd</DependentUpon>
     </Content>
@@ -317,7 +318,6 @@
     <Content Include="AlmacenTechDbDataSet.xss">
       <DependentUpon>AlmacenTechDbDataSet.xsd</DependentUpon>
     </Content>
-    <Content Include="Home.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

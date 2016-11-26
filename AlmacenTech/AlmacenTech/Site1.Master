@@ -70,21 +70,15 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#about" tabindex="32">Acerca de</a>
+                   <li>
+                        <a href="/Default.aspx#about" tabindex="32"><span aria-hidden="true" class="glyphicon glyphicon-question-sign"></span>  Acerca de</a>
                     </li>
                     <li>
-                        <a href="#services"tabindex="33">Servicios</a>
+                        <a href="/Default.aspx#services"tabindex="33"><span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>  Servicios</a>
                     </li>
                     <li>
-                        <a href="#contact"tabindex="34">Contactanos</a>
+                        <a href="/Default.aspx#contact"tabindex="34"><span aria-hidden="true" class="glyphicon glyphicon-envelope"></span>  Contactanos</a>
                     </li>
-                    <%--<li>
-                        <a href="/Registros/rUsuarios.aspx" tabindex="35">Registrarse</a>
-                    </li>--%>
-                   <%-- <li>
-                        <a href="/Registros/rUsuarios.aspx" tabindex="36">Iniciar Sesion</a>
-                    </li>--%>
                      <li>
                          <li role="presentation" class="dropdown">
                         <a class="dropdown-toggle" tabindex="37" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -96,6 +90,7 @@
                             <li><a href="/Registros/rEquipos.aspx">Equipos</a></li>
                             <li><a href="/Registros/rMensajeros.aspx">Mensajeros</a></li>
                             <li><a href="/Registros/rSalidas.aspx">Salidas</a></li>
+                            <li><a href="/Registros/rDevoluciones.aspx">Salidas</a></li>
                           
                         </ul>
                       </li>
@@ -136,16 +131,16 @@
                         <li class="footer-menu-divider">&sdot;</li>
                        
                         <li>
-                            <a href="#about" tabindex="40">Acerca de</a>
+                            <a href="/Default.aspx#about" tabindex="40">Acerca de</a>
                         </li>
                         
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services" tabindex="41">Servicios</a>
+                            <a href="/Default.aspx#services" tabindex="41">Servicios</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#contact" tabindex="42">Contactanos</a>
+                            <a href="/Default.aspx#contact" tabindex="42">Contactanos</a>
                         </li>
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; HJ Company 2016. Todos los derechos reservados</p>

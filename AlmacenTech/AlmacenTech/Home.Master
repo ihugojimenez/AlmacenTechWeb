@@ -73,13 +73,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#about" tabindex="32"><span aria-hidden="true" class="glyphicon glyphicon-question-sign"></span>  Acerca de</a>
+                        <a href="/DefaultHome.aspx#about" tabindex="32"><span aria-hidden="true" class="glyphicon glyphicon-question-sign"></span>  Acerca de</a>
                     </li>
                     <li>
-                        <a href="#services"tabindex="33"><span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>  Servicios</a>
+                        <a href="/DefaultHome.aspx#services"tabindex="33"><span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>  Servicios</a>
                     </li>
                     <li>
-                        <a href="#contact"tabindex="34"><span aria-hidden="true" class="glyphicon glyphicon-envelope"></span>  Contactanos</a>
+                        <a href="/DefaultHome.aspx#contact"tabindex="34"><span aria-hidden="true" class="glyphicon glyphicon-envelope"></span>  Contactanos</a>
                     </li>
                     <li>
                         <a href="/Registros/rUsuarioNivel1.aspx" tabindex="35"><span aria-hidden="true" class="glyphicon glyphicon-pencil"></span> Registrarse</a>
@@ -104,21 +104,21 @@
                 <div class="col-lg-12 text-center">
                     <ul class="list-inline">
                         <li>
-                            <a href="#" tabindex="39">AlmacenTech</a>
+                            <a href="/DefaultHome.aspx" tabindex="39">AlmacenTech</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                        
                         <li>
-                            <a href="#about" tabindex="40">Acerca de</a>
+                            <a href="/DefaultHome.aspx#about" tabindex="40">Acerca de</a>
                         </li>
                         
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services" tabindex="41">Servicios</a>
+                            <a href="/DefaultHome.aspx#services" tabindex="41">Servicios</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#contact" tabindex="42">Contactanos</a>
+                            <a href="/DefaultHome.aspx#contact" tabindex="42">Contactanos</a>
                         </li>
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; HJ Company 2016. Todos los derechos reservados</p>

@@ -34,7 +34,7 @@ namespace BLL
 
             try
             {
-                identity = con.ObtenerValor(string.Format("Insert into Devoluciones(UsuarioId, MensajeroId, BancaId, FechaDevolucion) Values({0}, {1}, {2}, {3}, '{4}'); Select @@Identity", 1, this.MensajeroId, this.BancaId, this.FechaDevolucion));
+                identity = con.ObtenerValor(string.Format("Insert into Devoluciones(UsuarioId, MensajeroId, BancaId, FechaDevolucion) Values({0}, {1}, {2}, '{3}'); Select @@Identity", 1, this.MensajeroId, this.BancaId, this.FechaDevolucion));
 
                 int.TryParse(identity.ToString(), out aux);
 
