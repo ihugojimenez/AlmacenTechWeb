@@ -127,11 +127,13 @@
     <Content Include="Consultas\cBancas.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
     <Content Include="Consultas\ReporteEquipos.aspx" />
+    <Content Include="Controls\ButtonsWebUserControl.ascx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\landing-page.css" />
     <Content Include="Default.aspx" />
     <Content Include="DefaultHome.aspx" />
+    <Content Include="Imagenes\icon_ondemand_user.png" />
     <Content Include="img\banner-bg.jpg" />
     <Content Include="img\dog.png" />
     <Content Include="img\fondo.jpg" />
@@ -141,6 +143,7 @@
     <Content Include="JQuery\toastr.min.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="PruebaWebForm.aspx" />
     <Content Include="Registros\rBancas.aspx" />
     <Content Include="Registros\rDevoluciones.aspx" />
     <Content Include="Registros\rEquipos.aspx" />
@@ -149,7 +152,7 @@
     <Content Include="Registros\rUsuarioNivel1.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Boostrap\toastr.min.css" />
-    <Content Include="Sesion\IniciarSesionWebForm.aspx" />
+    <Content Include="Sesion\Sing-in.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +182,13 @@
     <Compile Include="Consultas\ReporteEquipos.aspx.designer.cs">
       <DependentUpon>ReporteEquipos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ButtonsWebUserControl.ascx.cs">
+      <DependentUpon>ButtonsWebUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ButtonsWebUserControl.ascx.designer.cs">
+      <DependentUpon>ButtonsWebUserControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -205,6 +215,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PruebaWebForm.aspx.cs">
+      <DependentUpon>PruebaWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PruebaWebForm.aspx.designer.cs">
+      <DependentUpon>PruebaWebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\rBancas.aspx.cs">
       <DependentUpon>rBancas.aspx</DependentUpon>
@@ -255,12 +272,12 @@
     <Compile Include="Registros\rUsuarios.aspx.designer.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sesion\IniciarSesionWebForm.aspx.cs">
-      <DependentUpon>IniciarSesionWebForm.aspx</DependentUpon>
+    <Compile Include="Sesion\Sing-in.aspx.cs">
+      <DependentUpon>Sing-in.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sesion\IniciarSesionWebForm.aspx.designer.cs">
-      <DependentUpon>IniciarSesionWebForm.aspx</DependentUpon>
+    <Compile Include="Sesion\Sing-in.aspx.designer.cs">
+      <DependentUpon>Sing-in.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -312,6 +329,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Reportes\EquiposReport.rdlc" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

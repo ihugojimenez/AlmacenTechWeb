@@ -66,55 +66,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="/Default.aspx" tabindex="31">AlmacenTech</a>
+                <a class="navbar-brand topnav" href="/DefaultHome.aspx" tabindex="31"><span aria-hidden="true" class="glyphicon glyphicon-home"></span>  AlmacenTech</a>
+                
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#about" tabindex="32">Acerca de</a>
+                        <a href="#about" tabindex="32"><span aria-hidden="true" class="glyphicon glyphicon-question-sign"></span>  Acerca de</a>
                     </li>
                     <li>
-                        <a href="#services"tabindex="33">Servicios</a>
+                        <a href="#services"tabindex="33"><span aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>  Servicios</a>
                     </li>
                     <li>
-                        <a href="#contact"tabindex="34">Contactanos</a>
+                        <a href="#contact"tabindex="34"><span aria-hidden="true" class="glyphicon glyphicon-envelope"></span>  Contactanos</a>
                     </li>
                     <li>
-                        <a href="/Registros/rUsuarios.aspx" tabindex="35">Registrarse</a>
+                        <a href="/Registros/rUsuarioNivel1.aspx" tabindex="35"><span aria-hidden="true" class="glyphicon glyphicon-pencil"></span> Registrarse</a>
                     </li>
                     <li>
-                        <a href="/Sesion/IniciarSesionWebForm.aspx" tabindex="36">Iniciar Sesion</a>
+                        <a href="/Sesion/Sing-in.aspx" tabindex="36"><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span>  Iniciar Sesion</a>
                     </li>
-                     <%--<li>
-                         <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" tabindex="37" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                          Registros <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                             <li><a href="/Registros/rUsuarios.aspx">Usuarios</a></li>
-                             <li><a href="/Registros/rBancas.aspx">Bancas</a></li>
-                            <li><a href="/Registros/rEquipos.aspx">Equipos</a></li>
-                            <li><a href="/Registros/rMensajeros.aspx">Mensajeros</a></li>
-                            <li><a href="/Registros/rSalidas.aspx">Salidas</a></li>
-                          
-                        </ul>
-                      </li>
-                            
-                     </li>--%>
-                    <%--<li>
-                         <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" tabindex="38" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                          Consultas <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                             <li><a href="/Consultas/cUsuarios.aspx">Usuarios</a></li>
-                             <li><a href="/Consultas/cBancas.aspx">Bancas</a></li>
-                          
-                        </ul>
-                      </li>
-                            
-                     </li>--%>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
