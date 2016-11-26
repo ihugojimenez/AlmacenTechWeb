@@ -13,5 +13,10 @@ namespace AlmacenTech
         {
 
         }
+
+        protected void clickNew(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

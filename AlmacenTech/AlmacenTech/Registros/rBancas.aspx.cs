@@ -18,7 +18,7 @@ namespace AlmacenTech.Registros
             }
         }
 
-        protected void SearchButton_Click(object sender, EventArgs e)
+        protected void SearchButton_Click1(object sender, EventArgs e)
         {
             LlenaCampos(Utilitarios.ConvertirAentero(IdTextBox.Text));
         }
@@ -28,11 +28,11 @@ namespace AlmacenTech.Registros
             Limpiar();
         }
 
-        protected void SaveButton_Click(object sender, EventArgs e)
+        protected void SaveButton_Click1(object sender, EventArgs e)
         {
             Bancas ba = new Bancas();
             LlenarClase(ba);
-            if(ba.Insertar())
+            if (ba.Insertar())
             {
                 Limpiar();
                 Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
@@ -92,6 +92,10 @@ namespace AlmacenTech.Registros
         {
             NumTextBox.Focus();
         }
-        
+
+        protected void IdTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

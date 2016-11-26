@@ -128,11 +128,13 @@
     <Content Include="Consultas\cUsuarios.aspx" />
     <Content Include="Consultas\ReporteEquipos.aspx" />
     <Content Include="Controls\ButtonsWebUserControl.ascx" />
+    <Content Include="Controls\SearchWebUserControl.ascx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\landing-page.css" />
     <Content Include="Default.aspx" />
     <Content Include="DefaultHome.aspx" />
+    <Content Include="Imagenes\forma-bancaiconobanco.png" />
     <Content Include="Imagenes\icon_ondemand_user.png" />
     <Content Include="img\banner-bg.jpg" />
     <Content Include="img\dog.png" />
@@ -188,6 +190,13 @@
     </Compile>
     <Compile Include="Controls\ButtonsWebUserControl.ascx.designer.cs">
       <DependentUpon>ButtonsWebUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchWebUserControl.ascx.cs">
+      <DependentUpon>SearchWebUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchWebUserControl.ascx.designer.cs">
+      <DependentUpon>SearchWebUserControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
