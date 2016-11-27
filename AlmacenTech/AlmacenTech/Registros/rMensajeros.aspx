@@ -36,10 +36,9 @@
                 <asp:Label ID="Label2" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-pencil"></span> Nombres</asp:Label>
                 <br />
                 <asp:TextBox ID="NombresTextBox" TabIndex="21" CssClass="form-control text-uppercase" runat="server" Width="480"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="NombresTextBox" ErrorMessage="Favor ingresar nombres" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="NombresTextBox" ErrorMessage="Favor ingresar nombres" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="NombresTextBox" ErrorMessage="Favor ingresar Nombre valido" ForeColor="Red" ValidationExpression="^[a-zA-Z]*$" ValidationGroup="Save">*</asp:RegularExpressionValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="NombresTextBox" ErrorMessage="Favor ingresar Nombre valido" ForeColor="Red" ValidationExpression="^[a-zA-Z]*$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="NombresTextBox" ErrorMessage="Favor ingresar Nombre valido" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ ]+" ValidationGroup="Save">*</asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="NombresTextBox" ErrorMessage="Favor ingresar Nombre valido" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ ]+" ValidationGroup="ID">*</asp:RegularExpressionValidator>
                
 
             </div>    
@@ -48,21 +47,41 @@
                   
             </div>
             
-            <div class ="col-md-8 text-left">
+            <div class ="col-md-2 text-left">
                 <br />
                 <asp:Label ID="Label8" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span> Fecha de Nacimiento</asp:Label>
                 <br />
-                <asp:TextBox ID="FechaTextBox" TabIndex="21" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
-                <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender1" runat="server" TargetControlID="FechaTextBox" Mask="99/99/9999" />
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="FechaTextBox" ErrorMessage="Favor ingresar numero Id valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Buscar">*</asp:RegularExpressionValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="FechaTextBox" ErrorMessage="Favor ingresar numero Id valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="FechaTextBox" ErrorMessage="Favor ingresar nombres" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="FechaTextBox" ErrorMessage="Favor ingresar nombres" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
-                <%--<asp:DropDownList ID="DiaDropDownList" CssClass="form-control" Width="100" runat="server"></asp:DropDownList>
-                <asp:DropDownList ID="MesDropDownList" CssClass="form-control" Width="100" runat="server"></asp:DropDownList>
-                <asp:DropDownList ID="AnioDropDownList" CssClass="form-control" Width="100" runat="server"></asp:DropDownList>--%>
+                <asp:DropDownList ID="DiaDropDownList" CssClass="form-control" Width="250" runat="server"></asp:DropDownList>
                
             </div>
+
+             <div class ="col-md-1 text-left">
+                <br />
+                 <br />
+                  <asp:DropDownList ID="MesDropDownList" DataTextField="Mes" CssClass="form-control" Width="120" runat="server">
+                    <asp:ListItem>Mes</asp:ListItem>
+                            <asp:ListItem>Enero</asp:ListItem>
+                            <asp:ListItem>Febrero</asp:ListItem>
+                            <asp:ListItem>Marzo</asp:ListItem>
+                            <asp:ListItem>Abril</asp:ListItem>
+                            <asp:ListItem>Mayo</asp:ListItem>
+                            <asp:ListItem>Junio</asp:ListItem>
+                            <asp:ListItem>Julio</asp:ListItem>
+                            <asp:ListItem>Agosto</asp:ListItem>
+                            <asp:ListItem>Septiembre</asp:ListItem>
+                            <asp:ListItem>Octubre</asp:ListItem>
+                            <asp:ListItem>Noviembre</asp:ListItem>
+                            <asp:ListItem>Diciembre</asp:ListItem>
+                </asp:DropDownList>
+                 
+            </div>
+
+            <div class ="col-md-5 text-left">
+                <br />
+                <br />
+                   <asp:DropDownList ID="AnioDropDownList" CssClass="form-control" Width="95" runat="server"></asp:DropDownList>
+            </div>
+
 
           
 
@@ -95,7 +114,6 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="CedulaTextBox" ErrorMessage="Favor ingresar Cedula" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="CedulaTextBox" ErrorMessage="Favor ingresar Cedula" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="CedulaTextBox" ErrorMessage="Favor ingresar numero Id valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Save">*</asp:RegularExpressionValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="CedulaTextBox" ErrorMessage="Favor ingresar numero Id valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
             
             </div>
 
@@ -108,7 +126,6 @@
                 <asp:Label ID="Label4" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-phone"></span> Celular</asp:Label>
                 <br />
                 <asp:TextBox ID="CelularTextBox" TabIndex="24" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="CelularTextBox" ErrorMessage="Favor ingresar Celular" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="CelularTextBox" ErrorMessage="Favor ingresar Celular" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator12" runat="server" ControlToValidate="CelularTextBox" ErrorMessage="Favor ingresar Telefono valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Save">*</asp:RegularExpressionValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator13" runat="server" ControlToValidate="CelularTextBox" ErrorMessage="Favor ingresar Telefono valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
@@ -141,6 +158,8 @@
                 <asp:Label ID="Label6" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-map-marker"></span> Direccion</asp:Label>
                 <br />
                 <asp:TextBox ID="DireccionTextBox" TabIndex="26"  CssClass="form-control text-uppercase" runat="server" Width="480" ></asp:TextBox>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingrese una direccion valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\., -]+" ValidationGroup="ID">*</asp:RegularExpressionValidator>    
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingrese una direccion valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\., -]+" ValidationGroup="Save">*</asp:RegularExpressionValidator>    
             </div>
            
         </div>

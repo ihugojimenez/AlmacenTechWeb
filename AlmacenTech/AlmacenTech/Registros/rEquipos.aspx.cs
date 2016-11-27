@@ -20,7 +20,15 @@ namespace AlmacenTech.Registros
 
         protected void SearchButton_Click1(object sender, EventArgs e)
         {
-            LlenarCampos(Utilitarios.ConvertirAentero(IdTextBox.Text));
+            Equipos eq = new Equipos();
+            if (eq.Buscar(Utilitarios.ConvertirAentero(IdTextBox.Text)))
+            {
+                LlenarClase(eq);
+            }
+            else
+            {
+                Utilitarios.ShowToastr(this, "Equipo no encontrado, vuelva a intentar", "Mensaje", "error");
+            }
         }
         
         protected void NewButton_Click(object sender, EventArgs e)
@@ -37,18 +45,30 @@ namespace AlmacenTech.Registros
                 Limpiar();
                 Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
             }
+            else
+            {
+                Utilitarios.ShowToastr(this, "Error al intentar guardar, intentelo de nuevo", "Mensaje", "error");
+            }
         }
   
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
             Equipos eq = new Equipos();
-            LlenarClase(eq);
-            if (eq.Editar())
+            LlenarCampos(eq);
+            if(validarEditar())
             {
-                Limpiar();
-                Utilitarios.ShowToastr(this, "Editado", "Mensaje", "success");
+                if (eq.Editar())
+                {
+                    Limpiar();
+                    Utilitarios.ShowToastr(this, "Editado", "Mensaje", "success");
+                }
+                else
+                {
+                    Utilitarios.ShowToastr(this, "Error al intentar editar, intentelo de nuevo", "Mensaje", "error");
+                }
             }
+            
         }
 
         protected void DeleteButton_Click(object sender, EventArgs e)
@@ -60,6 +80,10 @@ namespace AlmacenTech.Registros
                 Utilitarios.ShowToastr(this, "Eliminado", "Mensaje", "success");
                 Limpiar();
             }
+            else
+            {
+                Utilitarios.ShowToastr(this, "Error al intentar eliminar, intentelo de nuevo", "Mensaje", "error");
+            }
         }
 
         public void LlenarClase(Equipos eq)
@@ -70,6 +94,19 @@ namespace AlmacenTech.Registros
             eq.SerialNum = SerialNumTextBox.Text;
             eq.Costo = Utilitarios.ConvertirAflotante(CostoTextBox.Text);
 
+        }
+
+        public bool validarEditar()
+        {
+            bool yes = true;
+            if (SerialNumTextBox.Text.Equals("") || CostoTextBox.Text.Equals(""))
+            {
+                UpdateButton.ValidationGroup = "Save";
+                ValidationSummary3.Visible = true;
+                yes = false;
+            }
+
+            return yes;
         }
 
         public void Cargar()
@@ -103,10 +140,8 @@ namespace AlmacenTech.Registros
                 
         }
 
-        public void LlenarCampos(int id)
+        public void LlenarCampos(Equipos eq)
         {
-            Equipos eq = new Equipos();
-            eq.Buscar(id);
             
             IdTextBox.Text = eq.EquipoId.ToString();
             MarcaDropDownList.SelectedValue = eq.MarcaId.ToString();

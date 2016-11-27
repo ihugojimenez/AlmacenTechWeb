@@ -20,7 +20,16 @@ namespace AlmacenTech.Registros
 
         protected void SearchButton_Click1(object sender, EventArgs e)
         {
-            LlenaCampos(Utilitarios.ConvertirAentero(IdTextBox.Text));
+            Bancas b = new Bancas();
+            if(b.Buscar(Utilitarios.ConvertirAentero(IdTextBox.Text)))
+            {
+                LlenaCampos(b);
+            }
+            else
+            {
+                Utilitarios.ShowToastr(this, "Sucursal no encontrada, vuelva a intentar", "Mensaje", "error");
+            }
+
         }
 
         protected void NewButton_Click(object sender, EventArgs e)
@@ -37,6 +46,10 @@ namespace AlmacenTech.Registros
                 Limpiar();
                 Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
             }
+            else
+            {
+                Utilitarios.ShowToastr(this, "Error al intentar guardar, intentelo de nuevo", "Mensaje", "error");
+            }
         }
 
         protected void UpdateButton_Click(object sender, EventArgs e)
@@ -44,11 +57,19 @@ namespace AlmacenTech.Registros
 
             Bancas ba = new Bancas();
             LlenarClase(ba);
-            if (ba.Editar())
+            if(validarEditar())
             {
-                Limpiar();
-                Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
+                if (ba.Editar())
+                {
+                    Limpiar();
+                    Utilitarios.ShowToastr(this, "Editado", "Mensaje", "success");
+                }
+                else
+                {
+                    Utilitarios.ShowToastr(this, "Error al intentar editar, intentelo de nuevo", "Mensaje", "error");
+                }
             }
+            
         }
 
         protected void DeleteButton_Click(object sender, EventArgs e)
@@ -60,6 +81,10 @@ namespace AlmacenTech.Registros
                 Utilitarios.ShowToastr(this, "Eliminado", "Mensaje", "success");
                 Limpiar();
             }
+            else
+            {
+                Utilitarios.ShowToastr(this, "Error al intentar eliminar, intentelo de nuevo", "Mensaje", "error");
+            }
         }
 
         public void LlenarClase(Bancas b)
@@ -69,11 +94,22 @@ namespace AlmacenTech.Registros
 
         }
 
-        public void LlenaCampos(int id)
+        public bool validarEditar()
         {
-            Bancas b = new Bancas();
-            b.Buscar(id);
+            bool yes = true;
+            if (NumTextBox.Text.Equals("") || DireccionTextBox.Text.Equals(""))
+            {
+                UpdateButton.ValidationGroup = "Save";
+                ValidationSummary3.Visible = true;
+                yes = false;
+            }
 
+            return yes;
+        }
+
+        public void LlenaCampos(Bancas b)
+        {
+            
             IdTextBox.Text = b.BancaId.ToString();
             NumTextBox.Text = b.NumeroBanca.ToString();
             DireccionTextBox.Text = b.Direccion;

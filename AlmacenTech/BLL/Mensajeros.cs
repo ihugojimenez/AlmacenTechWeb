@@ -83,7 +83,7 @@ namespace BLL
                     this.Celular = dt.Rows[0]["Celular"].ToString();
                     this.Telefono = dt.Rows[0]["Telefono"].ToString();
                     this.Direccion = dt.Rows[0]["Direccion"].ToString();
-                    //this.FechaNacimiento = dt.Rows[0]["FechaNacimiento"].ToString();
+                    this.FechaNacimiento = dt.Rows[0]["FechaNacimiento"].ToString();
                     this.Sexo = dt.Rows[0]["Sexo"].ToString();
                 }
             }

@@ -35,6 +35,10 @@ namespace AlmacenTech.Registros
             u.NombreUsuario = UserNameTextBox.Text.ToUpper();
             u.Contraseña = PassTextBox.Text;
             u.IdTipo = 2;
+            string str = PhotoFileUpload.FileName;
+            PhotoFileUpload.PostedFile.SaveAs(Server.MapPath("//FotosPerfil//") + str);
+            string path = "~//FotosPerfil//" + str.ToString();
+            u.Imagen = path;
 
 
         }

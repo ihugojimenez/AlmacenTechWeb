@@ -170,12 +170,24 @@ namespace AlmacenTech.Registros
         protected void Limpiar()
         {
             IdTextBox.Text = "";
-            EquiposDropDownList.SelectedIndex = 0;
-            BancasDropDownList.SelectedIndex = 0;
-            MensajerosDropDownList.SelectedIndex = 0;
-            EquiposGridView.DataSource = null;
-            EquiposGridView.DataBind();
-            Cargar();
+            if(EquiposDropDownList.DataSource == null)
+            {
+                BancasDropDownList.SelectedIndex = 0;
+                MensajerosDropDownList.SelectedIndex = 0;
+                EquiposGridView.DataSource = null;
+                EquiposGridView.DataBind();
+                Cargar();
+            }
+            else
+            {
+                EquiposDropDownList.SelectedIndex = 0;
+                BancasDropDownList.SelectedIndex = 0;
+                MensajerosDropDownList.SelectedIndex = 0;
+                EquiposGridView.DataSource = null;
+                EquiposGridView.DataBind();
+                Cargar();
+            }
+            
         }
 
         protected void Cargar()

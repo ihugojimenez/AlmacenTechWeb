@@ -62,8 +62,9 @@
                 <asp:Label ID="Label4" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-barcode"></span> Numero serial</asp:Label>
                 <br />
                 <asp:TextBox ID="SerialNumTextBox" TabIndex="4" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="SerialNumTextBox" ErrorMessage="Favor ingresar Numero Serial" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="SerialNumTextBox" ErrorMessage="Favor ingresar Numero Serial" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="SerialNumTextBox" ErrorMessage="Favor ingrese un numero serial valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d\ -]+" ValidationGroup="ID">*</asp:RegularExpressionValidator>    
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="SerialNumTextBox" ErrorMessage="Favor ingrese un numero serial valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d\ -]+" ValidationGroup="Save">*</asp:RegularExpressionValidator>  
             
             </div>
             
@@ -78,7 +79,6 @@
                 <br />
                 <asp:TextBox ID="CostoTextBox" TabIndex="5" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="CostoTextBox" ErrorMessage="Favor repetir la contraseña" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="CostoTextBox" ErrorMessage="Favor repetir la contraseña" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="CostoTextBox" ErrorMessage="Favor ingresar el costo valido" ForeColor="Red" ValidationExpression="^(\d|-)?(\d|,)*\.?\d*$" ValidationGroup="Save">*</asp:RegularExpressionValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="CostoTextBox" ErrorMessage="Favor ingresar el costo valido" ForeColor="Red" ValidationExpression="^(\d|-)?(\d|,)*\.?\d*$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
             </div>

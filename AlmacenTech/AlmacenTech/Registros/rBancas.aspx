@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="rBancas.aspx.cs" Inherits="AlmacenTech.Registros.rBancas" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="rBancas.aspx.cs" Inherits="AlmacenTech.Registros.rBancas" %>
 
 <%@ Register Src="~/Controls/SearchWebUserControl.ascx" TagPrefix="uc1" TagName="SearchWebUserControl" %>
 
@@ -36,7 +37,6 @@
                 <asp:Label ID="Label2" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-asterisk"></span> Numero de Banca</asp:Label>
                 <asp:TextBox ID="NumTextBox" CssClass="form-control" Width="480" ValidationGroup="Save" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="NumTextBox" ErrorMessage="Favor ingresar el numero de banca" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="NumTextBox" ErrorMessage="Favor ingresar el numero de banca" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="NumTextBox" ErrorMessage="Favor ingrese un numero valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Save">*</asp:RegularExpressionValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="NumTextBox" ErrorMessage="Favor ingrese un numero valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
             </div>
@@ -48,7 +48,9 @@
                 <asp:Label ID="Label3" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-map-marker"></span> Direccion</asp:Label>
                 <asp:TextBox ID="DireccionTextBox" CssClass="form-control" Width="480" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingresar la direccion" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingresar la direccion" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingrese una direccion valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\., -]+" ValidationGroup="ID">*</asp:RegularExpressionValidator>    
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingrese una direccion valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\., -]+" ValidationGroup="Save">*</asp:RegularExpressionValidator>    
+                   
             </div>
         </div>
 

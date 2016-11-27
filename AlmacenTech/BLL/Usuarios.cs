@@ -17,6 +17,7 @@ namespace BLL
         public string Contraseña { get; set; }
         public string Nombres { get; set; }
         public int IdTipo { get; set; }
+        public string Imagen { get; set; }
 
         public override bool Buscar(int IdBuscado)
         {
@@ -34,6 +35,7 @@ namespace BLL
                     this.Contraseña = dt.Rows[0]["Contraseña"].ToString();
                     this.Nombres = dt.Rows[0]["Nombres"].ToString();
                     this.IdTipo = int.Parse(dt.Rows[0]["IdTipo"].ToString());
+                    this.Imagen = dt.Rows[0]["Imagen"].ToString();
                 }
             }
             catch (Exception ex)
@@ -82,7 +84,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Insert into Usuarios(NombreUsuario, Contraseña, Nombres, IdTipo) values('{0}', '{1}','{2}', {3})", this.NombreUsuario, this.Contraseña, this.Nombres, this.IdTipo));
+                retorno = Conexion.Ejecutar(string.Format("Insert into Usuarios(NombreUsuario, Contraseña, Nombres, IdTipo, Imagen) values('{0}', '{1}','{2}', {3}, '{4}')", this.NombreUsuario, this.Contraseña, this.Nombres, this.IdTipo, this.Imagen));
             }
             catch(Exception ex)
             {

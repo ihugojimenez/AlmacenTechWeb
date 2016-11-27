@@ -20,11 +20,22 @@
             
             <div class ="col-md-8 text-left">
                 <br />
+                <asp:Label ID="Label5" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-picture"></span> Imagen</asp:Label>
+                <br />
+                <asp:FileUpload ID="PhotoFileUpload"  runat="server" />
+            </div>
+
+            <div class ="col-md-4 text-left">
+                  
+            </div>
+            
+            <div class ="col-md-8 text-left">
+                <br />
                 <asp:Label ID="Label2" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-pencil"></span> Nombres</asp:Label>
                 <br />
                 <asp:TextBox ID="NamesTextBox" CssClass="form-control text-uppercase" TabIndex="21" runat="server" Width="480" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="NamesTextBox" ErrorMessage="Favor ingresar sus nombres" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="NamesTextBox" ErrorMessage="Favor ingresar Nombre valido" ForeColor="Red" ValidationExpression="^[a-zA-Z]*$" ValidationGroup="Save">*</asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="NamesTextBox" ErrorMessage="Favor ingresar Nombre valido" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ ]+" ValidationGroup="Save">*</asp:RegularExpressionValidator>
             </div>    
             
             <div class ="col-md-4 text-left">
@@ -37,7 +48,7 @@
                 <br />
                 <asp:TextBox ID="UserNameTextBox" TabIndex="22" CssClass="form-control text-uppercase" runat="server" Width="480"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="UserNameTextBox" ErrorMessage="favor ingrese su nombre de Usuario" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
-                
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="UserNameTextBox" ErrorMessage="Favor ingresar Nombre de usuario valido" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\.-]+" ValidationGroup="Save">*</asp:RegularExpressionValidator>
             
             </div>
 
@@ -51,6 +62,7 @@
                 <br />
                 <asp:TextBox ID="PassTextBox" TabIndex="23" TextMode="Password" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="PassTextBox" ErrorMessage="Favor ingresar la contraseña" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="PassTextBox" ErrorMessage="Favor ingresar contraseña valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\.-]+" ValidationGroup="Save">*</asp:RegularExpressionValidator>
             
             </div>
             <div class ="col-md-4 text-left">
