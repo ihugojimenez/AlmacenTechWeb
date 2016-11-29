@@ -15,7 +15,7 @@ namespace BLL
         public int TipoEquipoId { get; set; }
         public string SerialNum { get; set; }
         public float Costo { get; set; }
-        public int Estado { get; set; }
+        public int EstadoId { get; set; }
 
         public override bool Buscar(int IdBuscado)
         {
@@ -32,7 +32,7 @@ namespace BLL
                     this.TipoEquipoId = int.Parse(dt.Rows[0]["TipoEquipoId"].ToString());
                     this.SerialNum = dt.Rows[0]["SerialNum"].ToString();
                     this.Costo = float.Parse(dt.Rows[0]["Costo"].ToString());
-                    this.Estado = int.Parse(dt.Rows[0]["Estado"].ToString());
+                    this.EstadoId = int.Parse(dt.Rows[0]["EstadoId"].ToString());
                 }
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Insert into Equipos(MarcaId, TipoEquipoId, SerialNum, Costo, Estado) values({0}, {1},'{2}', {3}, {4})", this.MarcaId, this.TipoEquipoId, this.SerialNum, this.Costo, 0));
+                retorno = Conexion.Ejecutar(string.Format("Insert into Equipos(MarcaId, TipoEquipoId, SerialNum, Costo, EstadoId) values({0}, {1},'{2}', {3}, {4})", this.MarcaId, this.TipoEquipoId, this.SerialNum, this.Costo, 1));
             }
             catch (Exception ex)
             {
@@ -117,13 +117,20 @@ namespace BLL
             return conexion.ObtenerDatos(string.Format("select EquipoId, TE.Detalle + '  ' + ME.Detalle + '  ' + E.SerialNum as Aux" + " from Equipos as E inner join TiposEquipos TE on E.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on E.MarcaId=ME.MarcaId where " + Condicion));
         }
 
+        public DataTable ListadoMarca(string Condicion)
+        {
+            ConexionDb conexion = new ConexionDb();
+
+            return conexion.ObtenerDatos(string.Format("select EquipoId, TE.Detalle + '  ' + ME.Detalle + '  ' + E.SerialNum as Aux" + " from Equipos as E inner join TiposEquipos TE on E.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on E.MarcaId=ME.MarcaId where " + Condicion));
+        }
+
         public bool Editarestado(int estado)
         {
             bool retorno;
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Update Equipos set Estado = {0} Where EquipoId = {1}", estado, this.EquipoId));
+                retorno = Conexion.Ejecutar(string.Format("Update Equipos set EstadoId = {0} Where EquipoId = {1}", estado, this.EquipoId));
             }
             catch (Exception ex)
             {

@@ -28,27 +28,30 @@ namespace AlmacenTech.Consultas
         public string Filtrar()
         {
             Usuarios u = new Usuarios();
-            string condicion = "";
-            if (string.IsNullOrWhiteSpace(FiltroTextBox.Text))
-            {
-                condicion = "1=1";
-            }
-            else
-            {
-                if (!string.IsNullOrWhiteSpace(FiltroTextBox.Text))
-                {
-                    condicion = FiltroDropDownList.SelectedValue + " like '%" + FiltroTextBox.Text + "%'";
-                    
-                }
-            }
+            string condicion = "1=1";
+
+            if (!string.IsNullOrWhiteSpace(FiltroTextBox.Text))
+                condicion = SeleccionarFiltro() + " like '%" + FiltroTextBox.Text + "%'";
+             
             UsuariosRepeater.DataSource = u.Listado("Nombres,Imagen,NombreUsuario,IdTipo", condicion, "");
             UsuariosRepeater.DataBind();
 
             return condicion;
         }
 
-        protected void SeleccionarFiltro()
+        protected string SeleccionarFiltro()
         {
+            string op=" ";
+
+            if (FiltroDropDownList.SelectedIndex == 0)
+                op = "UsuarioId";
+            if (FiltroDropDownList.SelectedIndex == 1)
+                op = "Nombres";
+            if (FiltroDropDownList.SelectedIndex == 2)
+                op = "NombreUsuario";
+            if (FiltroDropDownList.SelectedIndex == 3)
+                op = "IdTipo";
+            return op;
 
         }
 

@@ -51,6 +51,29 @@ namespace BLL
             return dt.Rows.Count > 0;
         }
 
+        public  bool BuscarFiltro(string cond)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                dt = Conexion.ObtenerDatos(string.Format(cond));
+                if (dt.Rows.Count > 0)
+                {
+                    this.MarcaId = Utilitarios.ConvertirAentero(dt.Rows[0]["MarcaId"].ToString());
+                    this.Detalle = dt.Rows[0]["Detalle"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+
+
+            return dt.Rows.Count > 0;
+        }
+
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
             string ordenFinal = "";

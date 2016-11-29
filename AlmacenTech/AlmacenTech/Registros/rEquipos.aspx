@@ -61,7 +61,7 @@
                 <br />
                 <asp:Label ID="Label4" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-barcode"></span> Numero serial</asp:Label>
                 <br />
-                <asp:TextBox ID="SerialNumTextBox" TabIndex="4" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
+                <asp:TextBox ID="SerialNumTextBox" TabIndex="4" CssClass="form-control text-uppercase" runat="server" Width="480"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="SerialNumTextBox" ErrorMessage="Favor ingresar Numero Serial" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="SerialNumTextBox" ErrorMessage="Favor ingrese un numero serial valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d\ -]+" ValidationGroup="ID">*</asp:RegularExpressionValidator>    
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="SerialNumTextBox" ErrorMessage="Favor ingrese un numero serial valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d\ -]+" ValidationGroup="Save">*</asp:RegularExpressionValidator>  

@@ -107,13 +107,25 @@ namespace AlmacenTech.Registros
         protected void Limpiar()
         {
             IdTextBox.Text = "";
-            TipoDropDownList.SelectedIndex = 0;
-            EquiposDropDownList.SelectedIndex = 0;
-            BancasDropDownList.SelectedIndex = 0;
-            MensajerosDropDownList.SelectedIndex = 0;
-            EquiposGridView.DataSource = null;
-            EquiposGridView.DataBind();
-            Cargar();
+            if(EquiposDropDownList.DataSource == null)
+            {
+                TipoDropDownList.SelectedIndex = 0;
+                BancasDropDownList.SelectedIndex = 0;
+                MensajerosDropDownList.SelectedIndex = 0;
+                EquiposGridView.DataSource = null;
+                EquiposGridView.DataBind();
+            }
+            else
+            {
+                TipoDropDownList.SelectedIndex = 0;
+                EquiposDropDownList.SelectedIndex = 0;
+                BancasDropDownList.SelectedIndex = 0;
+                MensajerosDropDownList.SelectedIndex = 0;
+                EquiposGridView.DataSource = null;
+                EquiposGridView.DataBind();
+                Cargar();
+            }
+            
         }
 
         protected void Cargar()
@@ -142,7 +154,7 @@ namespace AlmacenTech.Registros
             MensajerosDropDownList.DataTextField = "Nombres";
             MensajerosDropDownList.DataBind();
 
-            EquiposDropDownList.DataSource = eq.Listadodts("Estado = 0");
+            EquiposDropDownList.DataSource = eq.Listadodts("EstadoId = 1");
             EquiposDropDownList.DataValueField = "EquipoId";
             EquiposDropDownList.DataTextField = "Aux";
             EquiposDropDownList.DataBind();
@@ -154,13 +166,13 @@ namespace AlmacenTech.Registros
 
         protected int CambioEstado()
         {
-            int aux = 0;
+            int aux = 1;
             if (TipoDropDownList.SelectedIndex == 0)
-                aux = 1;
-            if (TipoDropDownList.SelectedIndex == 1)
                 aux = 2;
-            if (TipoDropDownList.SelectedIndex == 2)
+            if (TipoDropDownList.SelectedIndex == 1)
                 aux = 3;
+            if (TipoDropDownList.SelectedIndex == 2)
+                aux = 4;
 
             return aux;
 
@@ -178,7 +190,7 @@ namespace AlmacenTech.Registros
             foreach (var a in s.Detalle)
             {
                 eq.Buscar(a.EquipoId);
-                eq.Editarestado(0);
+                eq.Editarestado(1);
 
 
             }

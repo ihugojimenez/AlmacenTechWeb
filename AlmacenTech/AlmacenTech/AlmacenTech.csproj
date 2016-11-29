@@ -129,8 +129,6 @@
     <Content Include="Consultas\cUsuarios.aspx" />
     <Content Include="Consultas\ReportEquipos.aspx" />
     <Content Include="Consultas\ReportUsers.aspx" />
-    <Content Include="Controls\ButtonsWebUserControl.ascx" />
-    <Content Include="Controls\SearchWebUserControl.ascx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\landing-page.css" />
@@ -204,20 +202,6 @@
     </Compile>
     <Compile Include="Consultas\ReportUsers.aspx.designer.cs">
       <DependentUpon>ReportUsers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ButtonsWebUserControl.ascx.cs">
-      <DependentUpon>ButtonsWebUserControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\ButtonsWebUserControl.ascx.designer.cs">
-      <DependentUpon>ButtonsWebUserControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\SearchWebUserControl.ascx.cs">
-      <DependentUpon>SearchWebUserControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\SearchWebUserControl.ascx.designer.cs">
-      <DependentUpon>SearchWebUserControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

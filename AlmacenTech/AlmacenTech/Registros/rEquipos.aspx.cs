@@ -23,7 +23,7 @@ namespace AlmacenTech.Registros
             Equipos eq = new Equipos();
             if (eq.Buscar(Utilitarios.ConvertirAentero(IdTextBox.Text)))
             {
-                LlenarClase(eq);
+                LlenarCampos(eq);
             }
             else
             {
@@ -142,34 +142,21 @@ namespace AlmacenTech.Registros
 
         public void LlenarCampos(Equipos eq)
         {
-            
+            Estado es = new Estado();
+
+            es.Buscar(eq.EstadoId);
             IdTextBox.Text = eq.EquipoId.ToString();
             MarcaDropDownList.SelectedValue = eq.MarcaId.ToString();
             TipoDropDownList.SelectedValue = eq.TipoEquipoId.ToString();
             SerialNumTextBox.Text = eq.SerialNum;
             CostoTextBox.Text = eq.Costo.ToString();
-            EstadoTextBox.Text = Estado();
+            EstadoTextBox.Text = es.Descripcion;
             Label6.Visible = true;
             EstadoTextBox.Visible = true;
 
         }
 
-        public string Estado()
-        {
-            Equipos eq = new Equipos();
-            string estado = "";
-            if (eq.Estado == 0)
-                estado = "Existencia";
-            if (eq.Estado == 1)
-                estado = "Prestado";
-            if (eq.Estado == 2)
-                estado = "Reparacion";
-            if (eq.Estado == 1)
-                estado = "Asignado";
 
-            return estado;
-
-        }
 
         protected void IdTextBox_TextChanged(object sender, EventArgs e)
         {

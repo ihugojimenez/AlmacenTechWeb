@@ -16,9 +16,10 @@
             <div class ="col-md-8 text-left">
                 <asp:Label ID="Label1" runat="server" Text="Filtrar por"></asp:Label>
                 <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" Width="480" runat="server">
-                    <asp:ListItem>BancaId</asp:ListItem>
-                            <asp:ListItem>Numero de banca</asp:ListItem>
-                            <asp:ListItem>Direccion</asp:ListItem>
+                    <asp:ListItem>Equipo Id</asp:ListItem>
+                            <asp:ListItem>Marca</asp:ListItem>
+                            <asp:ListItem>Estado</asp:ListItem>
+                            <asp:ListItem>Tipo de Equipo</asp:ListItem>
                 </asp:DropDownList>
                 
             </div>
@@ -27,9 +28,17 @@
             </div>
             <div class ="col-md-8 text-left">
                 <br />
+                 <asp:DropDownList ID="AuxDropDownList" Visible="false" CssClass="form-control" Width="480" runat="server"></asp:DropDownList>
+            </div>
+            <div class ="col-md-4 text-left">
+                  
+            </div>
+            <div class ="col-md-8 text-left">
+                <br />
                 <asp:Label ID="Label2" runat="server" Text="Filtro"></asp:Label>
                 <asp:TextBox ID="FiltroTextBox" CssClass="form-control" Width="480" runat="server"></asp:TextBox>
-                <asp:Button ID="SearchButton" runat="server" CssClass="btn btn-info" Text="Buscar" />
+                <asp:LinkButton ID="SearchButton" CssClass="btn btn-info" ValidationGroup="Buscar"  runat="server" Width="89px" OnClick="SearchButton_Click" ><span aria-hidden="true" class="glyphicon glyphicon-search"></span>  Buscar</asp:LinkButton>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Text="*" ControlToValidate="FiltroTextBox" ForeColor="Red" ValidationGroup="Buscar" ErrorMessage="Favor ingrese el filtro"></asp:RequiredFieldValidator>
                 
             </div>  
             <div class ="col-md-4 text-left">
@@ -37,7 +46,7 @@
             </div>
             <div class ="col-md-8 text-left">
                 <br />
-                <asp:GridView ID="BancasGridView" runat="server" CellPadding="4"  ForeColor="#333333" GridLines="None" Width="480">
+                <asp:GridView ID="EquiposGridView" runat="server" CellPadding="4"  ForeColor="#333333" GridLines="None" Width="480">
                     <AlternatingRowStyle BackColor="White" />
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -57,7 +66,7 @@
             </div>
             <div class ="col-md-8 text-left">
                 
-                <asp:LinkButton ID="LinkButton1" CssClass="btn btn-info" ValidationGroup="Buscar"  runat="server" Width="89px" OnClick="LinkButton1_Click"  ><span aria-hidden="true" class="glyphicon glyphicon-search"></span>  Buscar</asp:LinkButton>
+                <asp:LinkButton ID="PrintButon"  CssClass="btn btn-warning" runat="server" Width="100" OnClick="PrintButon_Click" ><span aria-hidden="true" class="glyphicon glyphicon-print"></span>  Imprimir</asp:LinkButton>
             </div>  
         </div>
 </asp:Content>

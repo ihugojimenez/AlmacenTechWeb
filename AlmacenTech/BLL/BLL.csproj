@@ -47,6 +47,7 @@
     <Compile Include="Devoluciones.cs" />
     <Compile Include="DevolucionesDetalle.cs" />
     <Compile Include="Equipos.cs" />
+    <Compile Include="Estado.cs" />
     <Compile Include="MarcaEquipos.cs" />
     <Compile Include="Mensajeros.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

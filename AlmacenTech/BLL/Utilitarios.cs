@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace BLL
 {
@@ -44,5 +45,6 @@ namespace BLL
             rv.LocalReport.DataSources.Add(sourse);
             rv.LocalReport.Refresh();
         }
+        
     }
 }

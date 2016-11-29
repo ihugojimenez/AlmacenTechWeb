@@ -11,8 +11,5 @@
     <br />
     <br />
 
-
-    <uc1:ButtonsWebUserControl runat="server" id="ButtonsWebUserControl" />
-    <uc1:SearchWebUserControl runat="server" id="SearchWebUserControl" />
    
 </asp:Content>

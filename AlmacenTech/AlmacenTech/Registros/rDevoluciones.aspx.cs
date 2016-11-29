@@ -121,7 +121,7 @@ namespace AlmacenTech.Registros
             MarcaEquipos me = new MarcaEquipos();
             DataTable dt = (DataTable)ViewState["Detalle"];
             eq.Buscar(Convert.ToInt32(EquiposDropDownList.SelectedValue));
-            eq.Editarestado(0);
+            eq.Editarestado(1);
             Cargar();
             me.Buscar(eq.MarcaId);
             te.Buscar(eq.TipoEquipoId);
@@ -160,7 +160,7 @@ namespace AlmacenTech.Registros
             foreach (var a in d.Detalle)
             {
                 eq.Buscar(a.EquipoId);
-                eq.Editarestado(1);
+                eq.Editarestado(2);
 
 
             }
