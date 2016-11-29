@@ -128,7 +128,7 @@ namespace AlmacenTech.Registros
         public void LlenarClase(Usuarios u)
         {
             
-            u.Nombres = NamesTextBox.Text;
+            u.Nombres = NamesTextBox.Text.ToUpper();
             u.NombreUsuario = UserNameTextBox.Text.ToUpper();
             u.Contraseña = PassTextBox.Text;
             u.IdTipo = Utilitarios.ConvertirAentero(TipoUsersDropDownList.SelectedValue);

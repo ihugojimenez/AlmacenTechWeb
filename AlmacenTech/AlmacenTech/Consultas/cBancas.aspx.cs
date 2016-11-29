@@ -12,46 +12,57 @@ namespace AlmacenTech.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+                cargar();
         }
 
-        protected void SearchButton_Click(object sender, EventArgs e)
+        protected void SearchButton_Click1(object sender, EventArgs e)
         {
-            Condicion();
-            gridView();
+
+            Filtrar();
         }
 
-        public string Condicion()
+        public string Filtrar()
         {
-            string condicion = "";
-            if (string.IsNullOrWhiteSpace(FiltroTextBox.Text))
-            {
-                condicion = "1=1";
-            }
-            else
-            {
-                if (!string.IsNullOrWhiteSpace(FiltroTextBox.Text))
-                {
-                    condicion = FiltroDropDownList.SelectedValue + " like '%" + FiltroTextBox.Text + "%'";
+            Bancas B = new Bancas();
+            string condicion = "1=1";
 
-                }
-            }
+            if (!string.IsNullOrWhiteSpace(FiltroTextBox.Text))
+                condicion = SeleccionarFiltro() + " like '%" + FiltroTextBox.Text + "%'";
+
+            BancasGridView.DataSource = B.Listado("BancaId, NumeroBanca, Direccion", condicion, "");
+            BancasGridView.DataBind();
 
             return condicion;
         }
 
-        public void gridView()
+        protected string SeleccionarFiltro()
         {
-            Bancas u = new Bancas();
-            BancasGridView.DataSource = u.Listado("BancaId, NumeroBanca, Direccion", Condicion(), "");
-            BancasGridView.DataBind();
+            string op = " ";
+
+            if (FiltroDropDownList.SelectedIndex == 0)
+                op = "BancaId";
+            if (FiltroDropDownList.SelectedIndex == 1)
+                op = "Direccion";
+            if (FiltroDropDownList.SelectedIndex == 2)
+                op = "NumeroBanca";
+            return op;
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+
+        protected void cargar()
         {
-            Response.Redirect("~/Consultas/ReporteEquipos.aspx");
-            Response.Clear();
+            Bancas b = new Bancas();
+            BancasGridView.DataSource = b.Listado("BancaId, NumeroBanca, Direccion", Filtrar(), "");
+            BancasGridView.DataBind();
+            Utilitarios.Data = Filtrar();
+        }
+
+        protected void PrintButon_Click(object sender, EventArgs e)
+        {
+            Utilitarios.Data = Filtrar();
+            Response.Write("<script type='text/javascript'>detailedresults=window.open('ReportBancas.aspx');</script>");
         }
     }
 }

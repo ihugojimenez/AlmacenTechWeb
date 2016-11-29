@@ -8,36 +8,43 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="jumbotron text-center ">
+   <div class="jumbotron text-center ">
+        <br />
+        <br />
+        <asp:Image ID="Image1" runat="server" Width="100" ImageUrl="~/Imagenes/forma-bancaiconobanco.png" />
         <h2>Consulta de Bancas</h2>
    </div>
 
     <div class="row">
-            <div class ="col-md-4 text-left">
+        <div class ="col-md-4 text-left">
                   
             </div>
             <div class ="col-md-8 text-left">
                 <asp:Label ID="Label1" runat="server" Text="Filtrar por"></asp:Label>
                 <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" Width="480" runat="server">
                     <asp:ListItem>BancaId</asp:ListItem>
-                            <asp:ListItem>Numero de banca</asp:ListItem>
-                            <asp:ListItem>Direccion</asp:ListItem>
+                             <asp:ListItem>Direccion</asp:ListItem>
+                            <asp:ListItem>Numero de Banca</asp:ListItem>
                 </asp:DropDownList>
                 
             </div>
+
             <div class ="col-md-4 text-left">
-                  
+                  <asp:ValidationSummary ID="ValidationSummary1" ForeColor="Red" ValidationGroup="Buscar" runat="server" />
             </div>
             <div class ="col-md-8 text-left">
                 <br />
                 <asp:Label ID="Label2" runat="server" Text="Filtro"></asp:Label>
                 <asp:TextBox ID="FiltroTextBox" CssClass="form-control" Width="480" runat="server"></asp:TextBox>
-                <asp:Button ID="SearchButton" runat="server" CssClass="btn btn-info" Text="Buscar" OnClick="SearchButton_Click"  />
-                
+                <asp:LinkButton ID="SearchButton" CssClass="btn btn-info" ValidationGroup="Buscar"  runat="server" Width="89px" OnClick="SearchButton_Click1" ><span aria-hidden="true" class="glyphicon glyphicon-search"></span>  Buscar</asp:LinkButton>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Text="*" ControlToValidate="FiltroTextBox" ForeColor="Red" ValidationGroup="Buscar" ErrorMessage="Favor ingrese el filtro"></asp:RequiredFieldValidator>
             </div>  
+
             <div class ="col-md-4 text-left">
                   
             </div>
+
+
             <div class ="col-md-8 text-left">
                 <br />
                 <asp:GridView ID="BancasGridView" runat="server" CellPadding="4"  ForeColor="#333333" GridLines="None" Width="480">
@@ -52,15 +59,19 @@
                     <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:GridView>
-                
+                </asp:GridView>               
             </div>  
-        <div class ="col-md-4 text-left">
+        </div>
+
+    <%--Botones--%>
+    <%--href="/Consultas/ReportUsers.aspx"--%>
+     <div class="row">
+            <div class ="col-md-4 text-left">
                   
             </div>
             <div class ="col-md-8 text-left">
-                
-                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
-            </div>  
-        </div>
+                <br />
+                <asp:LinkButton ID="PrintButon"  CssClass="btn btn-warning" runat="server" Width="100" OnClick="PrintButon_Click" ><span aria-hidden="true" class="glyphicon glyphicon-print"></span>  Imprimir</asp:LinkButton>
+            </div>
+         </div>
 </asp:Content>

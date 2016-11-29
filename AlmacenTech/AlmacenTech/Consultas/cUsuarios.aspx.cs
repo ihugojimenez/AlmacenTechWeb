@@ -66,7 +66,6 @@ namespace AlmacenTech.Consultas
 
         protected void PrintButon_Click(object sender, EventArgs e)
         {
-            Usuarios u = new Usuarios();
             Utilitarios.Data = Filtrar();
             Response.Write("<script type='text/javascript'>detailedresults=window.open('ReportUsers.aspx');</script>");
         }

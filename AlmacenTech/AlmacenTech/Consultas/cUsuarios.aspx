@@ -3,6 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="jumbotron text-center ">
+        <br />
+        <br />
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/icon_ondemand_user.png" Width="100" />
         <h2>Consulta de Usuarios</h2>
    </div>
 
@@ -68,7 +71,7 @@
                   
             </div>
             <div class ="col-md-8 text-left">
-                
+                <br />
                 <asp:LinkButton ID="PrintButon"  CssClass="btn btn-warning" runat="server" Width="100" OnClick="PrintButon_Click" ><span aria-hidden="true" class="glyphicon glyphicon-print"></span>  Imprimir</asp:LinkButton>
             </div>
          </div>
