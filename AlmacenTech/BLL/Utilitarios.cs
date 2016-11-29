@@ -13,6 +13,7 @@ namespace BLL
     {
         public static string Data { get; set; }
         public static string Operacion { get; set; }
+        public static string Set { get; set; }
 
         public static void ShowToastr(this Page page, string message, string title, string type = "info")
         {

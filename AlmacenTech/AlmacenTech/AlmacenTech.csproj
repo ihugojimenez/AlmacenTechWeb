@@ -128,9 +128,7 @@
     <Content Include="Consultas\cEquipos.aspx" />
     <Content Include="Consultas\cMensajeros.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
-    <Content Include="Consultas\ReportBancas.aspx" />
-    <Content Include="Consultas\ReportEquipos.aspx" />
-    <Content Include="Consultas\ReportUsers.aspx" />
+    <Content Include="Consultas\ReportVisor.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\landing-page.css" />
@@ -198,26 +196,12 @@
     <Compile Include="Consultas\cUsuarios.aspx.designer.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\ReportBancas.aspx.cs">
-      <DependentUpon>ReportBancas.aspx</DependentUpon>
+    <Compile Include="Consultas\ReportVisor.aspx.cs">
+      <DependentUpon>ReportVisor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\ReportBancas.aspx.designer.cs">
-      <DependentUpon>ReportBancas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultas\ReportEquipos.aspx.cs">
-      <DependentUpon>ReportEquipos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Consultas\ReportEquipos.aspx.designer.cs">
-      <DependentUpon>ReportEquipos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultas\ReportUsers.aspx.cs">
-      <DependentUpon>ReportUsers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Consultas\ReportUsers.aspx.designer.cs">
-      <DependentUpon>ReportUsers.aspx</DependentUpon>
+    <Compile Include="Consultas\ReportVisor.aspx.designer.cs">
+      <DependentUpon>ReportVisor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

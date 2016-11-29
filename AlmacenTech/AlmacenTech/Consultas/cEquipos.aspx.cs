@@ -27,14 +27,17 @@ namespace AlmacenTech.Consultas
 
         protected void PrintButon_Click(object sender, EventArgs e)
         {
-            
+            Utilitarios.Data = Filtrar();
+            Utilitarios.Set = "EquiposDataSet";
+            //Response.Write("<script type='text/javascript'>detailedresults=window.open('ReportEquipos.aspx');</script>");
+            Response.Write("<script type='text/javascript'>detailedresults=window.open('ReportVisor.aspx');</script>");
         }
 
         public string Filtrar()
         {
             Equipos eq = new Equipos();
             string condicion = "1=1";
-            if(!Utilitarios.Data.Equals(""))
+            if(!Utilitarios.Data.Equals("1=1"))
             {
                 condicion = Utilitarios.Data;
                 ValidationSummary1.Enabled = false;
@@ -52,6 +55,7 @@ namespace AlmacenTech.Consultas
             Equipos eq = new Equipos();
             EquiposGridView.DataSource = eq.ListadoConsultas("1=1");
             EquiposGridView.DataBind();
+            Utilitarios.Data = "1=1";
         }
         
         protected void FiltroDropDownList_SelectedIndexChanged(object sender, EventArgs e)
