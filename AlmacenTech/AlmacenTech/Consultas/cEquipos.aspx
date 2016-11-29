@@ -43,8 +43,22 @@
             
         <div class ="col-md-8 text-left">
                 <br />
-                <asp:GridView ID="EquiposGridView" runat="server" CellPadding="4"  ForeColor="#333333" GridLines="None" Width="480">
+                <asp:GridView ID="EquiposGridView" runat="server" CellPadding="4"  ForeColor="#333333" GridLines="None" Width="499px" AutoGenerateColumns="False">
                     <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:BoundField DataField="EquipoId" HeaderText="Equipo ID" ReadOnly="True" SortExpression="EquipoId">
+                        <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Detalles" HeaderText="Equipo" ReadOnly="True" SortExpression="Detalle">
+                        <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Descripcion" HeaderText="Estado" ReadOnly="True" SortExpression="Descripcion">
+                        <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Costo" HeaderText="Costo" ReadOnly="True" SortExpression="Costo">
+                        <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                    </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

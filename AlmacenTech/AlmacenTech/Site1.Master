@@ -90,7 +90,7 @@
                             <li><a href="/Registros/rEquipos.aspx">Equipos</a></li>
                             <li><a href="/Registros/rMensajeros.aspx">Mensajeros</a></li>
                             <li><a href="/Registros/rSalidas.aspx">Salidas</a></li>
-                            <li><a href="/Registros/rDevoluciones.aspx">Salidas</a></li>
+                            <li><a href="/Registros/rDevoluciones.aspx">Devoluciones</a></li>
                           
                         </ul>
                       </li>
@@ -105,6 +105,8 @@
                              <li><a href="/Consultas/cUsuarios.aspx" id="cUsuariosAdm">Usuarios</a></li>
                              <li><a href="/Consultas/cBancas.aspx">Bancas</a></li>
                             <li><a href="/Consultas/cEquipos.aspx">Equipos</a></li>
+                            <li><a href="/Consultas/cMensajeros.aspx">Mensajeros</a></li>
+                            <li><a href="/Consultas/cSalidas.aspx">Salidas</a></li>
                           
                         </ul>
                       </li>

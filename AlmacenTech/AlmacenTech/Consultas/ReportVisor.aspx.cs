@@ -22,7 +22,7 @@ namespace AlmacenTech.Consultas
             if(Utilitarios.Set.Equals("UsersDataSet"))
             {
                 Usuarios u = new Usuarios();
-                Utilitarios.ConfigurarReporte(ReportViewerGenerico, @"Reportes\UsersReport.rdlc", "UsersDataSet", u.Listadodts(Utilitarios.Data));
+                Utilitarios.ConfigurarReporte(ReportViewerGenerico, @"Reportes\UsersReport.rdlc", "UsersDataSet", u.Listado("*", Utilitarios.Data, ""));
             }
             if(Utilitarios.Set.Equals("BancasDataSet"))
             {
@@ -33,6 +33,11 @@ namespace AlmacenTech.Consultas
             {
                 Equipos eq = new Equipos();
                 Utilitarios.ConfigurarReporte(ReportViewerGenerico, @"Reportes\EquiposReport.rdlc", "EquiposDataSet", eq.ListadoViewer(Utilitarios.Data));
+            }
+            if (Utilitarios.Set.Equals("MensajerosDataSet"))
+            {
+                Mensajeros M = new Mensajeros();
+                Utilitarios.ConfigurarReporte(ReportViewerGenerico, @"Reportes\MensajerosReport.rdlc", "MensajerosDataSet", M.Listado("*", Utilitarios.Data, ""));
             }
         }
     }

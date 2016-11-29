@@ -121,7 +121,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
 
-            return conexion.ObtenerDatos(string.Format("select EquipoId, TE.Detalle + '   ' + ME.Detalle + '   ' + EQ.SerialNum + '   ' + E.Descripcion as Detalles" + " from Equipos as EQ inner join TiposEquipos TE on EQ.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on EQ.MarcaId=ME.MarcaId inner join Estado E on EQ.EstadoId=E.EstadoId where " + Condicion));
+            return conexion.ObtenerDatos(string.Format("select EquipoId, EQ.Costo, E.Descripcion, TE.Detalle + '   ' + ME.Detalle + '   ' + EQ.SerialNum as Detalles" + " from Equipos as EQ inner join TiposEquipos TE on EQ.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on EQ.MarcaId=ME.MarcaId inner join Estado E on EQ.EstadoId=E.EstadoId where " + Condicion));
         }
 
         public bool Editarestado(int estado)

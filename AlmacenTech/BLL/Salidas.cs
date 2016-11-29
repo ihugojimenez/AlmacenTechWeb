@@ -131,6 +131,13 @@ namespace BLL
             throw new NotImplementedException();
         }
 
+        public DataTable ListadoConsultas(string Condicion)
+        {
+            ConexionDb conexion = new ConexionDb();
+            
+            return conexion.ObtenerDatos(string.Format("select S.SalidaId,FechaSalida, B.NumeroBanca, M.Nombres, TE.Detalle + '   '+ ME.Detalle +  '   ' + EQ.SerialNum as Detalles" + " from Salidas as S inner join SalidasDetalle SD on S.SalidaId=SD.SalidaId inner join Equipos EQ on SD.EquipoId= EQ.EquipoId inner join Mensajeros M on S.MensajeroId=M.MensajeroId inner join Bancas B on S.BancaId=B.BancaId inner join TiposEquipos TE on EQ.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on EQ.MarcaId=ME.MarcaId where " + Condicion));
+        }
+
         public void AgregarEquipos(int SalidaId, int EquipoId)
         {
             this.Detalle.Add(new SalidasDetalle(SalidaId, EquipoId));

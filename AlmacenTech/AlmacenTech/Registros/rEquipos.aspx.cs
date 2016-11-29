@@ -91,7 +91,7 @@ namespace AlmacenTech.Registros
             
             eq.MarcaId = Utilitarios.ConvertirAentero(MarcaDropDownList.SelectedValue);
             eq.TipoEquipoId = Utilitarios.ConvertirAentero(TipoDropDownList.SelectedValue);
-            eq.SerialNum = SerialNumTextBox.Text;
+            eq.SerialNum = SerialNumTextBox.Text.ToUpper();
             eq.Costo = Utilitarios.ConvertirAflotante(CostoTextBox.Text);
 
         }

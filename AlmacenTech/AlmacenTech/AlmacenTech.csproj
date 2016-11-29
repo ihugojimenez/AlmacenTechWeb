@@ -127,6 +127,7 @@
     <Content Include="Consultas\cBancas.aspx" />
     <Content Include="Consultas\cEquipos.aspx" />
     <Content Include="Consultas\cMensajeros.aspx" />
+    <Content Include="Consultas\cSalidas.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
     <Content Include="Consultas\ReportVisor.aspx" />
     <Content Include="css\bootstrap.min.css" />
@@ -188,6 +189,13 @@
     </Compile>
     <Compile Include="Consultas\cMensajeros.aspx.designer.cs">
       <DependentUpon>cMensajeros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cSalidas.aspx.cs">
+      <DependentUpon>cSalidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cSalidas.aspx.designer.cs">
+      <DependentUpon>cSalidas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
@@ -343,6 +351,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Reportes\BancasReport.rdlc" />
     <EmbeddedResource Include="Reportes\EquiposReport.rdlc" />
+    <EmbeddedResource Include="Reportes\MensajerosReport.rdlc" />
     <EmbeddedResource Include="Reportes\UsersReport.rdlc" />
   </ItemGroup>
   <ItemGroup />

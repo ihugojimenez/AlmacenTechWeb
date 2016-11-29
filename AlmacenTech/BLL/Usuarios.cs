@@ -104,11 +104,11 @@ namespace BLL
             return conexion.ObtenerDatos(string.Format("select " + Campos + " from Usuarios where " + Condicion + ordenFinal));
         }
 
-        public  DataTable Listadodts(string Condicion)
+        public  DataTable ListadoConsulta(string Condicion)
         {
             ConexionDb conexion = new ConexionDb();
             
-            return conexion.ObtenerDatos(string.Format("select *" + " from Usuarios where " + Condicion));
+            return conexion.ObtenerDatos(string.Format("select Nombres, Imagen, NombreUsuario, TU.Detalle" + " from Usuarios as U inner join TiposUsuarios TU on U.IdTipo=TU.IdTipo where " + Condicion));
         }
 
         public DataSet GetData(int id)

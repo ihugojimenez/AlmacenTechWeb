@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="card-content">                
                                     <asp:Label ID="Label4" runat="server" Text="Nombre de usuario: "></asp:Label><asp:Label ID="UserLabel" runat="server" Text='<%# Eval("NombreUsuario")%>'></asp:Label><br />
-                                    <asp:Label ID="Label5" runat="server" Text="Tipo de usuario: "></asp:Label><asp:Label ID="EmailLabel" runat="server" Text='<%# Eval("IdTipo")%>'></asp:Label><br />                                                   
+                                    <asp:Label ID="Label5" runat="server" Text="Tipo de usuario: "></asp:Label><asp:Label ID="EmailLabel" runat="server" Text='<%# Eval("Detalle")%>'></asp:Label><br />                                                   
                                     <br />
                                     <br />
                                 </div>

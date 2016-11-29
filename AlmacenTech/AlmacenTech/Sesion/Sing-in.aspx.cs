@@ -17,8 +17,8 @@ namespace AlmacenTech.Sesion
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            Default d = new Default();
-            if (ValidarUsuario())
+            
+            //if (ValidarUsuario())
                 Response.Redirect("~/Default.aspx");
         }
 

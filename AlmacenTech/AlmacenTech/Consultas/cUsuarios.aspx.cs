@@ -33,7 +33,7 @@ namespace AlmacenTech.Consultas
             if (!string.IsNullOrWhiteSpace(FiltroTextBox.Text))
                 condicion = SeleccionarFiltro() + " like '%" + FiltroTextBox.Text + "%'";
              
-            UsuariosRepeater.DataSource = u.Listado("Nombres,Imagen,NombreUsuario,IdTipo", condicion, "");
+            UsuariosRepeater.DataSource = u.ListadoConsulta(condicion);
             UsuariosRepeater.DataBind();
 
             return condicion;
@@ -59,7 +59,7 @@ namespace AlmacenTech.Consultas
         protected void cargar()
         {
             Usuarios u = new Usuarios();
-            UsuariosRepeater.DataSource = u.Listado("Nombres,Imagen,NombreUsuario,IdTipo", Filtrar(), "");
+            UsuariosRepeater.DataSource = u.ListadoConsulta(Filtrar());
             UsuariosRepeater.DataBind();
             Utilitarios.Data = Filtrar();
         }
