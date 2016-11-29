@@ -111,7 +111,6 @@
                 <br />
                 <asp:TextBox ID="CedulaTextBox" TabIndex="23" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
                  <ajaxToolkit:MaskedEditExtender ID="CedulaMasked" runat="server" TargetControlID="CedulaTextBox" Mask="999-9999999-9" />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="CedulaTextBox" ErrorMessage="Favor ingresar Cedula" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="CedulaTextBox" ErrorMessage="Favor ingresar Cedula" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="CedulaTextBox" ErrorMessage="Favor ingresar numero Id valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Save">*</asp:RegularExpressionValidator>
             
@@ -144,7 +143,6 @@
                 <br />
                 <asp:TextBox ID="TelefonoTextBox" TabIndex="25" CssClass="form-control" runat="server" Width="480"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TelefonoTextBox" ErrorMessage="Favor ingresar telefono" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="TelefonoTextBox" ErrorMessage="Favor ingresar telefono" ForeColor="Red" ValidationGroup="ID">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server" ControlToValidate="TelefonoTextBox" ErrorMessage="Favor ingresar Telefono valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Save">*</asp:RegularExpressionValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ControlToValidate="TelefonoTextBox" ErrorMessage="Favor ingresar Telefono valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="ID">*</asp:RegularExpressionValidator>
                 <ajaxToolkit:MaskedEditExtender ID="TelMasked" runat="server" TargetControlID="TelefonoTextBox" Mask="999-999-9999" />
@@ -155,11 +153,12 @@
             
             <div class ="col-md-8 text-left">
                 <br />
-                <asp:Label ID="Label6" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-map-marker"></span> Direccion</asp:Label>
+                <asp:Label ID="Label6" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-map-marker text-uppercase"></span> Direccion</asp:Label>
                 <br />
                 <asp:TextBox ID="DireccionTextBox" TabIndex="26"  CssClass="form-control text-uppercase" runat="server" Width="480" ></asp:TextBox>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingrese una direccion valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\., -]+" ValidationGroup="ID">*</asp:RegularExpressionValidator>    
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingrese una direccion valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\., -]+" ValidationGroup="Save">*</asp:RegularExpressionValidator>    
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingresar direccion" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingrese una direccion valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\#., -]+" ValidationGroup="ID">*</asp:RegularExpressionValidator>    
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingrese una direccion valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\#., -]+" ValidationGroup="Save">*</asp:RegularExpressionValidator>    
             </div>
            
         </div>

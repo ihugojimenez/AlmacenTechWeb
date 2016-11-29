@@ -104,6 +104,7 @@ namespace AlmacenTech.Registros
 
         }
 
+
         public bool validarEditar()
         {
             bool yes = true;
@@ -146,13 +147,13 @@ namespace AlmacenTech.Registros
 
         protected void LlenarClase(Mensajeros m)
         {
-            m.Nombres = NombresTextBox.Text;            
+            m.Nombres = NombresTextBox.Text.ToUpper() ;            
             m.FechaNacimiento = string.Concat(Fecha(), AnioDropDownList.SelectedItem.ToString());
             m.Sexo = InsertarSexo();
             m.Cedula = CedulaTextBox.Text;
             m.Celular = CelularTextBox.Text;
             m.Telefono = TelefonoTextBox.Text;
-            m.Direccion = DireccionTextBox.Text;
+            m.Direccion = DireccionTextBox.Text.ToUpper();
         }
 
         protected string Fecha()

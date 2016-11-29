@@ -126,6 +126,7 @@
     </Content>
     <Content Include="Consultas\cBancas.aspx" />
     <Content Include="Consultas\cEquipos.aspx" />
+    <Content Include="Consultas\cMensajeros.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
     <Content Include="Consultas\ReportBancas.aspx" />
     <Content Include="Consultas\ReportEquipos.aspx" />
@@ -182,6 +183,13 @@
     </Compile>
     <Compile Include="Consultas\cEquipos.aspx.designer.cs">
       <DependentUpon>cEquipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cMensajeros.aspx.cs">
+      <DependentUpon>cMensajeros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cMensajeros.aspx.designer.cs">
+      <DependentUpon>cMensajeros.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
