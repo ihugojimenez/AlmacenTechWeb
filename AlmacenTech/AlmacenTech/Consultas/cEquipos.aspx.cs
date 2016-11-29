@@ -12,46 +12,71 @@ namespace AlmacenTech.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+                Cargar();
         }
 
         protected void SearchButton_Click(object sender, EventArgs e)
         {
-
+            Utilitarios.Data = "EQ.MarcaId = " + Utilitarios.ConvertirAentero(AuxDropDownList.SelectedValue);
+            Filtrar();
         }
 
         protected void PrintButon_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         public string Filtrar()
         {
+            Equipos eq = new Equipos();
+            string condicion = "1=1";
+            if(!Utilitarios.Data.Equals(""))
+            {
+                condicion = Utilitarios.Data;
+                ValidationSummary1.Enabled = false;
+                RequiredFieldValidator5.Enabled = false;
+            }
+            EquiposGridView.DataSource = eq.ListadoConsultas(condicion);
+            EquiposGridView.DataBind();
 
-            if(AuxDropDownList.SelectedIndex==1)
+            return condicion;
+        }
+
+        protected void Cargar()
+        {
+            Equipos eq = new Equipos();
+            EquiposGridView.DataSource = eq.ListadoConsultas("1=1");
+            EquiposGridView.DataBind();
+        }
+        
+        protected void FiltroDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (FiltroDropDownList.SelectedIndex == 1)
             {
                 MarcaEquipos me = new MarcaEquipos();
                 AuxDropDownList.DataSource = me.Listado("*", "1=1", "");
                 AuxDropDownList.DataTextField = "Detalle";
                 AuxDropDownList.DataValueField = "MarcaId";
+                AuxDropDownList.DataBind();
+                FiltroTextBox.Visible = false;
                 AuxDropDownList.Visible = true;
-                //me.BuscarFiltro("Select *" + " From MarcaEquipos Where Detalle like '% " + FiltroTextBox + "%'");
+                //Utilitarios.Data = "ME.Detalle" + " like '%" + AuxDropDownList.SelectedItem.ToString() + "%'";
                 
             }
-
-
-
-            Equipos eq = new Equipos();
-            string condicion = "1=1";
-
-            if (!string.IsNullOrWhiteSpace(FiltroTextBox.Text))
-                condicion = SeleccionarFiltro() + " like '%" + FiltroTextBox.Text + "%'";
-
-            EquiposGridView.DataSource = eq.Listado("*", condicion, "");
-            EquiposGridView.DataBind();
-
-            return condicion;
+            if (FiltroDropDownList.SelectedIndex == 2)
+            {
+                Estado es = new Estado();
+                AuxDropDownList.DataSource = es.Listado("*", "1=1", "");
+                AuxDropDownList.DataTextField = "Descripcion";
+                AuxDropDownList.DataValueField = "EstadoId";
+                AuxDropDownList.DataBind();
+                FiltroTextBox.Visible = false;
+                AuxDropDownList.Visible = true;
+                Utilitarios.Data = "EstadoId" + " like '%" + AuxDropDownList.SelectedItem.ToString() + "%'";
+            }
         }
+
 
         protected string SeleccionarFiltro()
         {
@@ -61,14 +86,14 @@ namespace AlmacenTech.Consultas
                 op = "EquipoId";
             if (FiltroDropDownList.SelectedIndex == 1)
             {
-                
 
-            }  
+
+            }
             if (FiltroDropDownList.SelectedIndex == 2)
             {
                 op = "Estado";
             }
-                
+
             if (FiltroDropDownList.SelectedIndex == 3)
                 op = "IdTipo";
             return op;

@@ -117,11 +117,11 @@ namespace BLL
             return conexion.ObtenerDatos(string.Format("select EquipoId, TE.Detalle + '  ' + ME.Detalle + '  ' + E.SerialNum as Aux" + " from Equipos as E inner join TiposEquipos TE on E.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on E.MarcaId=ME.MarcaId where " + Condicion));
         }
 
-        public DataTable ListadoMarca(string Condicion)
+        public DataTable ListadoConsultas(string Condicion)
         {
             ConexionDb conexion = new ConexionDb();
 
-            return conexion.ObtenerDatos(string.Format("select EquipoId, TE.Detalle + '  ' + ME.Detalle + '  ' + E.SerialNum as Aux" + " from Equipos as E inner join TiposEquipos TE on E.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on E.MarcaId=ME.MarcaId where " + Condicion));
+            return conexion.ObtenerDatos(string.Format("select EquipoId, TE.Detalle + '   ' + ME.Detalle + '   ' + EQ.SerialNum + '   ' + E.Descripcion as Detalles" + " from Equipos as EQ inner join TiposEquipos TE on EQ.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on EQ.MarcaId=ME.MarcaId inner join Estado E on EQ.EstadoId=E.EstadoId where " + Condicion));
         }
 
         public bool Editarestado(int estado)
