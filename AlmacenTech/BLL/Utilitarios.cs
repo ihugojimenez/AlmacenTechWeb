@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Reporting.WebForms;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Web.UI;
@@ -8,6 +10,7 @@ namespace BLL
 {
     public static class Utilitarios
     {
+        public static string Data { get; set; }
 
         public static void ShowToastr(this Page page, string message, string title, string type = "info")
         {
@@ -27,6 +30,19 @@ namespace BLL
             float aux = 0;
             float.TryParse(s, out aux);
             return aux;
+        }
+
+        public static void ConfigurarReporte(ReportViewer rv, string ruta, string DataSets, DataTable listado)
+        {
+            rv.LocalReport.DataSources.Clear();
+            rv.ProcessingMode = ProcessingMode.Local;
+
+
+            rv.LocalReport.ReportPath = ruta;
+            ReportDataSource sourse = new ReportDataSource(DataSets, listado);
+
+            rv.LocalReport.DataSources.Add(sourse);
+            rv.LocalReport.Refresh();
         }
     }
 }

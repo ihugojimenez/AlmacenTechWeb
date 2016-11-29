@@ -104,6 +104,7 @@
                         <ul class="dropdown-menu">
                              <li><a href="/Consultas/cUsuarios.aspx" id="cUsuariosAdm">Usuarios</a></li>
                              <li><a href="/Consultas/cBancas.aspx">Bancas</a></li>
+                            <li><a href="/Consultas/cEquipos.aspx">Equipos</a></li>
                           
                         </ul>
                       </li>

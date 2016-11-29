@@ -7,18 +7,19 @@
    </div>
 
     <div class="row">
-            <div class ="col-md-4 text-left">
+        <div class ="col-md-4 text-left">
                   
             </div>
             <div class ="col-md-8 text-left">
                 <asp:Label ID="Label1" runat="server" Text="Filtrar por"></asp:Label>
                 <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" Width="480" runat="server">
                     <asp:ListItem>UsuarioId</asp:ListItem>
-                            <asp:ListItem>Nombre de Usuario</asp:ListItem>
+                            <asp:ListItem>NombreUsuario</asp:ListItem>
                             <asp:ListItem>Tipo de Usuario</asp:ListItem>
                 </asp:DropDownList>
                 
             </div>
+
             <div class ="col-md-4 text-left">
                   
             </div>
@@ -26,30 +27,49 @@
                 <br />
                 <asp:Label ID="Label2" runat="server" Text="Filtro"></asp:Label>
                 <asp:TextBox ID="FiltroTextBox" CssClass="form-control" Width="480" runat="server"></asp:TextBox>
-                <asp:Button ID="SearchButton" runat="server" CssClass="btn btn-info" Text="Buscar" OnClick="SearchButton_Click" />
+                <asp:LinkButton ID="SearchButton" CssClass="btn btn-info" ValidationGroup="Buscar"  runat="server" Width="89px" OnClick="SearchButton_Click1" ><span aria-hidden="true" class="glyphicon glyphicon-search"></span>  Buscar</asp:LinkButton>
                 
             </div>  
 
             <div class ="col-md-4 text-left">
                   
             </div>
+
+
             <div class ="col-md-8 text-left">
                 <br />
-                <asp:GridView ID="UsersGridView"  runat="server" CellPadding="4" Width="480" ForeColor="#333333" GridLines="None">
-                    <AlternatingRowStyle BackColor="White" />
-                    <EditRowStyle BackColor="#2461BF" />
-                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#EFF3FB" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:GridView>
-               
-                
+                <asp:Repeater ID="UsuariosRepeater" runat="server">                    
+                    <ItemTemplate>
+                            <div class="card-panel light-blue lighten-1 white-text">
+                                <div class="card-title">
+                                    <asp:Label ID="Label3" runat="server" Text="Nombres: "></asp:Label><asp:Label ID="NombresLabel" runat="server" Text='<%# Eval("Nombres")%>'></asp:Label>
+                                </div>
+                                <div class="card-image text-center">
+                                    <asp:Image ID="imgEmployee" Width="180" class="img-circle img-responsive" ImageUrl='<%# Eval("Imagen")%>' runat="server" />
+                                </div>
+                                <div class="card-content">                
+                                    <asp:Label ID="Label4" runat="server" Text="Nombre de usuario: "></asp:Label><asp:Label ID="UserLabel" runat="server" Text='<%# Eval("NombreUsuario")%>'></asp:Label><br />
+                                    <asp:Label ID="Label5" runat="server" Text="Tipo de usuario: "></asp:Label><asp:Label ID="EmailLabel" runat="server" Text='<%# Eval("IdTipo")%>'></asp:Label><br />                                                   
+                                    <br />
+                                    <br />
+                                </div>
+                            </div>
+                    </ItemTemplate>
+                                   
+                </asp:Repeater>               
             </div>  
         </div>
+
+    <%--Botones--%>
+    <%--href="/Consultas/ReportUsers.aspx"--%>
+     <div class="row">
+            <div class ="col-md-4 text-left">
+                  
+            </div>
+            <div class ="col-md-8 text-left">
+                
+                <asp:LinkButton ID="PrintButon"  CssClass="btn btn-primary" ValidationGroup="Buscar"  runat="server" Width="89px" OnClick="PrintButon_Click" ><span aria-hidden="true" class="glyphicon glyphicon-print"></span>  Imprimir</asp:LinkButton>
+            </div>
+         </div>
+
 </asp:Content>

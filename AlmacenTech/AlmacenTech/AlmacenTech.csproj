@@ -125,8 +125,10 @@
       <DependentUpon>AlmacenTechDb.mdf</DependentUpon>
     </Content>
     <Content Include="Consultas\cBancas.aspx" />
+    <Content Include="Consultas\cEquipos.aspx" />
     <Content Include="Consultas\cUsuarios.aspx" />
     <Content Include="Consultas\ReportEquipos.aspx" />
+    <Content Include="Consultas\ReportUsers.aspx" />
     <Content Include="Controls\ButtonsWebUserControl.ascx" />
     <Content Include="Controls\SearchWebUserControl.ascx" />
     <Content Include="css\bootstrap.min.css" />
@@ -175,6 +177,13 @@
     <Compile Include="Consultas\cBancas.aspx.designer.cs">
       <DependentUpon>cBancas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\cEquipos.aspx.cs">
+      <DependentUpon>cEquipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cEquipos.aspx.designer.cs">
+      <DependentUpon>cEquipos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -188,6 +197,13 @@
     </Compile>
     <Compile Include="Consultas\ReportEquipos.aspx.designer.cs">
       <DependentUpon>ReportEquipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ReportUsers.aspx.cs">
+      <DependentUpon>ReportUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ReportUsers.aspx.designer.cs">
+      <DependentUpon>ReportUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controls\ButtonsWebUserControl.ascx.cs">
       <DependentUpon>ButtonsWebUserControl.ascx</DependentUpon>
@@ -342,6 +358,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\EquiposReport.rdlc" />
+    <EmbeddedResource Include="Reportes\UsersReport.rdlc" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
