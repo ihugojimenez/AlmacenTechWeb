@@ -23,6 +23,7 @@ namespace BLL
             if (dt.Rows.Count > 0)
             {
                 this.BancaId = IdBuscado;
+                Utilitarios.ID = IdBuscado;
                 this.NumeroBanca = int.Parse(dt.Rows[0]["NumeroBanca"].ToString());
                 this.Direccion = dt.Rows[0]["Direccion"].ToString();
                 
@@ -37,7 +38,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Update Bancas set NumeroBanca = {0}, Direccion = '{1}' Where BancaId = {2}", this.NumeroBanca, this.Direccion, this.BancaId));
+                retorno = Conexion.Ejecutar(string.Format("Update Bancas set NumeroBanca = {0}, Direccion = '{1}' Where BancaId = {2}", this.NumeroBanca, this.Direccion,Utilitarios.ID));
             }
             catch (Exception ex)
             {
@@ -54,11 +55,13 @@ namespace BLL
             try
             {
                 retorno = Conexion.Ejecutar(string.Format("delete from Bancas where BancaId= {0} ", this.BancaId));
+                retorno = true;
+                //retorno = Conexion.Ejecutar(string.Format("Delete from SalidasDetalle as SD inner join Salidas S on SD.SalidaId=S.SalidaId inner join Bancas B on S.BancaId=B.BancaId where B.BancaId = " + this.BancaId + ";" + " Delete from Bancas where BancaId =" + this.BancaId));
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                retorno = false;
+                //throw ex;
             }
             return retorno;
         }

@@ -1,7 +1,6 @@
 ﻿
 <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="rBancas.aspx.cs" Inherits="AlmacenTech.Registros.rBancas" %>
 
-<%@ Register Src="~/Controls/SearchWebUserControl.ascx" TagPrefix="uc1" TagName="SearchWebUserControl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -46,7 +45,7 @@
             <div class ="col-md-8 text-left">
                 <br />
                 <asp:Label ID="Label3" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-map-marker"></span> Direccion</asp:Label>
-                <asp:TextBox ID="DireccionTextBox" CssClass="form-control" Width="480" runat="server"></asp:TextBox>
+                <asp:TextBox ID="DireccionTextBox" CssClass="form-control text-uppercase" Width="480" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingresar la direccion" ForeColor="Red" ValidationGroup="Save">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingrese una direccion valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\., -]+" ValidationGroup="ID">*</asp:RegularExpressionValidator>    
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="DireccionTextBox" ErrorMessage="Favor ingrese una direccion valida" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ^\d_\., -]+" ValidationGroup="Save">*</asp:RegularExpressionValidator>    

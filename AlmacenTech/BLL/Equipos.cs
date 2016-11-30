@@ -51,7 +51,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Update Equipos set MarcaId = {0}, TipoEquipoId = {1}, SerialNum = '{2}', Costo= {3} Where UsuarioId = {4}", this.MarcaId, this.TipoEquipoId, this.SerialNum, this.Costo, this.EquipoId));
+                retorno = Conexion.Ejecutar(string.Format("Update Equipos set MarcaId = {0}, TipoEquipoId = {1}, SerialNum = '{2}', Costo= {3} Where EquipoId = {4}", this.MarcaId, this.TipoEquipoId, this.SerialNum, this.Costo, this.EquipoId));
             }
             catch (Exception ex)
             {

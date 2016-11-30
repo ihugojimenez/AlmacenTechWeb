@@ -42,7 +42,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Update Mensajeros set Nombres = '{0}', Cedula = '{1}', Celular = '{2}', Telefono= '{3}', Direccion = '{4}', FechaNacimiento = {5}, Sexo = '{6}'  Where MensajeroId = {7}", this.Nombres, this.Cedula, this.Celular, this.Telefono, this.Direccion, this.FechaNacimiento, this.Sexo, this.MensajeroId));
+                retorno = Conexion.Ejecutar(string.Format("Update Mensajeros set Nombres = '{0}', Cedula = '{1}', Celular = '{2}', Telefono= '{3}', Direccion = '{4}', FechaNacimiento = '{5}', Sexo = '{6}'  Where MensajeroId = {7}", this.Nombres, this.Cedula, this.Celular, this.Telefono, this.Direccion, this.FechaNacimiento, this.Sexo, Utilitarios.ID));
             }
             catch (Exception ex)
             {
@@ -78,6 +78,7 @@ namespace BLL
                 if (dt.Rows.Count > 0)
                 {
                     this.MensajeroId = IdBuscado;
+                    Utilitarios.ID = IdBuscado;
                     this.Nombres = dt.Rows[0]["Nombres"].ToString();
                     this.Cedula = dt.Rows[0]["Cedula"].ToString();
                     this.Celular = dt.Rows[0]["Celular"].ToString();

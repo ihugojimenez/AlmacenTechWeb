@@ -62,7 +62,7 @@ namespace AlmacenTech.Registros
 
             if(validarEditar())
             {
-                if (m.Insertar())
+                if (m.Editar())
                 {
                     Limpiar();
                     Utilitarios.ShowToastr(this, "Editado", "Mensaje", "success");
@@ -143,10 +143,14 @@ namespace AlmacenTech.Registros
             TelefonoTextBox.Text = "";
             DireccionTextBox.Text = "";
             SexoDropDownList.SelectedIndex = 1;
+            DiaDropDownList.SelectedIndex = 0;
+            MesDropDownList.SelectedIndex = 0;
+            AnioDropDownList.SelectedIndex = 0;
         }
 
         protected void LlenarClase(Mensajeros m)
         {
+            
             m.Nombres = NombresTextBox.Text.ToUpper() ;            
             m.FechaNacimiento = string.Concat(Fecha(), AnioDropDownList.SelectedItem.ToString());
             m.Sexo = InsertarSexo();
@@ -162,11 +166,11 @@ namespace AlmacenTech.Registros
             string dia="";
             string mes="";
 
-            if (DiaDropDownList.SelectedIndex < 10)
+            if (DiaDropDownList.SelectedIndex < 11)
                 dia = string.Concat("0", DiaDropDownList.SelectedIndex.ToString());
             else
                 dia = DiaDropDownList.SelectedIndex.ToString();
-            if (MesDropDownList.SelectedIndex < 10)
+            if (MesDropDownList.SelectedIndex < 11)
                 mes = string.Concat("0", MesDropDownList.SelectedIndex.ToString());
             else
                 mes = MesDropDownList.SelectedIndex.ToString();
@@ -191,21 +195,22 @@ namespace AlmacenTech.Registros
         {
             string dia = "";
             string mes = "";
-            string anio = " ";
+            string anio = "";
 
-            if(m.FechaNacimiento[0].ToString().Equals("0"))
+            if(m.FechaNacimiento[0].Equals('0'))
                 dia = m.FechaNacimiento[1].ToString();
             else
                 dia = string.Concat(m.FechaNacimiento[0].ToString(), m.FechaNacimiento[1]);
-            if(m.FechaNacimiento[2].ToString().Equals("0"))
+            if(m.FechaNacimiento[2].Equals('0'))
                 mes = m.FechaNacimiento[3].ToString();
             else
                 mes = string.Concat(m.FechaNacimiento[2].ToString(), m.FechaNacimiento[3].ToString());
 
-            anio = string.Concat(m.FechaNacimiento[4].ToString(), m.FechaNacimiento[5].ToString(), m.FechaNacimiento[6].ToString(), m.FechaNacimiento[7].ToString());
-            AnioDropDownList.SelectedValue = anio;
             DiaDropDownList.SelectedIndex = Utilitarios.ConvertirAentero(dia);
             MesDropDownList.SelectedIndex = Utilitarios.ConvertirAentero(mes);
+            anio = string.Concat(m.FechaNacimiento[4].ToString(), m.FechaNacimiento[5].ToString(), m.FechaNacimiento[6].ToString(), m.FechaNacimiento[7].ToString());
+            AnioDropDownList.SelectedValue = anio;
+            
 
         }
 

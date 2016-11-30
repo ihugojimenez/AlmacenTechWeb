@@ -93,6 +93,7 @@ namespace BLL
             return retorno;
         }
 
+
         public override bool Buscar(int IdBuscado)
         {
             DataTable dt = new DataTable();

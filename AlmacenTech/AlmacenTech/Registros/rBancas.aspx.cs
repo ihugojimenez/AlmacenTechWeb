@@ -27,7 +27,7 @@ namespace AlmacenTech.Registros
             }
             else
             {
-                Utilitarios.ShowToastr(this, "Sucursal no encontrada, vuelva a intentar", "Mensaje", "error");
+                Utilitarios.ShowToastr(this, "Sucursal no encontrada, o esta en uso,vuelva a intentar", "Mensaje", "error");
             }
 
         }
@@ -89,8 +89,8 @@ namespace AlmacenTech.Registros
 
         public void LlenarClase(Bancas b)
         {
-            b.NumeroBanca = Utilitarios.ConvertirAentero( NumTextBox.Text);
-            b.Direccion = DireccionTextBox.Text;
+            b.NumeroBanca = Utilitarios.ConvertirAentero(NumTextBox.Text);
+            b.Direccion = DireccionTextBox.Text.ToUpper();
 
         }
 

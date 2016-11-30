@@ -55,7 +55,7 @@ namespace AlmacenTech.Registros
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
             Equipos eq = new Equipos();
-            LlenarCampos(eq);
+            LlenarClase(eq);
             if(validarEditar())
             {
                 if (eq.Editar())
