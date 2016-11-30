@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="DefaultHome.aspx.cs" Inherits="AlmacenTech.DefaultHome" %>
+﻿<%@ Page Title="" EnableEventValidation="false" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="DefaultHome.aspx.cs" Inherits="AlmacenTech.DefaultHome" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -139,7 +139,7 @@
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
                                 <%--<button type="submit" class="btn btn-xl">Enviar mensaje</button>--%>
-                                <asp:Button ID="SendButton" Width="280" CssClass="btn btn-info" runat="server" Text="Enviar" />
+                                <asp:Button ID="SendButton" Width="280" CssClass="btn btn-info" runat="server" Text="Enviar" OnClick="SendButton_Click" />
                             </div>
                         </div>
                     </form>
