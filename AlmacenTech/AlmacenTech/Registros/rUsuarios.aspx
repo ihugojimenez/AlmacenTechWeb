@@ -45,6 +45,7 @@
                 <asp:Label ID="Label7" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-picture"></span> Imagen</asp:Label>
                 <br />
                 <asp:FileUpload ID="PhotoFileUpload"  runat="server" />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" Text="*" ControlToValidate="PhotoFileUpload" ForeColor="Red" ValidationGroup="Save" ErrorMessage="Favor inserte una imagen"></asp:RequiredFieldValidator>
             </div>
             
 

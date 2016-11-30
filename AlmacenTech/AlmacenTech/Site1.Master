@@ -119,6 +119,7 @@
                             <li><a href="/Consultas/cEquipos.aspx">Equipos</a></li>
                             <li><a href="/Consultas/cMensajeros.aspx">Mensajeros</a></li>
                             <li><a href="/Consultas/cSalidas.aspx">Salidas</a></li>
+                                <li><a href="/Consultas/cDevoluciones.aspx">Devoluciones</a></li>
                         </ul>
                         <% }
                         else { %>
@@ -127,6 +128,7 @@
                             <li><a href="/Consultas/cEquipos.aspx">Equipos</a></li>
                             <li><a href="/Consultas/cMensajeros.aspx">Mensajeros</a></li>
                             <li><a href="/Consultas/cSalidas.aspx">Salidas</a></li>
+                                <li><a href="/Consultas/cDevoluciones.aspx">Devoluciones</a></li>
                         </ul>
                         <% } %>
                       </li>

@@ -161,6 +161,7 @@
     <Content Include="Registros\rUsuarioNivel1.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Boostrap\toastr.min.css" />
+    <Content Include="Scrips\QueryTables.sql" />
     <Content Include="Sesion\Perfil.aspx" />
     <Content Include="Sesion\Sing-in.aspx" />
     <Content Include="Sesion\Sing-out.aspx" />

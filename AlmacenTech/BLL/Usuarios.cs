@@ -31,6 +31,7 @@ namespace BLL
                 if (dt.Rows.Count > 0)
                 {
                     this.UsuarioId = IdBuscado;
+                    Utilitarios.ID = IdBuscado;
                     this.NombreUsuario = dt.Rows[0]["NombreUsuario"].ToString();
                     this.Contraseña = dt.Rows[0]["Contraseña"].ToString();
                     this.Nombres = dt.Rows[0]["Nombres"].ToString();
@@ -53,7 +54,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Update Usuarios set NombreUsuario = '{0}', Contraseña = '{1}', Nombres = '{2}', IdTipo= {3} Where UsuarioId = {4}", this.NombreUsuario, this.Contraseña, this.Nombres ,this.IdTipo, this.UsuarioId));
+                retorno = Conexion.Ejecutar(string.Format("Update Usuarios set NombreUsuario = '{0}', Contraseña = '{1}', Nombres = '{2}', IdTipo= {3} Where UsuarioId = {4}", this.NombreUsuario, this.Contraseña, this.Nombres ,this.IdTipo, Utilitarios.ID));
             }
             catch (Exception ex)
             {

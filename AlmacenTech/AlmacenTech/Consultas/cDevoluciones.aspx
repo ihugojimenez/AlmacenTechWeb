@@ -16,7 +16,7 @@
             <div class ="col-md-8 text-left">
                 <asp:Label ID="Label1" runat="server" Text="Filtrar por"></asp:Label>
                 
-                <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" Width="480" runat="server"  AutoPostBack="True">
+                <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" Width="480" runat="server"  AutoPostBack="True" OnSelectedIndexChanged="FiltroDropDownList_SelectedIndexChanged1">
                     <asp:ListItem>Devolucion ID</asp:ListItem>
                             <asp:ListItem>Banca</asp:ListItem>
                             <asp:ListItem>Mensajero</asp:ListItem>
@@ -33,7 +33,7 @@
                 <asp:DropDownList ID="AuxDropDownList" Visible="false" CssClass="form-control" Width="480" runat="server" OnSelectedIndexChanged="AuxDropDownList_SelectedIndexChanged" ></asp:DropDownList>
                 <asp:TextBox ID="FiltroTextBox" CssClass="form-control" Width="480" runat="server"></asp:TextBox>
                 <asp:LinkButton ID="SearchButton" CssClass="btn btn-info" ValidationGroup="Buscar"  runat="server" Width="89px" OnClick="SearchButton_Click" ><span aria-hidden="true" class="glyphicon glyphicon-search"></span>  Buscar</asp:LinkButton>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" Text="*" ControlToValidate="FiltroTextBox" ForeColor="Red" ValidationGroup="ID" ErrorMessage="Favor buscar el Usuario"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" Text="*" ControlToValidate="FiltroTextBox" ForeColor="Red" ValidationGroup="Buscar" ErrorMessage="Favor ingresar campo de filtro"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="FiltroTextBox" ErrorMessage="Favor ingresar numero Id valido" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Buscar">*</asp:RegularExpressionValidator>
                 
             </div>  

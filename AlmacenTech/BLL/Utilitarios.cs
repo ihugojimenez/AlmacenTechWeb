@@ -20,6 +20,8 @@ namespace BLL
         public static string Img { get; set; }
         public static int Tipo { get; set; }
         public static int ID { get; set; }
+        public static int UsuarioID { get; set; }
+
 
 
         public static void ShowToastr(this Page page, string message, string title, string type = "info")

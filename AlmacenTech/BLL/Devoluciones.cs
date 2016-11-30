@@ -34,7 +34,7 @@ namespace BLL
 
             try
             {
-                identity = con.ObtenerValor(string.Format("Insert into Devoluciones(UsuarioId, MensajeroId, BancaId, FechaDevolucion) Values({0}, {1}, {2}, '{3}'); Select @@Identity", 1, this.MensajeroId, this.BancaId, this.FechaDevolucion));
+                identity = con.ObtenerValor(string.Format("Insert into Devoluciones(UsuarioId, MensajeroId, BancaId, FechaDevolucion) Values({0}, {1}, {2}, '{3}'); Select @@Identity", Utilitarios.UsuarioID, this.MensajeroId, this.BancaId, this.FechaDevolucion));
 
                 int.TryParse(identity.ToString(), out aux);
 
@@ -58,13 +58,13 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = con.Ejecutar(String.Format("Update Devoluciones set UsuarioId={0},  MensajeroId = {1}, BancaId = {2}, FechaSalida = '{3}' Where DevolucionId = {4}", 1, this.MensajeroId, this.BancaId, this.FechaDevolucion, this.DevolucionId));
+                retorno = con.Ejecutar(String.Format("Update Devoluciones set UsuarioId={0},  MensajeroId = {1}, BancaId = {2}, FechaDevolucion = '{3}' Where DevolucionId = {4}", Utilitarios.UsuarioID, this.MensajeroId, this.BancaId, this.FechaDevolucion, this.DevolucionId));
                 if (retorno)
                 {
                     con.Ejecutar(String.Format("Delete from DevolucionesDetalle Where DevolucionId= {0}", this.DevolucionId));
                     foreach (DevolucionesDetalle var in this.Detalle)
                     {
-                        con.Ejecutar(string.Format("Insert into DevolucionesDetalle(DevolucionId, EquipoId Values({0}, {1})", this.DevolucionId, var.EquipoId));
+                        con.Ejecutar(string.Format("Insert into DevolucionesDetalle(DevolucionId, EquipoId) Values({0}, {1})", this.DevolucionId, var.EquipoId));
                     }
                 }
             }
@@ -105,7 +105,7 @@ namespace BLL
                     this.UsuarioId = Utilitarios.ConvertirAentero(dt.Rows[0]["UsuarioId"].ToString());
                     this.MensajeroId = Utilitarios.ConvertirAentero(dt.Rows[0]["MensajeroId"].ToString());
                     this.BancaId = Utilitarios.ConvertirAentero(dt.Rows[0]["BancaId"].ToString());
-                    this.FechaDevolucion = dt.Rows[0]["FechaSalida"].ToString();
+                    this.FechaDevolucion = dt.Rows[0]["FechaDevolucion"].ToString();
 
                 }
 
@@ -127,7 +127,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
 
-            return conexion.ObtenerDatos(string.Format("select D.DevoplucionId, FechaDevolucion, B.NumeroBanca, M.Nombres, TE.Detalle + '   '+ ME.Detalle +  '   ' + EQ.SerialNum as Detalles" + " from Devoluciones as D inner join DevolcionesDetalle DD on D.DevolucionId=DD.DevolucionId inner join Equipos EQ on DD.EquipoId= EQ.EquipoId inner join Mensajeros M on D.MensajeroId=M.MensajeroId inner join Bancas B on D.BancaId=B.BancaId inner join TiposEquipos TE on EQ.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on EQ.MarcaId=ME.MarcaId where " + Condicion));
+            return conexion.ObtenerDatos(string.Format("select D.DevolucionId, FechaDevolucion, B.NumeroBanca, M.Nombres, TE.Detalle + '   '+ ME.Detalle +  '   ' + EQ.SerialNum as Detalles" + " from Devoluciones as D inner join DevolucionesDetalle DD on D.DevolucionId=DD.DevolucionId inner join Equipos EQ on DD.EquipoId= EQ.EquipoId inner join Mensajeros M on D.MensajeroId=M.MensajeroId inner join Bancas B on D.BancaId=B.BancaId inner join TiposEquipos TE on EQ.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on EQ.MarcaId=ME.MarcaId where " + Condicion));
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)

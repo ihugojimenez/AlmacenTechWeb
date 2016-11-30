@@ -36,7 +36,7 @@ namespace BLL
 
             try
             {
-                identity = con.ObtenerValor(string.Format("Insert into Salidas(UsuarioId, TipoSalidaId, BancaId, MensajeroId, FechaSalida) Values({0}, {1}, {2}, {3}, '{4}'); Select @@Identity", 1, this.TipoSalidaId, this.BancaId, this.MensajeroId, this.FechaSalida));
+                identity = con.ObtenerValor(string.Format("Insert into Salidas(UsuarioId, TipoSalidaId, BancaId, MensajeroId, FechaSalida) Values({0}, {1}, {2}, {3}, '{4}'); Select @@Identity", Utilitarios.UsuarioID, this.TipoSalidaId, this.BancaId, this.MensajeroId, this.FechaSalida));
 
                 int.TryParse(identity.ToString(), out aux);
 
@@ -46,7 +46,7 @@ namespace BLL
                 }
                 retorno = true;
             }
-            catch
+            catch(Exception ex)
             {
                 //throw ex;
                 retorno = false;
@@ -55,18 +55,21 @@ namespace BLL
             return retorno;
         }
 
+
+
+
         public override bool Editar()
         {
             bool retorno = false;
             try
             {
-                retorno = con.Ejecutar(String.Format("Update Salidas set UsuarioId={0}, TipoSalidaId ={1}, BancaId = {2}, MensajeroId = {3}, FechaSalida = '{4}' Where SalidaId = {5}", 1, this.SalidaId, this.BancaId, this.MensajeroId, this.FechaSalida, this.SalidaId));
+                retorno = con.Ejecutar(String.Format("Update Salidas set UsuarioId={0}, TipoSalidaId ={1}, BancaId = {2}, MensajeroId = {3}, FechaSalida = '{4}' Where SalidaId = {5}", Utilitarios.UsuarioID, this.TipoSalidaId, this.BancaId, this.MensajeroId, this.FechaSalida, Utilitarios.ID));
                 if (retorno)
                 {
-                    con.Ejecutar(String.Format("Delete from SalidasDetalle Where SalidaId= {0}", this.SalidaId));
+                    con.Ejecutar(String.Format("Delete from SalidasDetalle Where SalidaId= {0}", Utilitarios.ID));
                     foreach (SalidasDetalle var in this.Detalle)
                     {
-                        con.Ejecutar(string.Format("Insert into SalidasDetalle(SalidaId, EquipoId Values({0}, {1})", this.SalidaId, var.EquipoId));
+                        con.Ejecutar(string.Format("Insert into SalidasDetalle(SalidaId, EquipoId) Values({0}, {1})", Utilitarios.ID, var.EquipoId));
                     }
                 }
             }
@@ -105,6 +108,7 @@ namespace BLL
                 if (dt.Rows.Count > 0)
                 {
                     this.SalidaId = IdBuscado;
+                    Utilitarios.ID = IdBuscado;
                     this.UsuarioId = Utilitarios.ConvertirAentero(dt.Rows[0]["UsuarioId"].ToString());
                     this.TipoSalidaId = Utilitarios.ConvertirAentero(dt.Rows[0]["TipoSalidaId"].ToString());
                     this.BancaId = Utilitarios.ConvertirAentero(dt.Rows[0]["BancaId"].ToString());

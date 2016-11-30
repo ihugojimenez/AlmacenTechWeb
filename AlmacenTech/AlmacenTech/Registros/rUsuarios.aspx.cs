@@ -52,6 +52,7 @@ namespace AlmacenTech.Registros
         protected void SaveButton_Click1(object sender, EventArgs e)
         {
             Usuarios u = new Usuarios();
+
             LlenarClase(u);
             if (Validar())
                 if (u.Insertar())
@@ -69,7 +70,10 @@ namespace AlmacenTech.Registros
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
             Usuarios u = new Usuarios();
-            LlenarClase(u);
+
+            if (ValidarFoto())
+                LlenarClase(u);
+
             if (validarEditar())
             {
                 if(u.Editar())
@@ -122,7 +126,7 @@ namespace AlmacenTech.Registros
             UserNameTextBox.Text = "";
             PassTextBox.Text = "";
             rPassTextBox.Text = "";
-            TipoUsersDropDownList.SelectedIndex = 1;
+            TipoUsersDropDownList.SelectedIndex = 0;
         }
 
         public void LlenarClase(Usuarios u)
@@ -157,10 +161,23 @@ namespace AlmacenTech.Registros
 
         }
 
+        public bool ValidarFoto()
+        {
+            bool yes = true;
+            if (!PhotoFileUpload.HasFile)
+            {
+                UpdateButton.ValidationGroup = "Save";
+                ValidationSummary3.Visible = true;
+                yes = false;
+            }
+
+            return yes;
+        }
+
         public bool validarEditar()
         {
             bool yes = true;
-            if(NamesTextBox.Text.Equals("") || PassTextBox.Text.Equals("") || rPassTextBox.Text.Equals("") || UserNameTextBox.Text.Equals(""))
+            if(NamesTextBox.Text.Equals("") || PassTextBox.Text.Equals("") || rPassTextBox.Text.Equals("") || UserNameTextBox.Text.Equals("") || !PhotoFileUpload.HasFile)
             {
                 UpdateButton.ValidationGroup = "Save";
                 ValidationSummary3.Visible = true;

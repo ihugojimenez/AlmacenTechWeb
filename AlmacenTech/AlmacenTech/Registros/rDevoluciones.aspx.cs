@@ -47,16 +47,21 @@ namespace AlmacenTech.Registros
         protected void SaveButton_Click1(object sender, EventArgs e)
         {
             Devoluciones d = new Devoluciones();
-            LlenarClase(d);
-            if (d.Insertar())
+
+            if(ValidarLlenar())
             {
-                Limpiar();
-                Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
+                LlenarClase(d);
+                if (d.Insertar())
+                {
+                    Limpiar();
+                    Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
+                }
+                else
+                {
+                    Utilitarios.ShowToastr(this, "Error al intentar Guardar, Vuelva a intentarlo,si el problema persiste, contacte a soporte tecnico", "Mensaje", "error");
+                }
             }
-            else
-            {
-                Utilitarios.ShowToastr(this, "Error al intentar Guardar, Vuelva a intentarlo,si el problema persiste, contacte a soporte tecnico", "Mensaje", "error");
-            }
+            
         }
 
         protected void UpdateButton_Click1(object sender, EventArgs e)
@@ -167,6 +172,46 @@ namespace AlmacenTech.Registros
 
         }
 
+        protected bool ValidarLlenar()
+        {
+            bool yes = true;
+            if (EquiposGridView.Rows.Count == 0)
+            {
+                Utilitarios.ShowToastr(this, "Favor agregar Equipos", "Alerta", "warning");
+                yes = false;
+
+            }
+            if (MensajerosDropDownList.Items.Count <= 0)
+            {
+                Utilitarios.ShowToastr(this, "Favor ingersar Mensajero", "Alerta", "warning");
+                yes = false;
+            }
+            if (BancasDropDownList.Items.Count <= 0)
+            {
+                Utilitarios.ShowToastr(this, "Favor ingersar Banca", "Alerta", "warning");
+                yes = false;
+            }
+
+            return yes;
+        }
+
+        protected void ValidarCarga()
+        {
+
+            if (MensajerosDropDownList.Items.Count <= 0)
+            {
+                Utilitarios.ShowToastr(this, "No hay Mensajeros registrados en su base de datos", "Alerta", "info");
+            }
+            if (EquiposDropDownList.Items.Count <= 0)
+            {
+                Utilitarios.ShowToastr(this, "No hay equipos fuera de existencia", "Alerta", "info");
+            }
+            if (BancasDropDownList.Items.Count <= 0)
+            {
+                Utilitarios.ShowToastr(this, "No hay Bancas registradas en su base de datos", "Alerta", "info");
+            }
+        }
+
         protected void Limpiar()
         {
             IdTextBox.Text = "";
@@ -211,13 +256,14 @@ namespace AlmacenTech.Registros
             MensajerosDropDownList.DataTextField = "Nombres";
             MensajerosDropDownList.DataBind();
 
-            EquiposDropDownList.DataSource = eq.Listadodts("Estado = 1");
+            EquiposDropDownList.DataSource = eq.Listadodts("Estadoid = 2");
             EquiposDropDownList.DataValueField = "EquipoId";
             EquiposDropDownList.DataTextField = "Aux";
             EquiposDropDownList.DataBind();
 
             dt.Columns.AddRange(new DataColumn[4] { new DataColumn("Equipo ID"), new DataColumn("Tipo de Equipo"), new DataColumn("Marca"), new DataColumn("Costo") });
             ViewState["Detalle"] = dt;
+            ValidarCarga();
 
         }
     }

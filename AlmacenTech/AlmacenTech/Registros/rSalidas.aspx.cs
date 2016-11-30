@@ -21,7 +21,17 @@ namespace AlmacenTech.Registros
 
         protected void SearchButton_Click1(object sender, EventArgs e)
         {
-            LlenaCampos(Utilitarios.ConvertirAentero(IdTextBox.Text));
+            Salidas s = new Salidas();
+            if (s.Buscar(Utilitarios.ConvertirAentero(IdTextBox.Text)))
+            {
+                LlenaCampos(s);
+
+            }
+            else
+            {
+                Utilitarios.ShowToastr(this, "Salida no encontrada, vuelva a intentar", "Mensaje", "error");
+            }
+            
         }
 
 
@@ -38,12 +48,23 @@ namespace AlmacenTech.Registros
         protected void SaveButton_Click1(object sender, EventArgs e)
         {
             Salidas s = new Salidas();
-            LlenarClase(s);
-            if (s.Insertar())
+
+            if(ValidarLlenar())
             {
-                Limpiar();
-                Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
+                LlenarClase(s);
+
+                if (s.Insertar())
+                {
+                    Limpiar();
+                    Utilitarios.ShowToastr(this, "Registrado", "Mensaje", "success");
+                }
+                else
+                {
+                    Utilitarios.ShowToastr(this, "Error al intentar registrar", "Mensaje", "error");
+                    RegresarEstado(s);
+                }
             }
+
         }
 
         protected void UpdateButton_Click(object sender, EventArgs e)
@@ -71,21 +92,24 @@ namespace AlmacenTech.Registros
                 Utilitarios.ShowToastr(this, "Eliminado", "Mensaje", "success");
                 Limpiar();
             }
+            else
+            {
+                Utilitarios.ShowToastr(this, "Error la eliminar, vuelva a intentar", "Mensaje", "error");
+            }
+
         }
 
-        protected void LlenaCampos(int id)
+        protected void LlenaCampos(Salidas s)
         {
-            DataTable dt = new DataTable();
-            Salidas s = new Salidas();  
+            DataTable dt = new DataTable(); 
             Equipos eq = new Equipos();
             TiposEquipos te = new TiposEquipos();
             MarcaEquipos me = new MarcaEquipos();
-            s.Buscar(id);
-            IdTextBox.Text = id.ToString();
+            IdTextBox.Text = s.SalidaId.ToString();
             TipoDropDownList.SelectedValue = s.TipoSalidaId.ToString();
             BancasDropDownList.SelectedValue = s.BancaId.ToString();
             MensajerosDropDownList.SelectedValue = s.MensajeroId.ToString();
-            FechaCargar.Text = "Fecha de Saldia: " + s.FechaSalida;
+            FechaCargar.Text = "Fecha de Salida: " + s.FechaSalida;
             FechaCargar.Visible = true;
 
             
@@ -128,6 +152,46 @@ namespace AlmacenTech.Registros
             
         }
 
+        protected bool ValidarLlenar()
+        {
+            bool yes = true;
+            if (EquiposGridView.Rows.Count == 0)
+            {
+                Utilitarios.ShowToastr(this, "Favor agregar Equipos", "Alerta", "warning");
+                yes = false;
+                
+            }
+            if (MensajerosDropDownList.Items.Count <= 0)
+            {
+                Utilitarios.ShowToastr(this, "Favor ingersar Mensajero", "Alerta", "warning");
+                yes = false;
+            }
+            if (BancasDropDownList.Items.Count <= 0)
+            {
+                Utilitarios.ShowToastr(this, "Favor ingersar Banca", "Alerta", "warning");
+                yes = false;
+            }
+
+            return yes;
+        }
+
+        protected void ValidarCarga()
+        {
+
+            if(MensajerosDropDownList.Items.Count<=0)
+            {
+                Utilitarios.ShowToastr(this, "No hay Mensajeros registrados en su base de datos", "Alerta", "info");
+            }
+            if (EquiposDropDownList.Items.Count <= 0)
+            {
+                Utilitarios.ShowToastr(this, "No hay equipos registrados en su base de datos", "Alerta", "info");
+            }
+            if (BancasDropDownList.Items.Count <= 0)
+            {
+                Utilitarios.ShowToastr(this, "No hay Bancas registradas en su base de datos", "Alerta", "info");
+            }
+        }
+
         protected void Cargar()
         {
             Equipos eq = new Equipos();
@@ -161,6 +225,7 @@ namespace AlmacenTech.Registros
 
             dt.Columns.AddRange(new DataColumn[4] { new DataColumn("Equipo ID"), new DataColumn("Tipo de Equipo"), new DataColumn("Marca"), new DataColumn("Costo") });
             ViewState["Detalle"] = dt;
+            ValidarCarga();
 
         }
 
@@ -220,7 +285,7 @@ namespace AlmacenTech.Registros
         {
             Equipos eq = new Equipos();
             
-            s.UsuarioId = 1;
+            s.UsuarioId = 2;
             s.TipoSalidaId = Utilitarios.ConvertirAentero(TipoDropDownList.SelectedValue);
             s.BancaId = Utilitarios.ConvertirAentero(BancasDropDownList.SelectedValue);
             s.MensajeroId = Utilitarios.ConvertirAentero(MensajerosDropDownList.SelectedValue);

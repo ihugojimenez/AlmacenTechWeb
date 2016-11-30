@@ -19,7 +19,7 @@
             </div>
             
             <div class ="col-md-6 text-right">
-                <asp:Label ID="Label4" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span>  </asp:Label><asp:Label ID="FechaLabel" runat="server"></asp:Label>
+                <asp:Label ID="Label4" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-calendar"></span>  </asp:Label><asp:Label ID="FechaLabel" Font-Size="Medium" runat="server"></asp:Label>
             </div> 
 
             <div class ="col-md-2 text-right">
@@ -91,7 +91,6 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
-                
                 
                
             </div>

@@ -36,6 +36,7 @@ namespace AlmacenTech.Sesion
                 Utilitarios.Pass = u.Contraseña;
                 Utilitarios.Img = u.Imagen;
                 Utilitarios.Tipo = u.IdTipo;
+                Utilitarios.UsuarioID = u.UsuarioId;
                 yes = true;
             }
             else

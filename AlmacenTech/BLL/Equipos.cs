@@ -28,6 +28,7 @@ namespace BLL
                 if (dt.Rows.Count > 0)
                 {
                     this.EquipoId = IdBuscado;
+                    Utilitarios.ID = IdBuscado;
                     this.MarcaId = int.Parse(dt.Rows[0]["MarcaId"].ToString());
                     this.TipoEquipoId = int.Parse(dt.Rows[0]["TipoEquipoId"].ToString());
                     this.SerialNum = dt.Rows[0]["SerialNum"].ToString();
@@ -51,7 +52,7 @@ namespace BLL
 
             try
             {
-                retorno = Conexion.Ejecutar(string.Format("Update Equipos set MarcaId = {0}, TipoEquipoId = {1}, SerialNum = '{2}', Costo= {3} Where EquipoId = {4}", this.MarcaId, this.TipoEquipoId, this.SerialNum, this.Costo, this.EquipoId));
+                retorno = Conexion.Ejecutar(string.Format("Update Equipos set MarcaId = {0}, TipoEquipoId = {1}, SerialNum = '{2}', Costo= {3} Where EquipoId = {4}", this.MarcaId, this.TipoEquipoId, this.SerialNum, this.Costo, Utilitarios.ID));
             }
             catch (Exception ex)
             {

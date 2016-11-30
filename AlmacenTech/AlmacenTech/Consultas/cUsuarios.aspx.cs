@@ -50,7 +50,7 @@ namespace AlmacenTech.Consultas
             if (FiltroDropDownList.SelectedIndex == 2)
                 op = "NombreUsuario";
             if (FiltroDropDownList.SelectedIndex == 3)
-                op = "IdTipo";
+                op = "TU.Detalle";
             return op;
 
         }
@@ -67,7 +67,7 @@ namespace AlmacenTech.Consultas
         protected void PrintButon_Click(object sender, EventArgs e)
         {
             Utilitarios.Data = Filtrar();
-            Utilitarios.Set = "UsuariosDataSet";
+            Utilitarios.Set = "UsersDataSet";
             //Response.Write("<script type='text/javascript'>detailedresults=window.open('ReportUsers.aspx');</script>");
             Response.Write("<script type='text/javascript'>detailedresults=window.open('ReportVisor.aspx');</script>");
         }

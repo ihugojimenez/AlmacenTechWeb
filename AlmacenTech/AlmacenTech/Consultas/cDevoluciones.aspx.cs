@@ -12,12 +12,19 @@ namespace AlmacenTech.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+                Cargar();
         }
 
         protected void SearchButton_Click(object sender, EventArgs e)
         {
-
+            
+            
+            if (Utilitarios.Operacion.Equals("D.DevolucionId = "))
+                Utilitarios.Data = Utilitarios.Operacion + Utilitarios.ConvertirAentero(FiltroTextBox.Text);
+            else
+                Utilitarios.Data = Utilitarios.Operacion + Utilitarios.ConvertirAentero(AuxDropDownList.SelectedValue);
+            Filtrar();
         }
 
         protected void PrintButon_Click(object sender, EventArgs e)
@@ -56,9 +63,10 @@ namespace AlmacenTech.Consultas
             Utilitarios.Data = "1=1";
         }
 
-        protected void FiltroDropDownList_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        
 
+        protected void FiltroDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
+        {
             if (FiltroDropDownList.SelectedIndex == 0)
             {
                 AuxDropDownList.Visible = false;
@@ -71,35 +79,30 @@ namespace AlmacenTech.Consultas
             }
             if (FiltroDropDownList.SelectedIndex == 1)
             {
-
-                AuxDropDownList.Visible = false;
-                FiltroTextBox.Visible = true;
-                Utilitarios.Operacion = "B.NumeroBanca ";
+                Bancas b = new Bancas();
+                AuxDropDownList.DataSource = b.Listado("*", "1=1", "");
+                AuxDropDownList.DataTextField = "NumeroBanca";
+                AuxDropDownList.DataValueField = "BancaId";
+                AuxDropDownList.DataBind();
+                FiltroTextBox.Visible = false;
+                AuxDropDownList.Visible = true;
+                Utilitarios.Operacion = "D.BancaId = ";
 
 
 
             }
             if (FiltroDropDownList.SelectedIndex == 2)
             {
-
-                AuxDropDownList.Visible = false;
-                FiltroTextBox.Visible = true;
-                Utilitarios.Operacion = "M.Nombres = ";
+                Mensajeros M = new Mensajeros();
+                AuxDropDownList.DataSource = M.Listado("*", "1=1", "");
+                AuxDropDownList.DataTextField = "Nombres";
+                AuxDropDownList.DataValueField = "MensajeroId";
+                AuxDropDownList.DataBind();
+                FiltroTextBox.Visible = false;
+                AuxDropDownList.Visible = true;
+                Utilitarios.Operacion = "D.MensajeroId = ";
 
             }
-
-            //if (FiltroDropDownList.SelectedIndex == 3)
-            //{
-            //    TiposEquipos te = new TiposEquipos();
-            //    AuxDropDownList.DataSource = te.Listado("*", "1=1", "");
-            //    AuxDropDownList.DataTextField = "Detalle";
-            //    AuxDropDownList.DataValueField = "TipoEquipoId";
-            //    AuxDropDownList.DataBind();
-            //    FiltroTextBox.Visible = false;
-            //    AuxDropDownList.Visible = true;
-            //    Utilitarios.Operacion = "EQ.TipoEquipoId = ";
-
-            //}
         }
     }
 }
