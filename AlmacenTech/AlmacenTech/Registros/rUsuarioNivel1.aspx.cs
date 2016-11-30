@@ -13,7 +13,8 @@ namespace AlmacenTech.Registros
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+                NamesTextBox.Focus();
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)

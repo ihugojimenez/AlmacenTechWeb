@@ -125,6 +125,7 @@
       <DependentUpon>AlmacenTechDb.mdf</DependentUpon>
     </Content>
     <Content Include="Consultas\cBancas.aspx" />
+    <Content Include="Consultas\cDevoluciones.aspx" />
     <Content Include="Consultas\cEquipos.aspx" />
     <Content Include="Consultas\cMensajeros.aspx" />
     <Content Include="Consultas\cSalidas.aspx" />
@@ -177,6 +178,13 @@
     </Compile>
     <Compile Include="Consultas\cBancas.aspx.designer.cs">
       <DependentUpon>cBancas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cDevoluciones.aspx.cs">
+      <DependentUpon>cDevoluciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cDevoluciones.aspx.designer.cs">
+      <DependentUpon>cDevoluciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cEquipos.aspx.cs">
       <DependentUpon>cEquipos.aspx</DependentUpon>

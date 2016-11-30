@@ -123,6 +123,13 @@ namespace BLL
             return dt.Rows.Count > 0;
         }
 
+        public DataTable ListadoConsultas(string Condicion)
+        {
+            ConexionDb conexion = new ConexionDb();
+
+            return conexion.ObtenerDatos(string.Format("select D.DevoplucionId, FechaDevolucion, B.NumeroBanca, M.Nombres, TE.Detalle + '   '+ ME.Detalle +  '   ' + EQ.SerialNum as Detalles" + " from Devoluciones as D inner join DevolcionesDetalle DD on D.DevolucionId=DD.DevolucionId inner join Equipos EQ on DD.EquipoId= EQ.EquipoId inner join Mensajeros M on D.MensajeroId=M.MensajeroId inner join Bancas B on D.BancaId=B.BancaId inner join TiposEquipos TE on EQ.TipoEquipoId=TE.TipoEquipoId inner join MarcaEquipos ME on EQ.MarcaId=ME.MarcaId where " + Condicion));
+        }
+
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
             throw new NotImplementedException();
