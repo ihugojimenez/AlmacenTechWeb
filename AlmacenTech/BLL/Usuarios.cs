@@ -127,18 +127,27 @@ namespace BLL
         public bool BuscarDuplicado(string aux)
         {
             
-            DataTable datatable = new DataTable();
+            DataTable dt = new DataTable();
             try
             {
-                datatable = Conexion.ObtenerDatos(string.Format("select * from Usuarios" + " where NombreUsuario" + "= '" + aux + "'"));
-
+                dt = Conexion.ObtenerDatos(string.Format("select * from Usuarios" + " where NombreUsuario" + "= '" + aux + "'"));
+                if (dt.Rows.Count > 0)
+                {
+                    this.UsuarioId = Utilitarios.ConvertirAentero(dt.Rows[0]["UsuarioId"].ToString()); ;
+                    this.NombreUsuario = dt.Rows[0]["NombreUsuario"].ToString();
+                    this.Contraseña = dt.Rows[0]["Contraseña"].ToString();
+                    this.Nombres = dt.Rows[0]["Nombres"].ToString();
+                    this.IdTipo = Utilitarios.ConvertirAentero(dt.Rows[0]["IdTipo"].ToString());
+                    this.Imagen = dt.Rows[0]["Imagen"].ToString();
+                }
             }
             catch (Exception exc)
             {
 
                 throw exc;
             }
-            return datatable.Rows.Count > 0;
+
+            return dt.Rows.Count > 0;
 
         }
 

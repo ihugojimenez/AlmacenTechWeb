@@ -160,7 +160,9 @@
     <Content Include="Registros\rUsuarioNivel1.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Boostrap\toastr.min.css" />
+    <Content Include="Sesion\Perfil.aspx" />
     <Content Include="Sesion\Sing-in.aspx" />
+    <Content Include="Sesion\Sing-out.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -294,12 +296,26 @@
     <Compile Include="Registros\rUsuarios.aspx.designer.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Sesion\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sesion\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Sesion\Sing-in.aspx.cs">
       <DependentUpon>Sing-in.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Sesion\Sing-in.aspx.designer.cs">
       <DependentUpon>Sing-in.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sesion\Sing-out.aspx.cs">
+      <DependentUpon>Sing-out.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sesion\Sing-out.aspx.designer.cs">
+      <DependentUpon>Sing-out.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>

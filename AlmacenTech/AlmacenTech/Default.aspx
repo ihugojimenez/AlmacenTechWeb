@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
     
-    <!-- Header -->
+   <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">
         <div class="container">
@@ -20,10 +20,10 @@
                                 <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                             </li>
                             <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                                <a href="https://www.facebook.com/profile.php?id=100011881230696" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
                             </li>
                             <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                                <a href="https://github.com/ihugojimenez" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                             </li>
                         </ul>
                     </div>
@@ -60,7 +60,7 @@
     </div>
     <!-- /.content-section-a -->
 
-    <div class="content-section-b">
+   <%-- <div class="content-section-b">
 
         <div class="container">
 
@@ -77,23 +77,23 @@
             </div>
 
         </div>
-        <!-- /.container -->
+        
 
-    </div>
+    </div>--%>
     <!-- /.content-section-b -->
-
+    <%--class="col-lg-5 col-sm-6" class="col-lg-5 col-lg-offset-2 col-sm-6"--%>
     <div class="content-section-a">
 
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-5 col-sm-6">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                     <hr class="section-heading-spacer"/>
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br/>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                    <h2 class="section-heading">Consulta tu almacen<br/>no importa desde que dispositivo</h2>
+                    <p class="lead">Mantente actualizado del destino de tus equipos, cual es su disponibilidad, estado, costo, entre otras cosas.</p>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <img class="img-responsive" src="img/phones.png" alt=""/>
                 </div>
             </div>
@@ -140,7 +140,7 @@
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
                                 <%--<button type="submit" class="btn btn-xl">Enviar mensaje</button>--%>
-                                <asp:Button ID="SendButton" Width="280" CssClass="btn btn-info" runat="server" Text="Enviar" />
+                                <%--<asp:Button ID="SendButton" Width="280" CssClass="btn btn-info" runat="server" Text="Enviar" OnClick="SendButton_Click" />--%>
                             </div>
                         </div>
                     </form>

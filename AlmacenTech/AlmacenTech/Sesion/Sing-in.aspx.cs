@@ -12,13 +12,14 @@ namespace AlmacenTech.Sesion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+                UserNameTextBox.Focus();
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            
-            //if (ValidarUsuario())
+
+            if (ValidarUsuario())
                 Response.Redirect("~/Default.aspx");
         }
 
@@ -29,7 +30,12 @@ namespace AlmacenTech.Sesion
             bool yes = false;
             if (u.Listado("*", " NombreUsuario = '" + UserNameTextBox.Text + "'", "").Rows.Count > 0 && u.Listado("*", " Contraseña = '" + PassTextBox.Text + "'", "").Rows.Count > 0)
             {
-
+                u.BuscarDuplicado(UserNameTextBox.Text);
+                Utilitarios.Names = u.Nombres;
+                Utilitarios.UserName = u.NombreUsuario;
+                Utilitarios.Pass = u.Contraseña;
+                Utilitarios.Img = u.Imagen;
+                Utilitarios.Tipo = u.IdTipo;
                 yes = true;
             }
             else

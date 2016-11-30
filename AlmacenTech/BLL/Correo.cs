@@ -24,9 +24,11 @@ namespace BLL
              * Direccion de Correo (Gmail o Hotmail)
              * y Contrasena correspondiente
              */
+            server.DeliveryMethod = SmtpDeliveryMethod.Network;
+            server.EnableSsl = true;
             server.UseDefaultCredentials = false;
             server.Credentials = new System.Net.NetworkCredential("hugofernando809@gmail.com", "Fefo54321");
-            server.EnableSsl = true;
+            
         }
 
         public void MandarCorreo(MailMessage mensaje)

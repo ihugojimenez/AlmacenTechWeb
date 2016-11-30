@@ -84,8 +84,9 @@
                         <a class="dropdown-toggle" tabindex="37" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                           Registros <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
-                             <li><a href="/Registros/rUsuarios.aspx" id="UsuariosAdm">Usuarios</a></li>
+                            <% if(BLL.Utilitarios.Tipo==1) { %>
+                            <ul class="dropdown-menu">
+                             <li><a href="/Registros/rUsuarios.aspx" id="rUsuariosAdm">Usuarios</a></li>
                              <li><a href="/Registros/rBancas.aspx">Bancas</a></li>
                             <li><a href="/Registros/rEquipos.aspx">Equipos</a></li>
                             <li><a href="/Registros/rMensajeros.aspx">Mensajeros</a></li>
@@ -93,6 +94,16 @@
                             <li><a href="/Registros/rDevoluciones.aspx">Devoluciones</a></li>
                           
                         </ul>
+                        <% }
+                        else { %>
+                            <ul class="dropdown-menu">
+                             <li><a href="/Registros/rBancas.aspx">Bancas</a></li>
+                            <li><a href="/Registros/rEquipos.aspx">Equipos</a></li>
+                            <li><a href="/Registros/rMensajeros.aspx">Mensajeros</a></li>
+                            <li><a href="/Registros/rSalidas.aspx">Salidas</a></li>
+                            <li><a href="/Registros/rDevoluciones.aspx">Devoluciones</a></li>
+                        </ul>
+                        <% } %>
                       </li>
                             
                      </li>
@@ -101,13 +112,34 @@
                         <a class="dropdown-toggle" tabindex="38" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                           Consultas <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
+                            <% if(BLL.Utilitarios.Tipo==1) { %>
+                            <ul class="dropdown-menu">
                              <li><a href="/Consultas/cUsuarios.aspx" id="cUsuariosAdm">Usuarios</a></li>
                              <li><a href="/Consultas/cBancas.aspx">Bancas</a></li>
                             <li><a href="/Consultas/cEquipos.aspx">Equipos</a></li>
                             <li><a href="/Consultas/cMensajeros.aspx">Mensajeros</a></li>
                             <li><a href="/Consultas/cSalidas.aspx">Salidas</a></li>
-                          
+                        </ul>
+                        <% }
+                        else { %>
+                            <ul class="dropdown-menu">
+                             <li><a href="/Consultas/cBancas.aspx">Bancas</a></li>
+                            <li><a href="/Consultas/cEquipos.aspx">Equipos</a></li>
+                            <li><a href="/Consultas/cMensajeros.aspx">Mensajeros</a></li>
+                            <li><a href="/Consultas/cSalidas.aspx">Salidas</a></li>
+                        </ul>
+                        <% } %>
+                      </li>
+                            
+                     </li>
+                    <li>
+                         <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle glyphicon glyphicon-user" id="UserDrop" tabindex="37" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                           <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                             <li><a href="/Sesion/Perfil.aspx" >Perfil</a></li>
+                              <li><a href="/Sesion/Sing-out.aspx" >Cerrar Sesion</a></li>
                         </ul>
                       </li>
                             
